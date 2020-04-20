@@ -49,7 +49,7 @@ a| https://argoproj.github.io/argo-cd/[ArgoCD]
 | Security Static Code Analysis
 a| SonarQube
 
-| Linting STatic Code Analysis
+| Linting Satic Code Analysis
 a| SonarQube
 
 | Unit Testing
@@ -58,10 +58,10 @@ a| Junit
 | Build
 a| Maven
 
-| Compliance Image Scanning
+| Static Compliance Container Image Scanning
 a| OpenSCAP
 
-| Vulnerability Image Scanning
+| Static Vulnerability Container Image Scanning
 a| OpenSCAP
 
 | UAT
@@ -87,7 +87,7 @@ a| ?
 | Security Static Code Analysis
 a| SonarQube
 
-| Linting STatic Code Analysis
+| Linting Static Code Analysis
 a| SonarQube
 
 | Unit Testing
@@ -99,10 +99,10 @@ a|
 | Build
 a| N/A
 
-| Compliance Image Scanning
+| Static Compliance Container Image Scanning
 a| OpenSCAP
 
-| Vulnerability Image Scanning
+| Static Vulnerability Container Image Scanning
 a| OpenSCAP
 
 | UAT
