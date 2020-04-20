@@ -13,7 +13,7 @@ TODO.
 | Purpose
 2+| Tools by Workflow Type
 
-| Workflow Type
+|
 h| *Java (Backend)*
 h| *JavaScript (Frontend)*
 
