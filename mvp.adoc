@@ -7,114 +7,84 @@ TODO.
 
 == Tooling
 
-=== Shared
-.Shared
-[%header,cols=2]
+.Tooling by Workflow Implimentation
+[cols="a,a,a",options="header"]
 |===
-| Purpose | Tool(s)
+| Purpose
+2+| Tool(s)
+
+| 
+h| *Java (Backend)*
+h| *JavaScript (Frontend)*
 
 | Source Control 
-a| https://github.com/go-gitea/gitea[Gitea]
+2+| https://github.com/go-gitea/gitea[Gitea]
 
 | Container Orchestration
-a| Red Hat OpenShift Container Platform 4 (OCP)
+2+| Red Hat OpenShift Container Platform 4 (OCP)
 
 | Identity Management
-a| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
 
 | Artifact Repository
-a| https://jfrog.com/open-source/[JFrog Artifactory]
+2+| https://jfrog.com/open-source/[JFrog Artifactory]
 
 | Image Repository
-a| Red Hat Quay
+2+| Red Hat Quay
 
 | Continues Integration
-a|
+2+|
 * Jenkins
 * Tekton
 
 | Continues Deployment
-a| https://argoproj.github.io/argo-cd/[ArgoCD]
-|===
-
-=== Workflow Specific
-
-==== Java (Backend)
-
-.Workflow Specific - Java (Backend)
-[%header,cols=2]
-|===
-| Purpose | Tool(s)
+2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | Security Static Code Analysis
-a| SonarQube
+| SonarQube
+| SonarQube
 
 | Linting Satic Code Analysis
-a| SonarQube
+| SonarQube
+| SonarQube
 
 | Unit Testing
-a| Junit
+| Junit
+|
+* TBD
+** Mocha?
+** Jest?
+** ?
 
 | Build
-a| Maven
+| Maven
+| N/A
 
 | Static Compliance Container Image Scanning
-a| OpenSCAP
+| OpenSCAP
+| OpenSCAP
 
 | Static Vulnerability Container Image Scanning
-a| OpenSCAP
+| OpenSCAP
+| OpenSCAP
 
 | UAT
-a| Cucumber
+| Cucumber
+| Selenium
 
 | Runtime Vulnerability Scanning
-a| OWASP?
+|
+* TBD
+** OWASP?
+|
+* TBD
+** OWASP?
 
 | Canary Testing
 a| Selenium
-
-| Development Workflow (IDE)
-a| ?
-
-|===
-
-==== JavaScript (Frontend)
-.Workflow Specific - JavaScript (Frontend)
-[%header,cols=2]
-|===
-| Purpose | Tool(s)
-
-| Security Static Code Analysis
-a| SonarQube
-
-| Linting Static Code Analysis
-a| SonarQube
-
-| Unit Testing
-a|
-* Mocha?
-* Jest?
-* ?
-
-| Build
-a| N/A
-
-| Static Compliance Container Image Scanning
-a| OpenSCAP
-
-| Static Vulnerability Container Image Scanning
-a| OpenSCAP
-
-| UAT
-a| Selenium
-
-| Runtime Vulnerability Scanning
-a| OWASP
-
-| Canary Testing
 a| Selenium
 
 | Development Workflow (IDE)
-a| ?
-
+a| TBD
+a| TBD
 |===
