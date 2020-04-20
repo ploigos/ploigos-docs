@@ -1,7 +1,17 @@
 = MVP
 Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
 
-== Abstract Workflow
+== Workflows
+
+=== Abstract
+
+TODO.
+
+=== Java (Backend)
+
+TODO.
+
+=== JavaScript (Frontend)
 
 TODO.
 
