@@ -1,3 +1,120 @@
 = MVP
+Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
 
-TODO
+== Abstract Workflow
+
+TODO.
+
+== Tooling
+
+=== Shared
+.Shared
+[%header,cols=2]
+|===
+| Purpose | Tool(s)
+
+| Source Control 
+a| https://github.com/go-gitea/gitea[Gitea]
+
+| Container Orchestration
+a| Red Hat OpenShift Container Platform 4 (OCP)
+
+| Identity Management
+a| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+
+| Artifact Repository
+a| https://jfrog.com/open-source/[JFrog Artifactory]
+
+| Image Repository
+a| Red Hat Quay
+
+| Continues Integration
+a|
+* Jenkins
+* Tekton
+
+| Continues Deployment
+a| https://argoproj.github.io/argo-cd/[ArgoCD]
+|===
+
+=== Workflow Specific
+
+==== Java (Backend)
+
+.Workflow Specific - Java (Backend)
+[%header,cols=2]
+|===
+| Purpose | Tool(s)
+
+| Security Static Code Analysis
+a| SonarQube
+
+| Linting STatic Code Analysis
+a| SonarQube
+
+| Unit Testing
+a| Junit
+
+| Build
+a| Maven
+
+| Compliance Image Scanning
+a| OpenSCAP
+
+| Vulnerability Image Scanning
+a| OpenSCAP
+
+| UAT
+a| Cucumber
+
+| Runtime Vulnerability Scanning
+a| OWASP?
+
+| Canary Testing
+a| Selenium
+
+| Development Workflow (IDE)
+a| ?
+
+|===
+
+==== JavaScript (Frontend)
+.Workflow Specific - JavaScript (Frontend)
+[%header,cols=2]
+|===
+| Purpose | Tool(s)
+
+| Security Static Code Analysis
+a| SonarQube
+
+| Linting STatic Code Analysis
+a| SonarQube
+
+| Unit Testing
+a|
+* Mocha?
+* Jest?
+* ?
+
+| Build
+a| N/A
+
+| Compliance Image Scanning
+a| OpenSCAP
+
+| Vulnerability Image Scanning
+a| OpenSCAP
+
+| UAT
+a| Selenium
+
+| Runtime Vulnerability Scanning
+a| OWASP
+
+| Canary Testing
+a| Selenium
+
+| Development Workflow (IDE)
+a| ?
+
+|===
