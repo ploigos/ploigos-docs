@@ -39,7 +39,7 @@ h| *JavaScript (Frontend)*
 | Artifact Repository
 2+| https://jfrog.com/open-source/[JFrog Artifactory]
 
-| Image Repository
+| Image Registry
 2+| Red Hat Quay
 
 | Continues Integration
