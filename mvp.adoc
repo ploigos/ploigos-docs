@@ -5,7 +5,29 @@ Information about what is included in the MVP for Trusted Software Supply Chain 
 
 === Abstract
 
-TODO.
+==== Single Dev
+
+===== Simple
+
+image::assets/single-dev-workflow-simple.png[overview of a single dev simple workflow]
+
+===== Detailed
+
+image::assets/single-dev-workflow-detail.png[overview of a single dev details workflow]
+
+==== Multiple Devs
+
+===== Simple
+
+image::assets/multi-dev-workflow-simple.png[overview of multiple devs simple workflow]
+
+===== Detailed
+
+image::assets/multi-dev-workflow-detail.png[overview of multiple devs details workflow]
+
+==== Detailed Workflow
+
+image::assets/detailed-workflow.png[detailed workflow]
 
 === Java (Backend)
 
