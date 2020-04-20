@@ -11,9 +11,9 @@ TODO.
 [cols="a,a,a",options="header"]
 |===
 | Purpose
-2+| Tool(s)
+2+| Tools by Workflow Type
 
-| 
+| Workflow Type
 h| *Java (Backend)*
 h| *JavaScript (Frontend)*
 
