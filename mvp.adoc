@@ -8,7 +8,7 @@ TODO.
 == Tooling
 
 .Tooling by Workflow Implimentation
-[cols="a,a,a",options="header"]
+[cols="h,a,a",options="header"]
 |===
 | Purpose
 2+| Tool(s)
