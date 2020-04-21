@@ -11,10 +11,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: asciidoctor
+    - name: Generate HTML
       uses: rhtconsulting/asciidoctor-action@master
       with:
-        args: asciidoctor README.adoc
-        
-    - name: ls
-      run: ls -al
+        args: asciidoctor -D docs -o index.html README.adoc
+    
+    - name: Copy assets to docs/
+      run: cp -r assets docs/
+    
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages 
+          FOLDER: docs 
