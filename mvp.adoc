@@ -1,3 +1,5 @@
+:linkattrs:
+
 = MVP
 Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
 
@@ -33,7 +35,9 @@ image::assets/detailed-workflow.png[detailed workflow]
 
 === Java (Backend)
 
-image::assets/tssc-java-tools.png[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz"]
+image::assets/tssc-java-tools.png[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz"  window="_blank"]
+
+https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz[window="_blank"]
 
 === JavaScript (Frontend)
 
