@@ -1,9 +1,8 @@
 = MVP
 
-Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
+Information about what is included in the MVP for {ProjectName} ({ProjectShortName}).
 
 == Workflows
-(Embed workflow diagrams here)
 
 === Abstract
 
