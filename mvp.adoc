@@ -31,25 +31,7 @@ image::assets/detailed-workflow.png[detailed workflow]
 
 === Java (Backend)
 
-++++
-<p>
-Content in a passthrough block is passed to the output unprocessed.
-That means you can include raw HTML, like this embedded Gist:
-</p>
-
-<script src="https://gist.github.com/mojavelinux/5333524.js">
-</script>
-++++
-
-TEST1
-
-++++
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/686183c6-821a-42a8-a71a-44dbc594de91" id="PmVRGq_Bh6kJ"></iframe></div>
-++++
-
-TEST2
-
-image::https://www.lucidchart.com/documents/embeddedchart/686183c6-821a-42a8-a71a-44dbc594de91[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91"]
+TODO.
 
 === JavaScript (Frontend)
 
