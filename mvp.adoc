@@ -45,11 +45,9 @@ image::assets/tssc-javascript-tools.png[link="https://www.lucidchart.com/documen
 
 https://www.lucidchart.com/documents/view/c9bb007f-3d24-4800-ab52-ad6c972752eb[LucidChart Javascript (Frontend) TSSC]
 
-=======
-The following table lists chosen tooling for the TSSC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.
-
-
 == Tooling
+
+The following table lists chosen tooling for the TSSC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.
 
 .Tooling by Workflow Implimentation
 [cols="a,a,a",options="header"]
