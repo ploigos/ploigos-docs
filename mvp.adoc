@@ -2,10 +2,11 @@
 Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
 
 == Workflows
+(Embed workflow diagrams here)
 
 === Abstract
 
-TODO.
+The following table lists chosen tooling for the TSSC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.
 
 === Java (Backend)
 
@@ -40,14 +41,14 @@ h| *JavaScript (Frontend)*
 2+| https://jfrog.com/open-source/[JFrog Artifactory]
 
 | Image Registry
-2+| Red Hat Quay
+2+| Red Hat Quay (+ Clair)
 
-| Continues Integration
+| Continuous Integration
 2+|
 * Jenkins
 * Tekton
 
-| Continues Deployment
+| Continuous Deployment
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | Security Static Code Analysis
@@ -85,10 +86,10 @@ h| *JavaScript (Frontend)*
 | Runtime Vulnerability Scanning
 |
 * TBD
-** OWASP?
+** OWASP compliant (might be within CI tool)
 |
 * TBD
-** OWASP?
+** OWASP compliant (might be within CI tool)
 
 | Canary Testing
 a| Selenium

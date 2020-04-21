@@ -1,4 +1,4 @@
 # tssc-docs
-Trusted Software Supply Chain (TSSC) Documeation
+Trusted Software Supply Chain (TSSC) Documentation
 
 include::mvp.adoc[leveloffset=+1]
