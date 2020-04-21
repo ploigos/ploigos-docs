@@ -1,6 +1,5 @@
-:linkattrs:
-
 = MVP
+
 Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).
 
 == Workflows
@@ -35,13 +34,16 @@ image::assets/detailed-workflow.png[detailed workflow]
 
 === Java (Backend)
 
-image::assets/tssc-java-tools.png[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz"  window="_blank"]
+image::assets/tssc-java-tools.png[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz"]
 
-https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz[window="_blank"]
+https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz[LucidChart Java (Backend) TSSC]
 
 === JavaScript (Frontend)
 
-TODO.
+image::assets/tssc-javascript-tools.png[link="https://www.lucidchart.com/documents/view/c9bb007f-3d24-4800-ab52-ad6c972752eb"]
+
+https://www.lucidchart.com/documents/view/c9bb007f-3d24-4800-ab52-ad6c972752eb[LucidChart Javascript (Frontend) TSSC]
+
 
 == Tooling
 
