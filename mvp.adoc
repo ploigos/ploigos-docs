@@ -31,7 +31,7 @@ image::assets/detailed-workflow.png[detailed workflow]
 
 === Java (Backend)
 
-TODO.
+image::https://www.lucidchart.com/documents/embeddedchart/686183c6-821a-42a8-a71a-44dbc594de91[link="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91"]
 
 === JavaScript (Frontend)
 
