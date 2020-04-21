@@ -178,50 +178,68 @@ a| TBD
 |===
 
 .Red Hat OpenShift Sizing
-[cols="a,a,a,a",options="header"]
+[cols="a,a,a,a,a",options="header"]
 |===
 | Node
 | CPUs
 | Memmory (GB)
+| Disk (GB)
+| AWS EC2 Instance Type
 | Sizing Source
 
 | Master 0
 | 4
-| 16
+| 8
+| 120
+| a1.xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
 
 | Master 1
 | 4
-| 16
+| 8
+| 120
+| a1.xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
 
 | Master 2
 | 4
 | 16
+| 120
+| a1.xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
 
 | Infra 0
 | 8
-| 24
+| 16
+| 120
+| a1.2xlarge
 | WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
 
 | Infra 1
 | 8
-| 24
+| 16
+| 120
+| a1.2xlarge
 | WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
 
 | Infra 2
 | 8
-| 24
+| 16
+| 120
+| a1.2xlarge
 | WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
 
 | Compute 0
-| 
-|
-|
+| 16
+| 32
+| 120
+| a1.4xlarge
+| Based on Conterized Tool Sizing needs
 
 | Compute 1
-| 
-|
-|
+| 16
+| 32
+| 120
+| a1.4xlarge
+| Based on Conterized Tool Sizing needs
 |===
