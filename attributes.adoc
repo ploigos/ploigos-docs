@@ -1,4 +1,9 @@
-:toc:
+:toc: left
+:toclevels: 3
+:numbered:
+:sectanchors:
+:sectlinks:
+
 :ProjectName: Trusted{nbsp}Software{nbsp}Supply{nbsp}Chain
 :ProjectShortName: TSSC
 :ProjectNameID: tssc
