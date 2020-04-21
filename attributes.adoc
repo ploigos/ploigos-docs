@@ -1,0 +1,5 @@
+:toc:
+:ProjectName: Trusted{nbsp}Software{nbsp}Supply{nbsp}Chain
+:ProjectShortName: TSSC
+:ProjectNameID: tssc
+:ProjectVersion: 1.0
