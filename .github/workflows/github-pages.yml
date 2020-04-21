@@ -12,11 +12,13 @@ jobs:
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
-    - name: Generate HTML
+    - name: Generate HTML 🛠
       run: asciidoctor -D build -o index.html README.adoc
     
-    - name: Copy assets to build/
+    - name: Copy assets to build/ 📂
       run: cp -r assets build/
     
     - name: Upload Artifacts 🔺
