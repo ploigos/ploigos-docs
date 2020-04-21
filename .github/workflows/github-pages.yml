@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: asciidoctor
-      uses:  rhtconsulting/asciidoctor-action@master
+      uses: mgred/asciidoctor-action@master
       with:
         args: asciidoctor --failure-level=ERROR README.adoc
         
