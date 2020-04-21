@@ -46,7 +46,7 @@ h| *JavaScript (Frontend)*
 | Continuous Integration
 2+|
 * Jenkins
-* DroneCI
+* Tekton
 
 | Continuous Deployment
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
