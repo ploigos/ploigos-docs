@@ -99,3 +99,119 @@ a| Selenium
 a| TBD
 a| TBD
 |===
+
+== Infrastrcture
+
+=== Sizing
+.Conterized Tool Sizing
+[cols="a,a,a,a",options="header"]
+|===
+| Tool
+| CPUs
+| Memmory (GB)
+| Sizing Source
+
+| Red Hat SSO
+|
+|
+|
+
+| JFrog Artifactory OSS
+| 4
+| 4
+| https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware]
+
+| JFrog Artifactory OSS - DB (PostgreSQL)
+| 2
+| 2
+| WAG since https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware] provides no recomendation
+
+| Red Hat Quay
+|
+|
+|
+
+| Red Hat Clair
+|
+|
+|
+
+| Tekton
+|
+|
+|
+
+| Jenkins Master
+| 2
+| 2
+| WAG based on experince.
+
+| Jenkins Works
+| Variable
+| Variable
+| 
+
+| ArgoCD
+|
+|
+|
+
+| SonarQube
+| 2
+| 2
+| WAG sicne https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
+
+| SonarQube DB (PostgreSQL)
+| 2
+| 2
+| WAG sicne https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
+
+| Cucumber
+| N/A (embeded in CI container)
+| N/A (embeded in CI container)
+|
+|===
+
+.Red Hat OpenShift Sizing
+[cols="a,a,a,a",options="header"]
+|===
+| Node
+| CPUs
+| Memmory (GB)
+| Sizing Source
+
+| Master 0
+| 4
+| 16
+| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Master 1
+| 4
+| 16
+| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Master 2
+| 4
+| 16
+| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Infra 0
+| 
+|
+
+| Infra 1
+| 
+|
+
+| Infra 2
+| 
+|
+
+| Compute 0
+| 
+|
+
+| Compute 1
+| 
+|
+|===
