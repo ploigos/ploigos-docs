@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     container:
       image: quay.io/hdaems/podman-asciidoctor:1.1
 
     steps:
-    - name: Checkout
+    - name: Checkout 🛎️
       uses: actions/checkout@v2
 
     - name: Generate HTML
@@ -19,9 +19,30 @@ jobs:
     - name: Copy assets to build/
       run: cp -r assets build/
     
-    - name: Deploy
+    - name: Upload Artifacts 🔺
+      uses: actions/upload-artifact@v1
+      with:
+        name: site
+        path: build
+    
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    
+    - name: Download Artifacts 🔻
+      uses: actions/download-artifact@v1
+      with:
+        name: site
+    
+    - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages 
-        FOLDER: build 
+        FOLDER: "site" 
