@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Generate HTML
-      uses: rhtconsulting/asciidoctor-action@master
+      uses: rhtconsulting/asciidoctor-action@v1.0
       with:
         args: asciidoctor -D docs -o index.html README.adoc
     
