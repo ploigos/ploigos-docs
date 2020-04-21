@@ -14,14 +14,14 @@ jobs:
     - name: Generate HTML
       uses: rhtconsulting/asciidoctor-action@v1.0
       with:
-        args: asciidoctor -D docs -o index.html README.adoc
+        args: asciidoctor -D build -o index.html README.adoc
     
-    - name: Copy assets to docs/
-      run: cp -r assets docs/
+    - name: Copy assets to build/
+      run: cp -r assets build/
     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages 
-        FOLDER: docs 
+        FOLDER: build 
