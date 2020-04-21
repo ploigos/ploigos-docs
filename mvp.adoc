@@ -126,10 +126,15 @@ a| TBD
 | 2
 | WAG since https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware] provides no recomendation
 
-| Red Hat Quay
-|
-|
-|
+| Red Hat Quay - Basic
+| 2
+| 4
+| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites]
+
+| Red Hat Quay - Basic - DB (Cruncy Data PostgrSQL)
+| 
+| 
+| 
 
 | Red Hat Clair
 |
@@ -198,20 +203,25 @@ a| TBD
 | Infra 0
 | 
 |
+|
 
 | Infra 1
 | 
+|
 |
 
 | Infra 2
 | 
 |
+|
 
 | Compute 0
 | 
 |
+|
 
 | Compute 1
 | 
+|
 |
 |===
