@@ -157,25 +157,26 @@ a| TBD
 | 2
 | WAG since https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware] provides no recomendation
 
-| Red Hat Quay - Basic
+| Red Hat Quay - Operator Based
 | 2
 | 4
-| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites]
+| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites],
+https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_on_openshift_with_quay_setup_operator/architecture[Operator and Quay Architecture]
 
-| Red Hat Quay - Basic - DB (Cruncy Data PostgrSQL)
-| 
-| 
+| Red Hat Quay - Operator Based - DB (Cruncy Data PostgrSQL)
+| 2 / Operator Governed
+| 8 / Operator Governed
 | 
 
 | Red Hat Clair
-|
-|
+| 2
+| 4
 |
 
 | Tekton
-|
-|
-|
+| Operator Governed
+| Operator Governed
+| https://openshift.github.io/pipelines-docs/docs/0.10.5/assembly_installing-pipelines.html[Tekton Pipelines Docs - Github Pages for Openshift 4]
 
 | Jenkins Master
 | 2
@@ -188,9 +189,9 @@ a| TBD
 | 
 
 | ArgoCD
-|
-|
-|
+| 1
+| 4
+| Worker images are 50Mb in size, API server is extremely small.
 
 | SonarQube
 | 2
@@ -219,46 +220,25 @@ a| TBD
 | Sizing Source
 
 | Master 0
-| 4
-| 16
+| 8
+| 32
 | 120
-| m4.xlarge
+| m4.2xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
 
 | Master 1
-| 4
-| 16
+| 8
+| 32
 | 120
-| m4.xlarge
+| m4.2xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
 
 | Master 2
-| 4
-| 16
+| 8
+| 32
 | 120
-| m4.xlarge
+| m4.2xlarge
 | https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
-
-| Infra 0
-| 4
-| 16
-| 120
-| m4.xlarge
-| WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
-
-| Infra 1
-| 4
-| 16
-| 120
-| m4.xlarge
-| WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
-
-| Infra 2
-| 4
-| 16
-| 120
-| m4.xlarge
-| WAG based on OCP 3 recomendations since infra nodes for OCP 4 are just starting to become a thing again.
 
 | Compute 0
 | 8
