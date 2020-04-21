@@ -16,7 +16,7 @@ jobs:
         persist-credentials: false
 
     - name: Generate HTML 🛠
-      run: asciidoctor -D build -o index.html README.adoc
+      run: asciidoctor -D build -o index.html master.adoc
     
     - name: Copy assets to build/ 📂
       run: cp -r assets build/
