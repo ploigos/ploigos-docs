@@ -6,15 +6,15 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    container:
+      image: quay.io/hdaems/podman-asciidoctor:1.1
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Generate HTML
-      uses: rhtconsulting/asciidoctor-action@v1.0
-      with:
-        args: asciidoctor -D build -o index.html README.adoc
+      run: asciidoctor -D build -o index.html README.adoc
     
     - name: Copy assets to build/
       run: cp -r assets build/
