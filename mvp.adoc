@@ -10,11 +10,11 @@ The following table lists chosen tooling for the TSSC MVP implementation.  A sep
 
 === Java (Backend)
 
-TODO.
+TODO: (Describe the Java backend application architecture)
 
 === JavaScript (Frontend)
 
-TODO.
+TODO: (Describe the Javascript frontend application architecture)
 
 == Tooling
 
