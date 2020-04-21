@@ -14,7 +14,7 @@ jobs:
     - name: asciidoctor
       uses: rhtconsulting/asciidoctor-action@master
       with:
-        args: asciidoctor -b html5 README.adoc
+        args: asciidoctor README.adoc
         
     - name: ls
       run: ls -al
