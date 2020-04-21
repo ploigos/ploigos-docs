@@ -126,12 +126,13 @@ a| TBD
 | 2
 | WAG since https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware] provides no recomendation
 
-| Red Hat Quay - Basic
+| Red Hat Quay - Operator Based
 | 2
 | 4
-| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites]
+| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites],
+https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_on_openshift_with_quay_setup_operator/architecture[Operator and Quay Architecture]
 
-| Red Hat Quay - Basic - DB (Cruncy Data PostgrSQL)
+| Red Hat Quay - Operator Based - DB (Cruncy Data PostgrSQL)
 | 2 / Operator Governed
 | 8 / Operator Governed
 | 
