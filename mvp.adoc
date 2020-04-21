@@ -112,9 +112,9 @@ a| TBD
 | Sizing Source
 
 | Red Hat SSO
-|
-|
-|
+| 2
+| 2
+| WAG (https://access.redhat.com/solutions/3217681[Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO]
 
 | JFrog Artifactory OSS
 | 4
