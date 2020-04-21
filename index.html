@@ -436,17 +436,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Documenation for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC)</h1>
-<div id="toc" class="toc">
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_mvp">MVP</a>
+<li><a href="#_mvp">1. MVP</a>
 <ul class="sectlevel2">
-<li><a href="#_workflows">Workflows</a></li>
-<li><a href="#_tooling">Tooling</a></li>
-<li><a href="#_development_infrastructure">Development Infrastructure</a></li>
+<li><a href="#_workflows">1.1. Workflows</a>
+<ul class="sectlevel3">
+<li><a href="#_abstract">1.1.1. Abstract</a></li>
+<li><a href="#_java_backend">1.1.2. Java (Backend)</a></li>
+<li><a href="#_javascript_frontend">1.1.3. JavaScript (Frontend)</a></li>
+</ul>
+</li>
+<li><a href="#_tooling">1.2. Tooling</a></li>
+<li><a href="#_development_infrastructure">1.3. Development Infrastructure</a>
+<ul class="sectlevel3">
+<li><a href="#_sizing">1.3.1. Sizing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#tssc-terms-definitions-tssc">Appendix A: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></li>
@@ -462,22 +472,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mvp">MVP</h2>
+<h2 id="_mvp"><a class="anchor" href="#_mvp"></a><a class="link" href="#_mvp">1. MVP</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Information about what is included in the MVP for Trusted Software Supply Chain (TSSC).</p>
 </div>
 <div class="sect2">
-<h3 id="_workflows">Workflows</h3>
+<h3 id="_workflows"><a class="anchor" href="#_workflows"></a><a class="link" href="#_workflows">1.1. Workflows</a></h3>
 <div class="paragraph">
 <p>(Embed workflow diagrams here)</p>
 </div>
 <div class="sect3">
-<h4 id="_abstract">Abstract</h4>
+<h4 id="_abstract"><a class="anchor" href="#_abstract"></a><a class="link" href="#_abstract">1.1.1. Abstract</a></h4>
 <div class="sect4">
-<h5 id="_single_dev">Single Dev</h5>
+<h5 id="_single_dev"><a class="anchor" href="#_single_dev"></a><a class="link" href="#_single_dev">Single Dev</a></h5>
 <div class="sect5">
-<h6 id="_simple">Simple</h6>
+<h6 id="_simple"><a class="anchor" href="#_simple"></a><a class="link" href="#_simple">Simple</a></h6>
 <div class="imageblock">
 <div class="content">
 <img src="assets/single-dev-workflow-simple.png" alt="overview of a single dev simple workflow">
@@ -485,7 +495,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect5">
-<h6 id="_detailed">Detailed</h6>
+<h6 id="_detailed"><a class="anchor" href="#_detailed"></a><a class="link" href="#_detailed">Detailed</a></h6>
 <div class="imageblock">
 <div class="content">
 <img src="assets/single-dev-workflow-detail.png" alt="overview of a single dev details workflow">
@@ -494,9 +504,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="_multiple_devs">Multiple Devs</h5>
+<h5 id="_multiple_devs"><a class="anchor" href="#_multiple_devs"></a><a class="link" href="#_multiple_devs">Multiple Devs</a></h5>
 <div class="sect5">
-<h6 id="_simple_2">Simple</h6>
+<h6 id="_simple_2"><a class="anchor" href="#_simple_2"></a><a class="link" href="#_simple_2">Simple</a></h6>
 <div class="imageblock">
 <div class="content">
 <img src="assets/multi-dev-workflow-simple.png" alt="overview of multiple devs simple workflow">
@@ -504,7 +514,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect5">
-<h6 id="_detailed_2">Detailed</h6>
+<h6 id="_detailed_2"><a class="anchor" href="#_detailed_2"></a><a class="link" href="#_detailed_2">Detailed</a></h6>
 <div class="imageblock">
 <div class="content">
 <img src="assets/multi-dev-workflow-detail.png" alt="overview of multiple devs details workflow">
@@ -514,7 +524,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_java_backend">Java (Backend)</h4>
+<h4 id="_java_backend"><a class="anchor" href="#_java_backend"></a><a class="link" href="#_java_backend">1.1.2. Java (Backend)</a></h4>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz"><img src="assets/tssc-java-tools.png" alt="tssc java tools"></a>
@@ -525,7 +535,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_javascript_frontend">JavaScript (Frontend)</h4>
+<h4 id="_javascript_frontend"><a class="anchor" href="#_javascript_frontend"></a><a class="link" href="#_javascript_frontend">1.1.3. JavaScript (Frontend)</a></h4>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://www.lucidchart.com/documents/view/c9bb007f-3d24-4800-ab52-ad6c972752eb"><img src="assets/tssc-javascript-tools.png" alt="tssc javascript tools"></a>
@@ -537,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tooling">Tooling</h3>
+<h3 id="_tooling"><a class="anchor" href="#_tooling"></a><a class="link" href="#_tooling">1.2. Tooling</a></h3>
 <div class="paragraph">
 <p>The following table lists chosen tooling for the TSSC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.</p>
 </div>
@@ -776,9 +786,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_development_infrastructure">Development Infrastructure</h3>
+<h3 id="_development_infrastructure"><a class="anchor" href="#_development_infrastructure"></a><a class="link" href="#_development_infrastructure">1.3. Development Infrastructure</a></h3>
 <div class="sect3">
-<h4 id="_sizing">Sizing</h4>
+<h4 id="_sizing"><a class="anchor" href="#_sizing"></a><a class="link" href="#_sizing">1.3.1. Sizing</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Conterized Tool Sizing</caption>
 <colgroup>
@@ -1121,7 +1131,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="tssc-terms-definitions-tssc">Appendix A: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</h2>
+<h2 id="tssc-terms-definitions-tssc"><a class="anchor" href="#tssc-terms-definitions-tssc"></a><a class="link" href="#tssc-terms-definitions-tssc">Appendix A: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -1148,7 +1158,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-21 19:41:03 UTC
+Last updated 2020-04-21 19:46:11 UTC
 </div>
 </div>
 </body>
