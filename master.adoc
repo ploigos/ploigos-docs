@@ -5,7 +5,7 @@ include::attributes.adoc[]
 
 Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
 
-include::mvp.adoc[leveloffset=+1]
+include::docs/mvp.adoc[leveloffset=+1]
 
 [appendix]
-include::tssc-terms-definitions.adoc[leveloffset=+1]
+include::docs/tssc-terms-definitions.adoc[leveloffset=+1]
