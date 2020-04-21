@@ -16,5 +16,5 @@ jobs:
       with:
         args: asciidoctor README.adoc
         
-    - name: ls
+    - name: ls DEBUG
       run: ls -al
