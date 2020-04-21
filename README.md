@@ -1,6 +1,8 @@
-![GitHub Pages](https://github.com/rhtconsulting/tssc-docs/workflows/GitHub%20Pages/badge.svg?branch=master&event=push)
 
-= tssc-docs
+
+# tssc-docs
+
+![GitHub Pages](https://github.com/rhtconsulting/tssc-docs/workflows/GitHub%20Pages/badge.svg?branch=master&event=push)
 
 Documenation source for the Trusted Software Supply Chain (TSSC) project.
 
