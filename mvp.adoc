@@ -178,7 +178,7 @@ a| TBD
 |===
 
 .Red Hat OpenShift Sizing
-[cols="a,a,a,a,a",options="header"]
+[cols="a,a,a,a,a,a",options="header"]
 |===
 | Node
 | CPUs
