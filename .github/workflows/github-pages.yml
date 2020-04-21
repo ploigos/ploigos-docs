@@ -14,7 +14,7 @@ jobs:
     - name: asciidoctor
       uses: mgred/asciidoctor-action@master
       with:
-        args: asciidoctor --failure-level=ERROR README.adoc
+        args: asciidoctor README.adoc
         
     - name: ls
       run: ls -al
