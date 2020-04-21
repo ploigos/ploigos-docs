@@ -131,7 +131,7 @@ a| TBD
 a| TBD
 |===
 
-== Infrastrcture
+== Development Infrastructure
 
 === Sizing
 .Conterized Tool Sizing
