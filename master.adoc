@@ -1,6 +1,6 @@
 include::attributes.adoc[]
 
-= Documenation for {ProjectName} ({ProjectShortName})
+= Documentation for {ProjectName} ({ProjectShortName})
 :context: {ProjectNameID}
 
 Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
