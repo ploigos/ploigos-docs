@@ -195,16 +195,16 @@ https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat
 | SonarQube
 | 2
 | 2
-| WAG sicne https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
+| WAG since https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
 
 | SonarQube DB (PostgreSQL)
 | 2
 | 2
-| WAG sicne https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
+| WAG since https://docs.sonarqube.org/latest/requirements/hardware-recommendations/[SonarQube official docs] offers no suggestion
 
 | Cucumber
-| N/A (embeded in CI container)
-| N/A (embeded in CI container)
+| N/A (embedded in CI container)
+| N/A (embedded in CI container)
 |
 |===
 
