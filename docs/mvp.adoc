@@ -260,3 +260,53 @@ https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat
 | m4.2xlarge
 | Based on Containerized Tool Sizing needs
 |===
+
+== Development Practices
+
+=== AWS Infrastructure
+
+=== Red Hat Product Demonstration System (RHPDS)
+
+RHPDS provides a simple way to spin up your own OpenShift cluster on AWS upon which you can deploy tools, develop pipelines / code, etc. If you haven't used RHPDS before, begin by visiting the https://www.opentlc.com/account[OpenTLC Account Setup Page] to activate your account or reset your password.
+
+==== Creating an OCP Cluster on RHPDS
+
+. Visit https://rhpds.redhat.com[RHPDS] and login using your OpenTLC credentials. Your userid will be in the format _<redhatuserid>-redhat.com_. 
++
+. Once logged in, make sure you switch to the _Employee_ Group.
++
+image::dev-practices/rhpds-change-group.png[RHPDS Change Group]
++
+. Select *Services* -> *Catalogs* -> *Workshops* -> *OpenShift 4.x Workshop*
++
+image::dev-practices/rhpds-services-catalogs.png[RHPDS Services Catalog]
++
+image::dev-practices/rhpds-workshop.png[RHPDS OCP 4 Workshop]
++
+. Click the *Order* button and fill out the requested information in the form, example below. Note that the default environment lifetime is 2 Days, however it can be extended once.
++
+image::dev-practices/rhpds-form.png[RHPDS Workshop Request Form]
++
+. Click the _Submit_button and wait for the final email stating that your environment was successfully provisioned. Use the credentials provided to access your OCP cluster.
++
+Since the cluster is ephemeral, automating your workloads can be quite valuable. Informally, the information provided by the final provisioning email can be used to spring-board ansible deployments into the environment. For example if the bastion host is *bastion.set-demo-1234.example.opentlc.com*:
++
+```
+export BASTION=bastion.set-demo-1234.example.opentlc.com
+export ANSIBLE_USER=userid-redhat.com
+mkdir rhpds_ansible
+cd rhpds_ansible
+
+# Configure the ansible inventory file
+echo "${BASTION} ansible_user=${ANSIBLE_USER}" > hosts
+
+# Copy yout local public key to the bastion for passwordless ssh
+ssh-copy-id -o PreferredAuthentications=password ${ANSIBLE_USER}@${BASTION}
+
+# Verify connectivity
+ansible -i hosts all -a "oc get nodes"
+```
++
+At this point a playbook or role can be developed to deploy your workloads.  Review the https://docs.ansible.com/ansible/latest/modules/k8s_module.html[ansible k8s module] for more flexibility, as this is the module used for creating ansible based operators.
++
+More formally, the https://github.com/redhat-cop/agnosticd[Ansible Agnostic Deployer] framework is used by RHPDS to deploy its labs. Content can be contributed back and any developed https://github.com/redhat-cop/agnosticd/tree/development/ansible/roles[roles] can potentially be added as catalog items for RHPDS.
