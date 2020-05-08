@@ -75,7 +75,7 @@ h| *JavaScript (Frontend)*
 
 | Continuous Integration
 2+|
-* Jenkins
+* Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
 * Tekton
 
 | Continuous Deployment
