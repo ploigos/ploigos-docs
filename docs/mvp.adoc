@@ -76,7 +76,7 @@ h| *JavaScript (Frontend)*
 | Continuous Integration
 2+|
 * Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
-* Tekton
+* Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
 
 | Continuous Deployment
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
