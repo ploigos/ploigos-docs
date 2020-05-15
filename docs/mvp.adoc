@@ -110,7 +110,7 @@ h| *JavaScript (Frontend)*
 | OpenSCAP
 
 | UAT
-| Cucumber
+| Cucumber (https://github.com/rhtconsulting/tssc-cucumber[documentation])
 | Selenium
 
 | Runtime Vulnerability Scanning
