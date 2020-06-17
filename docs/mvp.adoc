@@ -6,43 +6,10 @@ Information about what is included in the MVP for {ProjectName} ({ProjectShortNa
 
 === Abstract
 
-==== Single Developer
+[[tssc-workflow-image]]
+image::tssc_workflow.png[alt="Trusted Software Supply Chain (TSSC) Workflow",title="Trusted Software Supply Chain (TSSC)",caption="Workflow: "]
+link:images/tssc_workflow.drawio[Trusted Software Supply Chain (TSSC) Workflow draw.io source]
 
-===== Simple
-
-image::single-dev-workflow-simple.png[overview of a single dev simple workflow]
-
-===== Detailed
-
-image::single-dev-workflow-detail.png[overview of a single dev details workflow]
-
-==== Multiple Developers
-
-===== Simple
-
-image::multi-dev-workflow-simple.png[overview of multiple devs simple workflow]
-
-===== Detailed
-
-image::multi-dev-workflow-detail.png[overview of multiple devs details workflow]
-
-////
-==== Detailed Workflow
-
-image::detailed-workflow.png[detailed workflow]
-////
-
-=== Java (Backend)
-
-image::tssc-java-tools.png[link="{imagesdir}/tssc-java-tools.png"]
-
-https://www.lucidchart.com/documents/view/686183c6-821a-42a8-a71a-44dbc594de91/aG9PKqQUuCDz[LucidChart Java (Backend) TSSC]
-
-=== JavaScript (Frontend)
-
-image::tssc-javascript-tools.png[link="{imagesdir}/tssc-javascript-tools.png"]
-
-https://www.lucidchart.com/documents/view/c9bb007f-3d24-4800-ab52-ad6c972752eb[LucidChart Javascript (Frontend) TSSC]
 
 == Tooling
 
