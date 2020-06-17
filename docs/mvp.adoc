@@ -7,7 +7,7 @@ Information about what is included in the MVP for {ProjectName} ({ProjectShortNa
 === Abstract
 
 [[tssc-workflow-image]]
-image::tssc_workflow.png[alt="Trusted Software Supply Chain (TSSC) Workflow",title="Trusted Software Supply Chain (TSSC)",caption="Workflow: "]
+image::tssc_workflow.png[alt="Trusted Software Supply Chain (TSSC) Workflow",title="Trusted Software Supply Chain (TSSC)",caption="Workflow: ",link=images/tssc_workflow.png]
 link:images/tssc_workflow.drawio[Trusted Software Supply Chain (TSSC) Workflow draw.io source]
 
 
