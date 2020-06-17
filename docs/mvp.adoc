@@ -4,12 +4,48 @@ Information about what is included in the MVP for {ProjectName} ({ProjectShortNa
 
 == Workflows
 
+At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This section is a pictorial versions of that opinionated workflow.
+
+[[tssc-abstract-workflows, TSSC Abstract Workflows]]
 === Abstract
 
-[[tssc-workflow-image]]
-image::tssc_workflow.png[alt="Trusted Software Supply Chain (TSSC) Workflow",title="Trusted Software Supply Chain (TSSC)",caption="Workflow: ",link=images/tssc_workflow.png]
-link:images/tssc_workflow.drawio[Trusted Software Supply Chain (TSSC) Workflow draw.io source]
+When discussing methods for getting ideas from peoples heads to production groups often get lost in talking about technology and tools when the hard work is deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated "idea to production" workflow in an abstract form, that is without any specific technologies or tools.
 
+==== Use
+
+The usage of these diagrams is intended to be both used as is to spark discussion as to what your team's specific TSSC workflow will be without getting distracted by technology or tools. The intent being that a team can take the link:images/tssc_diagrams.drawio[Trusted Software Supply Chain (TSSC) diagrams draw.io source] and modify it to match the specific workflow the team agrees to. Then, copy that and fill in the technologies and tools, examples of which can be found in <<tssc-tech-specific-workflows>>.
+
+[[NOTE]]
+====
+The draw.io source for the <<tssc-abstract-workflows>> can be found here, link:images/tssc_diagrams.drawio[tssc_diagrams.drawio].
+====
+
+[[tssc-abstract-workflow-high-level, TSSC Abstract Workflow High Level]]
+==== High Level
+
+A high level rendering of the TSSC workflow where the majority of steps are Predefined Procedures, that is they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<tssc-abstract-workflow-details>>. If something is needed that will fit on "one slide" this is it.
+
+[[tssc-abstract-workflow-high-level-image, TSSC Abstract Workflow High Level Image]]
+image::Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_High_Level.png[alt="Trusted Software Supply Chain (TSSC) - Workflow - High Level ",title="Trusted Software Supply Chain (TSSC) - High Level ",caption="Workflow: ",link=images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_High_Level.png]
+
+[[tssc-abstract-workflow-details, TSSC Abstract Workflow Details]]
+==== Detailed
+
+If there is one artifact that defines what the TSSC is, this is it. This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the TSSC.
+
+[[tssc-abstract-workflow-details-image, TSSC Abstract Workflow Details Image]]
+image::Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_Details.png[alt="Trusted Software Supply Chain (TSSC) - Workflow - Details",title="Trusted Software Supply Chain (TSSC) - Details",caption="Workflow: ",link=images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_Details.png]
+
+[[tssc-tech-specific-workflows, TSSC Technology Specific Workflows]]
+=== Technology Specific
+
+This section contains technology specific renderings of the <<tssc-abstract-workflows>> for re-use and reference.
+
+==== Backend Application - JavaEE
+#TODO#
+
+==== Frontend Application - JavaScript
+#TODO#
 
 == Tooling
 
