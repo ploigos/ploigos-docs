@@ -1,0 +1,184 @@
+[id="{ProjectNameID}-workflow-tools-{context}"]
+= {ProjectShortName} Workflow Tools
+
+Once a <<{ProjectNameID}-workflow-{context}>> is decded upon then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.
+
+[id="{ProjectNameID}-workflow-tool-purposes-{context}"]
+== Tool Categories and Purposes
+
+This section describes the category of tools need to implement the {ProjectShortName} and their purpose in dong so.
+
+.{ProjectShortName} Workflow Tools Overview
+[cols="a,a",options="header"]
+|===
+| Tool Category
+| Purpose
+
+| Container Platform
+| #TODO - purpose#
+
+| Identity Management
+| #TODO - purpose#
+
+| Artifact Repository
+| #TODO - purpose#
+
+| Image Registry
+| #TODO - purpose#
+
+| Source Control Tool
+| #TODO - purpose#
+
+| Continuous Integration (CI) Tool
+| #TODO - purpose#
+
+| Static Security Scanning Tool
+| #TODO - purpose#
+
+| Static Code Linting Tool
+| #TODO - purpose#
+
+| Application Language Packaging Tool
+| #TODO - purpose#
+
+| Application Language Unit Test Tool
+| #TODO - purpose#
+
+| Binary Artifact Upload Tool
+| #TODO - purpose#
+
+| Container Image Build Tool
+| #TODO - purpose#
+
+| Container Image Upload Tool
+| #TODO - purpose#
+
+| Container Image Unit Test Tool
+| #TODO - purpose#
+
+| Container Image Scanning Tool
+| #TODO - purpose#
+
+| Kubernetes Resources Creation Tool
+| #TODO - purpose#
+
+| Continues Deployment Tool
+| #TODO - purpose#
+
+| User Acceptance Testing (UAT) Tool
+| #TODO - purpose#
+
+| Runtime Vulnerability Scanning Tool
+| #TODO - purpose#
+
+| Integrated Development Environment (IDE)
+| #TODO - purpose#
+
+| Peer Review Tool
+| #TODO - purpose#
+
+| Canary Testing Tool
+| #TODO - purpose#
+
+| Discussion
+| #TODO - purpose#
+
+|===
+
+[id="{ProjectNameID}-workflow-tool-implementers-{context}"]
+== Tool Implementers
+
+#TODO#
+
+.{ProjectShortName} Workflow Tool Implementers
+[cols="a,a,a",options="header"]
+|===
+| Tool Category
+2+| Tool by Application Technology Stack
+
+|
+h| Backend Application - JavaEE
+h| Frontend Application - JavaScript
+
+| Container Platform
+2+| Red Hat OpenShift Container Platform 4 (OCP)
+
+| Identity Management
+2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+
+| Artifact Repository
+2+| https://jfrog.com/open-source/[JFrog Artifactory]
+
+| Image Registry
+2+| Red Hat Quay (+ Clair)
+
+| Source Control Tool
+2+| https://github.com/go-gitea/gitea[Gitea]
+
+| Continuous Integration (CI) Tool
+2+|
+* Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
+* Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
+
+| Static Security Scanning Tool
+2+| SonarQube
+
+| Static Code Linting Tool
+2+| SonarQube
+
+| Application Language Packaging Tool
+| maven
+| #TODO - tbd#
+
+| Application Language Unit Test Tool
+| JUnit
+|
+* #TODO - tbd#
+** Mocha?
+** Jest?
+
+| Binary Artifact Upload Tool
+| maven
+| #TODO - tbd#
+
+| Container Image Build Tool
+2+| https://buildah.io/[buildah]
+
+| Container Image Upload Tool
+2+| https://github.com/containers/skopeo[skopeo]
+
+| Container Image Unit Test Tool
+2+| #TODO - tbd#
+
+| Container Image Scanning Tool
+2+| OpenSCAP
+
+| Kubernetes Resources Creation Tool
+2+| https://helm.sh[helm]
+
+| Continues Deploym (CD) Tool
+2+| https://argoproj.github.io/argo-cd/[ArgoCD]
+
+| User Acceptance Testing (UAT) Tool
+| Cucumber
+| Selenium
+
+| Runtime Vulnerability Scanning Tool
+2+|
+* TBD
+** OWASP compliant (might be within CI tool)
+
+| Integrated Development Environment (IDE)
+| #TODO - tbd#
+| #TODO - tbd#
+
+| Peer Review Tool
+2+| https://github.com/go-gitea/gitea[Gitea]
+
+| Canary Testing Tool
+2+| Selenium
+
+| Discussion
+| #TODO - purpose#
+
+|===

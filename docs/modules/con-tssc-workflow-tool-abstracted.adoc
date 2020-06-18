@@ -1,0 +1,30 @@
+[id="{ProjectNameID}-tool-abstracted-workflow", reftext="{ProjectShortName} Tool Abstracted Workflow"]
+= Tool Abstracted Workflow
+
+When discussing methods for getting ideas from peoples heads to production groups often get lost in talking about technology and tools when the hard work is deciding on the abstract process, or workflow. This section has pictorial renderings of the {ProjectShortName} opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific {ProjectShortName} workflow and then use the provided templates to draw it to avoid the https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png["I'm glad we all agree"] problem that enviably arrases if an abstract concept is not turned concrete by drawing it.
+
+[id="{ProjectNameID}-tool-abstracted-workflow-high-level", reftext="{ProjectShortName} Tool Abstracted Workflow - High Level"]
+== High Level
+
+A high level rendering of the {ProjectShortName} workflow where the majority of steps are Predefined Procedures, that is they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-tool-abstracted-workflow-detailed>>. If something is needed that will fit on "one slide" this is it.
+
+[id="{ProjectNameID}-tool-abstracted-workflow-high-level-image", reftext="{ProjectShortName} Tool Abstracted Workflow - High Level Image"]
+image::{ProjectShortName}_Workflow_High_Level.png[alt="Trusted Software Supply Chain ({ProjectShortName}) Workflow - High Level ",title="Trusted Software Supply Chain ({ProjectShortName}) - High Level ",caption="Workflow Image: ",link=images/{ProjectShortName}_Workflow_High_Level.png]
+
+[id="{ProjectNameID}-tool-abstracted-workflow-detailed", reftext="{ProjectShortName} Tool Abstracted Workflow - Detailed"]
+== Detailed
+
+If there is one artifact that defines what the {ProjectShortName} is, this is it. This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the {ProjectShortName}.
+
+[id="{ProjectNameID}-tool-abstracted-workflow-details-image", reftext="{ProjectShortName} Tool Abstracted Workflow - Details Image"]
+image:{ProjectShortName}_Workflow_Details.png[alt="Trusted Software Supply Chain ({ProjectShortName}) Workflow - Details",title="Trusted Software Supply Chain ({ProjectShortName}) - Details",caption="Workflow Image: ",link=images/{ProjectShortName}_Workflow_Details.png]
+
+== Source
+
+While the rendered PNGs here are useful for starting conversation and stating clearly the opinionated {ProjectShortName} workflow it is recognized every implementation of the {ProjectShortName} will be different. Both the toool abstracted workflow, and then most likely in the specific tools used to implement it.
+
+To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MX Graph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
+
+* link:images/{ProjectNameID}_diagrams.drawio[{ProjectNameID}_diagrams.drawio]
+** Trusted Software Supply Chain ({ProjectShortName}) Workflow - High Level
+** Trusted Software Supply Chain ({ProjectShortName}) Workflow - Details - Tool Agnostic

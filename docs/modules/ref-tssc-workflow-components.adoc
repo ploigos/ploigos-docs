@@ -1,0 +1,315 @@
+[id="{ProjectNameID}-workflow-components-{context}"]
+= {ProjectShortName} Workflow Components
+
+#TODO - description#
+
+[id="{ProjectNameID}-workflow-components-high-level-{context}"]
+== High Level Components
+#TODO - description#
+
+[cols="a,a,a",options="header"]
+|===
+| Component
+| Purpose
+| <<{ProjectNameID}-workflow-components-detailed-level-{context}, Sub Components>>
+
+| Prioritize Ideas
+| #TODO#
+| #TODO#
+
+| Initialize New Idea
+| #TODO#
+| 
+* <<detailed-component-fork-repository>>
+* <<detailed-component-create-idea-branch>>
+* <<detailed-component-create-wip-merge-request>>
+
+| Detect Change
+| #TODO#
+|
+* <<detailed-component-detect-changed-merge-request>>
+* <<detailed-component-detect-change-to-release-branch>>
+
+| Continuous Integration
+| #TODO#
+|
+* Generate Metadata
+* Tag Source Code with Metadata
+* Security Static Code Analysis
+* Linting Static Code Analysis
+* Package Application
+* Run Unit Tests
+* Push Packaged Application to Repository with Metadata
+* Create Container Image
+* Push Container Image to Repository with Metadata
+* Run Container Image Unit Tests
+* Run Static Compliance Container Image Scan
+* Run Static Vulnerability Container Image Scan
+* Push Trusted Container Image to Repository with Metadata
+
+| Continuos Merge Request Deployment
+| #TODO#
+|
+* Create MR#-DEV Deployment Environment
+* Deploy to MR#-DEV Environment
+* Run User Acceptance Tests (UAT)
+* Run Runtime Vulnerability Scans
+* Mark Merge Request Ready for Peer Review and Merging
+
+| Continuos Life Idea Development
+| #TODO#
+|
+* Remove "WIP" from Merge Request
+* Connect IDE to MR#-DEV Environment
+* Live Development and Testing in MR#-DEV Environment
+* Commit Change to Idea Branch on Fork of Repository
+
+| Peer Review
+| #TODO#
+|
+* Peer Review
+* Merge to Release Branch
+* Mark Merge Request as Work In Progress (WIP)
+
+| Continuous Deployment
+| #TODO#
+|
+* Create TEST Environment
+* Deploy to TEST Environment
+* Run User Acceptance Tests (UAT)
+* Run Runtime Vulnerability Scans
+* Create PROD Environment
+* Deploy to PROD Environment
+* Run Canary Testing
+* Collect, Bundle, & Publish Test Reports and Metadata
+
+| Finish
+| #TODO#
+|
+* Collect Lessons Learned
+* Celebrate
+
+|===
+
+[id="{ProjectNameID}-workflow-components-detailed-level-{context}"]
+== Detailed Level Components
+#TODO - description#
+
+[cols="20a,50a,30a",options="header"]
+|===
+| Component
+| Purpose
+| <<{ProjectNameID}-workflow-tool-purposes-{context}, Implementing Tool Category>>
+
+| [[detailed-component-fork-repository, Fork Repository]]
+Fork Repository
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| [[detailed-component-create-idea-branch, Create Idea Branch on Fork of Repository]]
+Create Idea Branch on Fork of Repository
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| [[detailed-component-create-wip-merge-request, Create WIP Merge Request to Release Branch on prime repository]]
+Create WIP Merge Request to Release Branch on prime repository
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| [[detailed-component-detect-changed-merge-request, Detect new or changed  Merge Request to Release Branch]]
+Detect new or changed  Merge Request to Release Branch
+| #TODO - purpose#
+|
+* CI Tool
+* Source Control Tool
+
+| [[detailed-component-detect-change-to-release-branch, Detect Change to Release Branch]]
+Detect Change to Release Branch
+| #TODO - purpose#
+|
+* CI Tool
+* Source Control Tool
+
+| Generate Metadata
+| #TODO - purpose#
+|
+* CI Tool
+
+| Tag Source Code with Metadata
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Security Static Code Analysis
+| #TODO - purpose#
+|
+* Static Security Scanning Tool
+
+| Linting Static Code Analysis
+| #TODO - purpose#
+|
+* Static Code Linting
+Tool
+
+| Package Application
+| #TODO - purpose#
+|
+* Application Language Packaging Tool
+
+| Run Unit Tests
+| #TODO - purpose#
+|
+* Application Language Unit Test Tool
+
+| Push Packaged Application to Repository with Metadata
+| #TODO - purpose#
+|
+* Binary Artifact Upload Tool
+* Artifact Repository
+
+| Create Container Image
+| #TODO - purpose#
+|
+* Container Image Build Tool
+
+| Push Container Image to Repository with Metadata
+| #TODO - purpose#
+|
+* Container Image Upload Tool
+* Image Registry
+
+| Run Container Image Unit Tests
+| #TODO - purpose#
+|
+* Container Image Unit Test Tool
+
+| Run Static Compliance Container Image Scan
+| #TODO - purpose#
+|
+* Container Image Scanning Tool
+
+| Run Static Vulnerability Container Image Scan
+| #TODO - purpose#
+|
+* Container Image Scanning Tool
+
+| Push Trusted Container Image to Repository with Metadata
+| #TODO - purpose#
+|
+* Container Image Upload Tool
+* Image Registry
+
+| Create MR#-DEV Deployment Environment
+| #TODO - purpose#
+|
+* Kubernetes Resources Creation Tool
+
+| Deploy to MR#-DEV Environment
+| #TODO - purpose#
+|
+* Continues Deployment Tool
+
+| Run User Acceptance Tests (UAT)
+| #TODO - purpose#
+|
+* UAT Tool
+
+| Run Runtime Vulnerability Scans
+| #TODO - purpose#
+|
+* Runtime Vulnerability Scanning Tool
+
+| Mark Merge Request Ready for Peer Review and Merging
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Remove "WIP" from Merge Request
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Connect IDE to MR#-DEV Environment
+| #TODO - purpose#
+|
+* IDE & Container Platform
+
+| Live Development and Testing in MR#-DEV Environment
+| #TODO - purpose#
+|
+* IDE & Container Platform
+
+| Commit Change to Idea Branch on Fork of Repository
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Peer Review
+| #TODO - purpose#
+|
+* Peer Review Tool
+
+| Merge to Release Branch
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Mark Merge Request as Work In Progress (WIP)
+| #TODO - purpose#
+|
+* Source Control Tool
+
+| Create TEST Environment
+| #TODO - purpose#
+|
+* Kubernetes Resources Creation Tool
+
+| Deploy to TEST Environment
+| #TODO - purpose#
+|
+* Continues Deployment Tool
+
+| Run User Acceptance Tests (UAT)
+| #TODO - purpose#
+|
+* UAT Tool
+
+| Run Runtime Vulnerability Scans
+| #TODO - purpose#
+|
+* Runtime Vulnerability Scanning Tool
+
+| Create PROD Environment
+| #TODO - purpose#
+|
+* Kubernetes Resources Creation Tool
+
+| Deploy to PROD Environment
+| #TODO - purpose#
+|
+* Continues Deployment Tool
+
+| Run Canary Testing
+| #TODO - purpose#
+|
+* Canary Testing Tool
+
+| Collect, Bundle, & Publish Test Reports and Metadata
+| #TODO - purpose#
+|
+* CI Tool
+
+| Collect Lessons Learned
+| #TODO - purpose#
+|
+* Discussion
+
+| Celebrate
+| #TODO - purpose#
+|
+* Discussion
+
+|===

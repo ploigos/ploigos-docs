@@ -5,7 +5,11 @@ include::attributes.adoc[]
 
 Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
 
-include::docs/mvp.adoc[leveloffset=+1]
+include::docs/assembly-tssc-workflow.adoc[leveloffset=+1]
+include::docs/assembly-tssc-mvp.adoc[leveloffset=+1]
+
+[appendix]
+include::docs/modules/ref-tssc-workflow-examples.adoc[leveloffset=+1]
 
 [appendix]
 include::docs/tssc-terms-definitions.adoc[leveloffset=+1]
