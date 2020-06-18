@@ -442,23 +442,45 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_mvp">1. MVP</a>
+<li><a href="#tssc-workflow-tssc">1. TSSC Workflow</a>
 <ul class="sectlevel2">
-<li><a href="#_workflows">1.1. Workflows</a>
+<li><a href="#tssc-tool-abstracted-workflow">1.1. Tool Abstracted Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#tssc-abstract-workflows">1.1.1. Abstract</a></li>
-<li><a href="#tssc-tech-specific-workflows">1.1.2. Technology Specific</a></li>
+<li><a href="#tssc-tool-abstracted-workflow-high-level">1.1.1. High Level</a></li>
+<li><a href="#tssc-tool-abstracted-workflow-detailed">1.1.2. Detailed</a></li>
+<li><a href="#_source">1.1.3. Source</a></li>
 </ul>
 </li>
-<li><a href="#_tooling">1.2. Tooling</a></li>
-<li><a href="#_development_infrastructure">1.3. Development Infrastructure</a>
+<li><a href="#tssc-workflow-components-assembly-tssc-workflow">1.2. TSSC Workflow Components</a>
 <ul class="sectlevel3">
-<li><a href="#_sizing">1.3.1. Sizing</a></li>
+<li><a href="#tssc-workflow-components-high-level-assembly-tssc-workflow">1.2.1. High Level Components</a></li>
+<li><a href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">1.2.2. Detailed Level Components</a></li>
+</ul>
+</li>
+<li><a href="#tssc-workflow-tools-assembly-tssc-workflow">1.3. TSSC Workflow Tools</a>
+<ul class="sectlevel3">
+<li><a href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">1.3.1. Tool Categories and Purposes</a></li>
+<li><a href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">1.3.2. Tool Implementers</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#tssc-terms-definitions-tssc">Appendix A: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></li>
+<li><a href="#tssc-mvp">2. TSSC MVP</a>
+<ul class="sectlevel2">
+<li><a href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">2.1. MVP Development Infrastructure</a>
+<ul class="sectlevel3">
+<li><a href="#_sizing">2.1.1. Sizing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tssc-workflow-examples-tssc">Appendix A: TSSC Workflow Examples</a>
+<ul class="sectlevel2">
+<li><a href="#_backend_application_javaee">A.1. Backend Application - JavaEE</a></li>
+<li><a href="#_frontend_application_javascript">A.2. Frontend Application - JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#tssc-terms-definitions-tssc">Appendix B: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></li>
 </ul>
 </div>
 </div>
@@ -471,85 +493,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mvp"><a class="anchor" href="#_mvp"></a><a class="link" href="#_mvp">1. MVP</a></h2>
+<h2 id="tssc-workflow-tssc"><a class="anchor" href="#tssc-workflow-tssc"></a><a class="link" href="#tssc-workflow-tssc">1. TSSC Workflow</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Information about what is included in the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
+<p>At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
 </div>
 <div class="sect2">
-<h3 id="_workflows"><a class="anchor" href="#_workflows"></a><a class="link" href="#_workflows">1.1. Workflows</a></h3>
+<h3 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.1. Tool Abstracted Workflow</a></h3>
 <div class="paragraph">
-<p>At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This section is a pictorial versions of that opinionated workflow.</p>
+<p>When discussing methods for getting ideas from peoples heads to production groups often get lost in talking about technology and tools when the hard work is deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific TSSC workflow and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that enviably arrases if an abstract concept is not turned concrete by drawing it.</p>
 </div>
 <div class="sect3">
-<h4 id="tssc-abstract-workflows"><a class="anchor" href="#tssc-abstract-workflows"></a><a class="link" href="#tssc-abstract-workflows">1.1.1. Abstract</a></h4>
+<h4 id="tssc-tool-abstracted-workflow-high-level"><a class="anchor" href="#tssc-tool-abstracted-workflow-high-level"></a><a class="link" href="#tssc-tool-abstracted-workflow-high-level">1.1.1. High Level</a></h4>
 <div class="paragraph">
-<p>When discussing methods for getting ideas from peoples heads to production groups often get lost in talking about technology and tools when the hard work is deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated "idea to production" workflow in an abstract form, that is without any specific technologies or tools.</p>
+<p>A high level rendering of the TSSC workflow where the majority of steps are Predefined Procedures, that is they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <a href="#tssc-tool-abstracted-workflow-detailed">TSSC Tool Abstracted Workflow - Detailed</a>. If something is needed that will fit on "one slide" this is it.</p>
 </div>
-<div class="sect4">
-<h5 id="_use"><a class="anchor" href="#_use"></a><a class="link" href="#_use">Use</a></h5>
-<div class="paragraph">
-<p>The usage of these diagrams is intended to be both used as is to spark discussion as to what your team&#8217;s specific TSSC workflow will be without getting distracted by technology or tools. The intent being that a team can take the <a href="images/tssc_diagrams.drawio">Trusted Software Supply Chain (TSSC) diagrams draw.io source</a> and modify it to match the specific workflow the team agrees to. Then, copy that and fill in the technologies and tools, examples of which can be found in <a href="#tssc-tech-specific-workflows">TSSC Technology Specific Workflows</a>.</p>
-</div>
-<div id="NOTE" class="exampleblock">
+<div id="tssc-tool-abstracted-workflow-high-level-image" class="imageblock">
 <div class="content">
-<div class="paragraph">
-<p>The draw.io source for the <a href="#tssc-abstract-workflows">TSSC Abstract Workflows</a> can be found here, <a href="images/tssc_diagrams.drawio">tssc_diagrams.drawio</a>.</p>
+<a class="image" href="images/TSSC_Workflow_High_Level.png"><img src="images/TSSC_Workflow_High_Level.png" alt="Trusted Software Supply Chain (TSSC) Workflow - High Level "></a>
+</div>
+<div class="title">Workflow Image: Trusted Software Supply Chain (TSSC) - High Level </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="tssc-abstract-workflow-high-level"><a class="anchor" href="#tssc-abstract-workflow-high-level"></a><a class="link" href="#tssc-abstract-workflow-high-level">High Level</a></h5>
-<div class="paragraph">
-<p>A high level rendering of the TSSC workflow where the majority of steps are Predefined Procedures, that is they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <a href="#tssc-abstract-workflow-details">TSSC Abstract Workflow Details</a>. If something is needed that will fit on "one slide" this is it.</p>
-</div>
-<div id="tssc-abstract-workflow-high-level-image" class="imageblock">
-<div class="content">
-<a class="image" href="images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_High_Level.png"><img src="images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_High_Level.png" alt="Trusted Software Supply Chain (TSSC) - Workflow - High Level "></a>
-</div>
-<div class="title">Workflow: Trusted Software Supply Chain (TSSC) - High Level </div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="tssc-abstract-workflow-details"><a class="anchor" href="#tssc-abstract-workflow-details"></a><a class="link" href="#tssc-abstract-workflow-details">Detailed</a></h5>
+<div class="sect3">
+<h4 id="tssc-tool-abstracted-workflow-detailed"><a class="anchor" href="#tssc-tool-abstracted-workflow-detailed"></a><a class="link" href="#tssc-tool-abstracted-workflow-detailed">1.1.2. Detailed</a></h4>
 <div class="paragraph">
 <p>If there is one artifact that defines what the TSSC is, this is it. This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the TSSC.</p>
 </div>
-<div id="tssc-abstract-workflow-details-image" class="imageblock">
-<div class="content">
-<a class="image" href="images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_Details.png"><img src="images/Trusted_Software_Supply_Chain_(TSSC)_-_Workflow_-_Details.png" alt="Trusted Software Supply Chain (TSSC) - Workflow - Details"></a>
-</div>
-<div class="title">Workflow: Trusted Software Supply Chain (TSSC) - Details</div>
-</div>
+<div id="tssc-tool-abstracted-workflow-details-image" class="paragraph">
+<p><span class="image"><a class="image" href="images/TSSC_Workflow_Details.png"><img src="images/TSSC_Workflow_Details.png" alt="Trusted Software Supply Chain (TSSC) Workflow - Details" title="Trusted Software Supply Chain (TSSC) - Details"></a></span></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tssc-tech-specific-workflows"><a class="anchor" href="#tssc-tech-specific-workflows"></a><a class="link" href="#tssc-tech-specific-workflows">1.1.2. Technology Specific</a></h4>
+<h4 id="_source"><a class="anchor" href="#_source"></a><a class="link" href="#_source">1.1.3. Source</a></h4>
 <div class="paragraph">
-<p>This section contains technology specific renderings of the <a href="#tssc-abstract-workflows">TSSC Abstract Workflows</a> for re-use and reference.</p>
+<p>While the rendered PNGs here are useful for starting conversation and stating clearly the opinionated TSSC workflow it is recognized every implementation of the TSSC will be different. Both the toool abstracted workflow, and then most likely in the specific tools used to implement it.</p>
 </div>
-<div class="sect4">
-<h5 id="_backend_application_javaee"><a class="anchor" href="#_backend_application_javaee"></a><a class="link" href="#_backend_application_javaee">Backend Application - JavaEE</a></h5>
 <div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the <a href="https://jgraph.github.io/mxgraph/">MX Graph</a> format using <a href="https://draw.io/">Draw.io</a> and provided here for consumption, modification, and re-use.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/tssc_diagrams.drawio">tssc_diagrams.drawio</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Trusted Software Supply Chain (TSSC) Workflow - High Level</p>
+</li>
+<li>
+<p>Trusted Software Supply Chain (TSSC) Workflow - Details - Tool Agnostic</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_frontend_application_javascript"><a class="anchor" href="#_frontend_application_javascript"></a><a class="link" href="#_frontend_application_javascript">Frontend Application - JavaScript</a></h5>
-<div class="paragraph">
-<p><mark>TODO</mark></p>
-</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tooling"><a class="anchor" href="#_tooling"></a><a class="link" href="#_tooling">1.2. Tooling</a></h3>
+<h3 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.2. TSSC Workflow Components</a></h3>
 <div class="paragraph">
-<p>The following table lists chosen tooling for the TSSC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.</p>
+<p><mark>TODO - description</mark></p>
+</div>
+<div class="sect3">
+<h4 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">1.2.1. High Level Components</a></h4>
+<div class="paragraph">
+<p><mark>TODO - description</mark></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Tooling by Workflow Implementation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -557,27 +569,1118 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
+<th class="tableblock halign-left valign-top">Component</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
-<th class="tableblock halign-left valign-top" colspan="2">Tools by Workflow Type</th>
+<th class="tableblock halign-left valign-top"><a href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Sub Components</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prioritize Ideas</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Initialize New Idea</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="#detailed-component-fork-repository">Fork Repository</a></p>
+</li>
+<li>
+<p><a href="#detailed-component-create-idea-branch">Create Idea Branch on Fork of Repository</a></p>
+</li>
+<li>
+<p><a href="#detailed-component-create-wip-merge-request">Create WIP Merge Request to Release Branch on prime repository</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Detect Change</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="#detailed-component-detect-changed-merge-request">Detect new or changed  Merge Request to Release Branch</a></p>
+</li>
+<li>
+<p><a href="#detailed-component-detect-change-to-release-branch">Detect Change to Release Branch</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Integration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Generate Metadata</p>
+</li>
+<li>
+<p>Tag Source Code with Metadata</p>
+</li>
+<li>
+<p>Security Static Code Analysis</p>
+</li>
+<li>
+<p>Linting Static Code Analysis</p>
+</li>
+<li>
+<p>Package Application</p>
+</li>
+<li>
+<p>Run Unit Tests</p>
+</li>
+<li>
+<p>Push Packaged Application to Repository with Metadata</p>
+</li>
+<li>
+<p>Create Container Image</p>
+</li>
+<li>
+<p>Push Container Image to Repository with Metadata</p>
+</li>
+<li>
+<p>Run Container Image Unit Tests</p>
+</li>
+<li>
+<p>Run Static Compliance Container Image Scan</p>
+</li>
+<li>
+<p>Run Static Vulnerability Container Image Scan</p>
+</li>
+<li>
+<p>Push Trusted Container Image to Repository with Metadata</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuos Merge Request Deployment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Create MR#-DEV Deployment Environment</p>
+</li>
+<li>
+<p>Deploy to MR#-DEV Environment</p>
+</li>
+<li>
+<p>Run User Acceptance Tests (UAT)</p>
+</li>
+<li>
+<p>Run Runtime Vulnerability Scans</p>
+</li>
+<li>
+<p>Mark Merge Request Ready for Peer Review and Merging</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuos Life Idea Development</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Remove "WIP" from Merge Request</p>
+</li>
+<li>
+<p>Connect IDE to MR#-DEV Environment</p>
+</li>
+<li>
+<p>Live Development and Testing in MR#-DEV Environment</p>
+</li>
+<li>
+<p>Commit Change to Idea Branch on Fork of Repository</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Peer Review</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Peer Review</p>
+</li>
+<li>
+<p>Merge to Release Branch</p>
+</li>
+<li>
+<p>Mark Merge Request as Work In Progress (WIP)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Deployment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Create TEST Environment</p>
+</li>
+<li>
+<p>Deploy to TEST Environment</p>
+</li>
+<li>
+<p>Run User Acceptance Tests (UAT)</p>
+</li>
+<li>
+<p>Run Runtime Vulnerability Scans</p>
+</li>
+<li>
+<p>Create PROD Environment</p>
+</li>
+<li>
+<p>Deploy to PROD Environment</p>
+</li>
+<li>
+<p>Run Canary Testing</p>
+</li>
+<li>
+<p>Collect, Bundle, &amp; Publish Test Reports and Metadata</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Finish</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Collect Lessons Learned</p>
+</li>
+<li>
+<p>Celebrate</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">1.2.2. Detailed Level Components</a></h4>
+<div class="paragraph">
+<p><mark>TODO - description</mark></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top"><a href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">Implementing Tool Category</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-fork-repository" class="paragraph">
+<p>Fork Repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-create-idea-branch" class="paragraph">
+<p>Create Idea Branch on Fork of Repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-create-wip-merge-request" class="paragraph">
+<p>Create WIP Merge Request to Release Branch on prime repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-detect-changed-merge-request" class="paragraph">
+<p>Detect new or changed  Merge Request to Release Branch</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>CI Tool</p>
+</li>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-detect-change-to-release-branch" class="paragraph">
+<p>Detect Change to Release Branch</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>CI Tool</p>
+</li>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Generate Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>CI Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Tag Source Code with Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Security Static Code Analysis</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Static Security Scanning Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Linting Static Code Analysis</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Static Code Linting
+Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Package Application</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Application Language Packaging Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Unit Tests</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Application Language Unit Test Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Push Packaged Application to Repository with Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Binary Artifact Upload Tool</p>
+</li>
+<li>
+<p>Artifact Repository</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create Container Image</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Build Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Push Container Image to Repository with Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Upload Tool</p>
+</li>
+<li>
+<p>Image Registry</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Container Image Unit Tests</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Unit Test Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Static Compliance Container Image Scan</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Scanning Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Static Vulnerability Container Image Scan</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Scanning Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Push Trusted Container Image to Repository with Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Container Image Upload Tool</p>
+</li>
+<li>
+<p>Image Registry</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create MR#-DEV Deployment Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Kubernetes Resources Creation Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Deploy to MR#-DEV Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Continues Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run User Acceptance Tests (UAT)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>UAT Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Runtime Vulnerability Scans</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Runtime Vulnerability Scanning Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mark Merge Request Ready for Peer Review and Merging</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Remove "WIP" from Merge Request</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Connect IDE to MR#-DEV Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>IDE &amp; Container Platform</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Live Development and Testing in MR#-DEV Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>IDE &amp; Container Platform</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Commit Change to Idea Branch on Fork of Repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Peer Review</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Peer Review Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Merge to Release Branch</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mark Merge Request as Work In Progress (WIP)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Source Control Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create TEST Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Kubernetes Resources Creation Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Deploy to TEST Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Continues Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run User Acceptance Tests (UAT)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>UAT Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Runtime Vulnerability Scans</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Runtime Vulnerability Scanning Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create PROD Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Kubernetes Resources Creation Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Deploy to PROD Environment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Continues Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Run Canary Testing</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Canary Testing Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Collect, Bundle, &amp; Publish Test Reports and Metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>CI Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Collect Lessons Learned</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Discussion</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Celebrate</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Discussion</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tssc-workflow-tools-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tools-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tools-assembly-tssc-workflow">1.3. TSSC Workflow Tools</a></h3>
+<div class="paragraph">
+<p>Once a <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a> is decded upon then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.</p>
+</div>
+<div class="sect3">
+<h4 id="tssc-workflow-tool-purposes-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">1.3.1. Tool Categories and Purposes</a></h4>
+<div class="paragraph">
+<p>This section describes the category of tools need to implement the TSSC and their purpose in dong so.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. TSSC Workflow Tools Overview</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool Category</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Platform</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identity Management</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artifact Repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Image Registry</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Source Control Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Integration (CI) Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Static Security Scanning Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Static Code Linting Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Application Language Packaging Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Application Language Unit Test Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Binary Artifact Upload Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Build Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Upload Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Unit Test Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Scanning Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Kubernetes Resources Creation Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continues Deployment Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>User Acceptance Testing (UAT) Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Runtime Vulnerability Scanning Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Integrated Development Environment (IDE)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Peer Review Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Canary Testing Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Discussion</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tssc-workflow-tool-implementers-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">1.3.2. Tool Implementers</a></h4>
+<div class="paragraph">
+<p><mark>TODO</mark></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. TSSC Workflow Tool Implementers</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool Category</th>
+<th class="tableblock halign-left valign-top" colspan="2">Tool by Application Technology Stack</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Java (Backend)</strong></p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>JavaScript (Frontend)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Backend Application - JavaEE</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Frontend Application - JavaScript</p></th>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Source Control</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/go-gitea/gitea">Gitea</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Container Orchestration</p>
+<p>Container Platform</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Red Hat OpenShift Container Platform 4 (OCP)</p>
@@ -609,7 +1712,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Continuous Integration</p>
+<p>Source Control Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/go-gitea/gitea">Gitea</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Integration (CI) Tool</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
@@ -624,45 +1735,42 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Continuous Deployment</p>
+<p>Static Security Scanning Tool</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><a href="https://argoproj.github.io/argo-cd/">ArgoCD</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Security Static Code Analysis</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SonarQube</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>SonarQube</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Linting Satic Code Analysis</p>
+<p>Static Code Linting Tool</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SonarQube</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>SonarQube</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Unit Testing</p>
+<p>Application Language Packaging Tool</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Junit</p>
+<p>maven</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - tbd</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Application Language Unit Test Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JUnit</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>TBD</p>
+<p><mark>TODO - tbd</mark></p>
 <div class="ulist">
 <ul>
 <li>
@@ -670,9 +1778,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>Jest?</p>
-</li>
-<li>
-<p>?</p>
 </li>
 </ul>
 </div>
@@ -682,40 +1787,66 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Build</p>
+<p>Binary Artifact Upload Tool</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Maven</p>
+<p>maven</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>N/A</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Static Compliance Container Image Scanning</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>OpenSCAP</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>OpenSCAP</p>
+<p><mark>TODO - tbd</mark></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Static Vulnerability Container Image Scanning</p>
+<p>Container Image Build Tool</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>OpenSCAP</p>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://buildah.io/">buildah</a></p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Upload Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/containers/skopeo">skopeo</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Unit Test Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><mark>TODO - tbd</mark></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Image Scanning Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>OpenSCAP</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>UAT</p>
+<p>Kubernetes Resources Creation Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://helm.sh">helm</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continues Deploym (CD) Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://argoproj.github.io/argo-cd/">ArgoCD</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>User Acceptance Testing (UAT) Tool</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Cucumber</p>
@@ -726,23 +1857,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Runtime Vulnerability Scanning</p>
+<p>Runtime Vulnerability Scanning Tool</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>TBD</p>
-<div class="ulist">
-<ul>
-<li>
-<p>OWASP compliant (might be within CI tool)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>TBD</p>
@@ -759,35 +1876,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Canary Testing</p>
+<p>Integrated Development Environment (IDE)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Selenium</p>
+<p><mark>TODO - tbd</mark></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Selenium</p>
+<p><mark>TODO - tbd</mark></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Development Workflow (IDE)</p>
+<p>Peer Review Tool</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>TBD</p>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/go-gitea/gitea">Gitea</a></p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>TBD</p>
+<p>Canary Testing Tool</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Selenium</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tssc-mvp"><a class="anchor" href="#tssc-mvp"></a><a class="link" href="#tssc-mvp">2. TSSC MVP</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Information about the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
+</div>
 <div class="sect2">
-<h3 id="_development_infrastructure"><a class="anchor" href="#_development_infrastructure"></a><a class="link" href="#_development_infrastructure">1.3. Development Infrastructure</a></h3>
+<h3 id="tssc-mvp-development-infrastructure-assembly-tssc-mvp"><a class="anchor" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp"></a><a class="link" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">2.1. MVP Development Infrastructure</a></h3>
+<div class="paragraph">
+<p>Reference information on the infrastructure used to develop and test the MVP of the <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a>.</p>
+</div>
 <div class="sect3">
-<h4 id="_sizing"><a class="anchor" href="#_sizing"></a><a class="link" href="#_sizing">1.3.1. Sizing</a></h4>
+<h4 id="_sizing"><a class="anchor" href="#_sizing"></a><a class="link" href="#_sizing">2.1.1. Sizing</a></h4>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Containerized Tool Sizing</caption>
+<caption class="title">Table 3. Containerized Tool Sizing</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -981,7 +2115,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Red Hat OpenShift Sizing</caption>
+<caption class="title">Table 4. Red Hat OpenShift Sizing</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -1128,7 +2262,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="tssc-terms-definitions-tssc"><a class="anchor" href="#tssc-terms-definitions-tssc"></a><a class="link" href="#tssc-terms-definitions-tssc">Appendix A: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></h2>
+<h2 id="tssc-workflow-examples-tssc"><a class="anchor" href="#tssc-workflow-examples-tssc"></a><a class="link" href="#tssc-workflow-examples-tssc">Appendix A: TSSC Workflow Examples</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specific examples of the <a href="#tssc-workflow-tssc">TSSC Workflow</a> implemented for specific application technology stacks designed for reference and re-use.</p>
+</div>
+<div class="sect2">
+<h3 id="_backend_application_javaee"><a class="anchor" href="#_backend_application_javaee"></a><a class="link" href="#_backend_application_javaee">A.1. Backend Application - JavaEE</a></h3>
+<div class="paragraph">
+<p><mark>TODO</mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_frontend_application_javascript"><a class="anchor" href="#_frontend_application_javascript"></a><a class="link" href="#_frontend_application_javascript">A.2. Frontend Application - JavaScript</a></h3>
+<div class="paragraph">
+<p><mark>TODO</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tssc-terms-definitions-tssc"><a class="anchor" href="#tssc-terms-definitions-tssc"></a><a class="link" href="#tssc-terms-definitions-tssc">Appendix B: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -1155,7 +2309,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-17 21:04:29 UTC
+Last updated 2020-06-18 20:18:25 UTC
 </div>
 </div>
 </body>
