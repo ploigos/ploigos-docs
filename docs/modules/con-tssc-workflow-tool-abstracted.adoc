@@ -23,8 +23,11 @@ image:{ProjectShortName}_Workflow_Details.png[alt="Trusted Software Supply Chain
 
 While the rendered PNGs here are useful for starting conversation and stating clearly the opinionated {ProjectShortName} workflow it is recognized every implementation of the {ProjectShortName} will be different. Both the toool abstracted workflow, and then most likely in the specific tools used to implement it.
 
-To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MX Graph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
+To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MXGraph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
 
-* link:images/{ProjectNameID}_diagrams.drawio[{ProjectNameID}_diagrams.drawio]
-** Trusted Software Supply Chain ({ProjectShortName}) Workflow - High Level
-** Trusted Software Supply Chain ({ProjectShortName}) Workflow - Details - Tool Agnostic
+* TSSC Workflows
+** link:images/tssc_workflows.drawio[Draw.io - Compressed XML]
+** link:images/tssc_workflows.xml[MXGraph - XML]
+** Contains
+*** Trusted Software Supply Chain ({ProjectShortName}) Workflow - High Level
+*** Trusted Software Supply Chain ({ProjectShortName}) Workflow - Details - Tool Agnostic
