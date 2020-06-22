@@ -5,10 +5,11 @@ ifdef::ProjectShortName[:parent-ProjectShortName: {ProjectShortName}]
 ifdef::ProjectNameID[:parent-ProjectNameID: {ProjectNameID}]
 ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 
+include::vars/tisc.adoc[]
+
 [id="{ProjectNameID}"]
 = {ProjectName} ({ProjectShortName})
 :context: assembly-{ProjectNameID}
-include::vars/tisc.adoc[]
 
 Information about the MVP for {ProjectName} ({ProjectShortName}).
 
