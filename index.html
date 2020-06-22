@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Documentation for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC)</title>
+<title>Documentation for Trusted&#160;Supply&#160;Chain (TSC)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,49 +438,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Documentation for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC)</h1>
+<h1>Documentation for Trusted&#160;Supply&#160;Chain (TSC)</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#tssc-workflow-tssc">1. TSSC Workflow</a>
+<li><a href="#tsc">1. Trusted&#160;Supply&#160;Chain (TSC)</a>
 <ul class="sectlevel2">
-<li><a href="#tssc-tool-abstracted-workflow">1.1. Tool Abstracted Workflow</a>
+<li><a href="#tssc-workflow-assembly-tsc">1.1. TSSC Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#tssc-tool-abstracted-workflow-high-level">1.1.1. High Level</a></li>
-<li><a href="#tssc-tool-abstracted-workflow-detailed">1.1.2. Detailed</a></li>
-<li><a href="#_source">1.1.3. Source</a></li>
+<li><a href="#tssc-tool-abstracted-workflow">1.1.1. Tool Abstracted Workflow</a></li>
+<li><a href="#tssc-workflow-components-assembly-tssc-workflow">1.1.2. TSSC Workflow Components</a></li>
+<li><a href="#tssc-workflow-tools-assembly-tssc-workflow">1.1.3. TSSC Workflow Tools</a></li>
 </ul>
 </li>
-<li><a href="#tssc-workflow-components-assembly-tssc-workflow">1.2. TSSC Workflow Components</a>
+<li><a href="#tssc-mvp">1.2. TSSC MVP</a>
 <ul class="sectlevel3">
-<li><a href="#tssc-workflow-components-high-level-assembly-tssc-workflow">1.2.1. High Level Components</a></li>
-<li><a href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">1.2.2. Detailed Level Components</a></li>
-</ul>
-</li>
-<li><a href="#tssc-workflow-tools-assembly-tssc-workflow">1.3. TSSC Workflow Tools</a>
-<ul class="sectlevel3">
-<li><a href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">1.3.1. Tool Categories and Purposes</a></li>
-<li><a href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">1.3.2. Tool Implementers</a></li>
+<li><a href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.2.1. MVP Development Infrastructure</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#tssc-mvp">2. TSSC MVP</a>
-<ul class="sectlevel2">
-<li><a href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">2.1. MVP Development Infrastructure</a>
-<ul class="sectlevel3">
-<li><a href="#_sizing">2.1.1. Sizing</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#tssc-workflow-examples-tssc">Appendix A: TSSC Workflow Examples</a>
+<li><a href="#tsc">2. Trusted&#160;Supply&#160;Chain (TSC)</a></li>
+<li><a href="#tsc-workflow-examples-assembly-tsc">Appendix A: TSC Workflow Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_backend_application_javaee">A.1. Backend Application - JavaEE</a></li>
 <li><a href="#_frontend_application_javascript">A.2. Frontend Application - JavaScript</a></li>
 </ul>
 </li>
-<li><a href="#tssc-terms-definitions-tssc">Appendix B: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></li>
+<li><a href="#tssc-terms-definitions-assembly-tsc">Appendix B: Trusted&#160;Supply&#160;Chain Terms and Definitions</a></li>
 </ul>
 </div>
 </div>
@@ -488,23 +473,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to the documentation for the Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
+<p>Welcome to the documentation for the Trusted&#160;Supply&#160;Chain (TSC).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tssc-workflow-tssc"><a class="anchor" href="#tssc-workflow-tssc"></a><a class="link" href="#tssc-workflow-tssc">1. TSSC Workflow</a></h2>
+<h2 id="tsc"><a class="anchor" href="#tsc"></a><a class="link" href="#tsc">1. Trusted&#160;Supply&#160;Chain (TSC)</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Information about the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
+</div>
+<div class="sect2">
+<h3 id="tssc-workflow-assembly-tsc"><a class="anchor" href="#tssc-workflow-assembly-tsc"></a><a class="link" href="#tssc-workflow-assembly-tsc">1.1. TSSC Workflow</a></h3>
 <div class="paragraph">
 <p>At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
 </div>
-<div class="sect2">
-<h3 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.1. Tool Abstracted Workflow</a></h3>
+<div class="sect3">
+<h4 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.1.1. Tool Abstracted Workflow</a></h4>
 <div class="paragraph">
 <p>When discussing methods for getting ideas from peoples heads to production groups often get lost in talking about technology and tools when the hard work is deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific TSSC workflow and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that enviably arrases if an abstract concept is not turned concrete by drawing it.</p>
 </div>
-<div class="sect3">
-<h4 id="tssc-tool-abstracted-workflow-high-level"><a class="anchor" href="#tssc-tool-abstracted-workflow-high-level"></a><a class="link" href="#tssc-tool-abstracted-workflow-high-level">1.1.1. High Level</a></h4>
+<div class="sect4">
+<h5 id="tssc-tool-abstracted-workflow-high-level"><a class="anchor" href="#tssc-tool-abstracted-workflow-high-level"></a><a class="link" href="#tssc-tool-abstracted-workflow-high-level">High Level</a></h5>
 <div class="paragraph">
 <p>A high level rendering of the TSSC workflow where the majority of steps are Predefined Procedures, that is they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <a href="#tssc-tool-abstracted-workflow-detailed">TSSC Tool Abstracted Workflow - Detailed</a>. If something is needed that will fit on "one slide" this is it.</p>
 </div>
@@ -515,8 +505,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Workflow Image: Trusted Software Supply Chain (TSSC) - High Level </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="tssc-tool-abstracted-workflow-detailed"><a class="anchor" href="#tssc-tool-abstracted-workflow-detailed"></a><a class="link" href="#tssc-tool-abstracted-workflow-detailed">1.1.2. Detailed</a></h4>
+<div class="sect4">
+<h5 id="tssc-tool-abstracted-workflow-detailed"><a class="anchor" href="#tssc-tool-abstracted-workflow-detailed"></a><a class="link" href="#tssc-tool-abstracted-workflow-detailed">Detailed</a></h5>
 <div class="paragraph">
 <p>If there is one artifact that defines what the TSSC is, this is it. This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the TSSC.</p>
 </div>
@@ -524,8 +514,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="image"><a class="image" href="images/TSSC_Workflow_Details.png"><img src="images/TSSC_Workflow_Details.png" alt="Trusted Software Supply Chain (TSSC) Workflow - Details" title="Trusted Software Supply Chain (TSSC) - Details"></a></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_source"><a class="anchor" href="#_source"></a><a class="link" href="#_source">1.1.3. Source</a></h4>
+<div class="sect4">
+<h5 id="_source"><a class="anchor" href="#_source"></a><a class="link" href="#_source">Source</a></h5>
 <div class="paragraph">
 <p>While the rendered PNGs here are useful for starting conversation and stating clearly the opinionated TSSC workflow it is recognized every implementation of the TSSC will be different. Both the toool abstracted workflow, and then most likely in the specific tools used to implement it.</p>
 </div>
@@ -564,13 +554,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.2. TSSC Workflow Components</a></h3>
+<div class="sect3">
+<h4 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.1.2. TSSC Workflow Components</a></h4>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
-<div class="sect3">
-<h4 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">1.2.1. High Level Components</a></h4>
+<div class="sect4">
+<h5 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">High Level Components</a></h5>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
@@ -818,8 +808,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">1.2.2. Detailed Level Components</a></h4>
+<div class="sect4">
+<h5 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Detailed Level Components</a></h5>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
@@ -1457,13 +1447,13 @@ Tool</p>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="tssc-workflow-tools-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tools-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tools-assembly-tssc-workflow">1.3. TSSC Workflow Tools</a></h3>
+<div class="sect3">
+<h4 id="tssc-workflow-tools-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tools-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tools-assembly-tssc-workflow">1.1.3. TSSC Workflow Tools</a></h4>
 <div class="paragraph">
 <p>Once a <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a> is decded upon then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.</p>
 </div>
-<div class="sect3">
-<h4 id="tssc-workflow-tool-purposes-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">1.3.1. Tool Categories and Purposes</a></h4>
+<div class="sect4">
+<h5 id="tssc-workflow-tool-purposes-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">Tool Categories and Purposes</a></h5>
 <div class="paragraph">
 <p>This section describes the category of tools need to implement the TSSC and their purpose in dong so.</p>
 </div>
@@ -1667,8 +1657,8 @@ Tool</p>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="tssc-workflow-tool-implementers-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">1.3.2. Tool Implementers</a></h4>
+<div class="sect4">
+<h5 id="tssc-workflow-tool-implementers-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">Tool Implementers</a></h5>
 <div class="paragraph">
 <p><mark>TODO</mark></p>
 </div>
@@ -1919,20 +1909,18 @@ Tool</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="tssc-mvp"><a class="anchor" href="#tssc-mvp"></a><a class="link" href="#tssc-mvp">2. TSSC MVP</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="tssc-mvp"><a class="anchor" href="#tssc-mvp"></a><a class="link" href="#tssc-mvp">1.2. TSSC MVP</a></h3>
 <div class="paragraph">
 <p>Information about the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
 </div>
-<div class="sect2">
-<h3 id="tssc-mvp-development-infrastructure-assembly-tssc-mvp"><a class="anchor" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp"></a><a class="link" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">2.1. MVP Development Infrastructure</a></h3>
+<div class="sect3">
+<h4 id="tssc-mvp-development-infrastructure-assembly-tssc-mvp"><a class="anchor" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp"></a><a class="link" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.2.1. MVP Development Infrastructure</a></h4>
 <div class="paragraph">
 <p>Reference information on the infrastructure used to develop and test the MVP of the <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a>.</p>
 </div>
-<div class="sect3">
-<h4 id="_sizing"><a class="anchor" href="#_sizing"></a><a class="link" href="#_sizing">2.1.1. Sizing</a></h4>
+<div class="sect4">
+<h5 id="_sizing"><a class="anchor" href="#_sizing"></a><a class="link" href="#_sizing">Sizing</a></h5>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Containerized Tool Sizing</caption>
 <colgroup>
@@ -2274,11 +2262,23 @@ Tool</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="tssc-workflow-examples-tssc"><a class="anchor" href="#tssc-workflow-examples-tssc"></a><a class="link" href="#tssc-workflow-examples-tssc">Appendix A: TSSC Workflow Examples</a></h2>
+<h2 id="tsc"><a class="anchor" href="#tsc"></a><a class="link" href="#tsc">2. Trusted&#160;Supply&#160;Chain (TSC)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Specific examples of the <a href="#tssc-workflow-tssc">TSSC Workflow</a> implemented for specific application technology stacks designed for reference and re-use.</p>
+<p>Information about the MVP for Trusted&#160;Infrastructure&#160;Supply&#160;Chain (TISC).</p>
+</div>
+<div class="paragraph">
+<p><mark>TODO - include sub assemblies</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tsc-workflow-examples-assembly-tsc"><a class="anchor" href="#tsc-workflow-examples-assembly-tsc"></a><a class="link" href="#tsc-workflow-examples-assembly-tsc">Appendix A: TSC Workflow Examples</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specific examples of the <a href="#tsc-workflow-assembly-tsc">[tsc-workflow-assembly-tsc]</a> implemented for specific application technology stacks designed for reference and re-use.</p>
 </div>
 <div class="sect2">
 <h3 id="_backend_application_javaee"><a class="anchor" href="#_backend_application_javaee"></a><a class="link" href="#_backend_application_javaee">A.1. Backend Application - JavaEE</a></h3>
@@ -2295,25 +2295,25 @@ Tool</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tssc-terms-definitions-tssc"><a class="anchor" href="#tssc-terms-definitions-tssc"></a><a class="link" href="#tssc-terms-definitions-tssc">Appendix B: Trusted&#160;Software&#160;Supply&#160;Chain Terms and Definitions</a></h2>
+<h2 id="tssc-terms-definitions-assembly-tsc"><a class="anchor" href="#tssc-terms-definitions-assembly-tsc"></a><a class="link" href="#tssc-terms-definitions-assembly-tsc">Appendix B: Trusted&#160;Supply&#160;Chain Terms and Definitions</a></h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1">TSSC</dt>
+<dt class="hdlist1">TSC</dt>
 <dd>
-<p>Trusted&#160;Software&#160;Supply&#160;Chain</p>
+<p>Trusted&#160;Supply&#160;Chain</p>
 </dd>
 <dt class="hdlist1">Workflow</dt>
 <dd>
-<p>A TSSC procedure as represented by a drawing.</p>
+<p>A TSC procedure as represented by a drawing.</p>
 </dd>
 <dt class="hdlist1">Workflow Abstraction</dt>
 <dd>
-<p>A TSSC Workflow as represented by a drawing with no specifed tooling to impliment that steps of the workflow.</p>
+<p>A TSC Workflow as represented by a drawing with no specifed tooling to impliment that steps of the workflow.</p>
 </dd>
 <dt class="hdlist1">Workflow Implimentaiton</dt>
 <dd>
-<p>An implimentation of a TSSC Workflow Abstraction with specific tooling.</p>
+<p>An implimentation of a TSC Workflow Abstraction with specific tooling.</p>
 </dd>
 </dl>
 </div>
@@ -2322,7 +2322,7 @@ Tool</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-22 15:03:42 UTC
+Last updated 2020-06-22 17:41:27 UTC
 </div>
 </div>
 </body>
