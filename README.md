@@ -14,4 +14,4 @@ Documenation source for the Trusted  Supply Chain (TSC) projects.
 
 ## Documenation Standards
 
-This repository uses the [https://redhat-documentation.github.io/modular-docs/](Modular Documentation Reference Guide) for how to organize the documentation. For a great example repository to look at for reference if unsure how to organize any new documenation based on the Reference Guide check out https://github.com/EnMasseProject/enmasse/.
+This repository uses the [Modular Documentation Reference Guide](https://redhat-documentation.github.io/modular-docs/) for how to organize the documentation. For a great example repository to look at for reference if unsure how to organize any new documenation based on the Reference Guide check out https://github.com/EnMasseProject/enmasse/.
