@@ -1,0 +1,28 @@
+// save parent variables
+ifdef::context[:parent-context: {context}]
+ifdef::ProjectName[:parent-ProjectName: {ProjectName}]
+ifdef::ProjectShortName[:parent-ProjectShortName: {ProjectShortName}]
+ifdef::ProjectNameID[:parent-ProjectNameID: {ProjectNameID}]
+ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
+
+[id="{ProjectNameID}"]
+= {ProjectName} ({ProjectShortName})
+:context: assembly-{ProjectNameID}
+include::vars/tssc.adoc[]
+
+Information about the MVP for {ProjectName} ({ProjectShortName}).
+
+include::assembly-tssc-workflow.adoc[leveloffset=+1]
+include::assembly-tssc-mvp.adoc[leveloffset=+1]
+
+// reload parent variables
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]
+ifdef::parent-ProjectName[:ProjectName: {parent-ProjectName}]
+ifndef::parent-ProjectName[:!ProjectName:]
+ifdef::parent-ProjectShortName[:ProjectShortName: {parent-ProjectShortName}]
+ifndef::parent-ProjectShortName[:!ProjectShortName:]
+ifdef::parent-ProjectNameID[:ProjectNameID: {parent-ProjectNameID}]
+ifndef::parent-ProjectNameID[:!ProjectNameID:]
+ifdef::parent-ProjectVersion[:ProjectVersion: {parent-ProjectVersion}]
+ifndef::parent-ProjectVersion[:!ProjectVersion:]

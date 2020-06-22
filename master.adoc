@@ -1,12 +1,14 @@
 include::attributes.adoc[]
+include::docs/vars/tsc.adoc[]
 
 = Documentation for {ProjectName} ({ProjectShortName})
 :context: {ProjectNameID}
 
 Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
 
-include::docs/assembly-tssc-workflow.adoc[leveloffset=+1]
-include::docs/assembly-tssc-mvp.adoc[leveloffset=+1]
+include::docs/assembly-tssc.adoc[leveloffset=+1]
+
+include::docs/assembly-tisc.adoc[leveloffset=+1]
 
 [appendix]
 include::docs/modules/ref-tssc-workflow-examples.adoc[leveloffset=+1]
