@@ -28,7 +28,6 @@
 | #TODO#
 |
 * <<detailed-component-detect-changed-merge-request>>
-* <<detailed-component-detect-change-to-release-branch>>
 
 | Continuous Integration
 | #TODO#
@@ -81,11 +80,11 @@
 * Create PROD Environment
 * Deploy to PROD Environment
 * Run Canary Testing
-* Collect, Bundle, & Publish Test Reports and Metadata
 
 | Finish
 | #TODO#
 |
+* Collect, Bundle, & Publish Test Reports and Metadata
 * Collect Lessons Learned
 * Celebrate
 
@@ -119,15 +118,8 @@ Create WIP Merge Request to Release Branch on prime repository
 |
 * Source Control Tool
 
-| [[detailed-component-detect-changed-merge-request, Detect new or changed  Merge Request to Release Branch]]
-Detect new or changed  Merge Request to Release Branch
-| #TODO - purpose#
-|
-* CI Tool
-* Source Control Tool
-
-| [[detailed-component-detect-change-to-release-branch, Detect Change to Release Branch]]
-Detect Change to Release Branch
+| [[detailed-component-detect-changed-merge-request, Detect new, changed, or merged,  Merge Request to Release Branch]]
+Detect new, changed, or merged,  Merge Request to Release Branch
 | #TODO - purpose#
 |
 * CI Tool
