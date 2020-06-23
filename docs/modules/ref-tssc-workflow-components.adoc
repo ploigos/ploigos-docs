@@ -53,6 +53,7 @@
 * Deploy to MR#-DEV Environment
 * Run User Acceptance Tests (UAT)
 * Run Runtime Vulnerability Scans
+* Run Performance Tests (Limited)
 * Mark Merge Request Ready for Peer Review and Merging
 
 | Continuos Life Idea Development
@@ -77,6 +78,7 @@
 * Deploy to TEST Environment
 * Run User Acceptance Tests (UAT)
 * Run Runtime Vulnerability Scans
+* Run Performance Tests (Full)
 * Create PROD Environment
 * Deploy to PROD Environment
 * Run Canary Testing
@@ -214,6 +216,11 @@ Tool
 |
 * Runtime Vulnerability Scanning Tool
 
+| Run Performance Tests (Limited)
+| #TODO - purpose#
+|
+* Performance Testing Tool
+
 | Mark Merge Request Ready for Peer Review and Merging
 | #TODO - purpose#
 |
@@ -264,15 +271,10 @@ Tool
 |
 * Continues Deployment Tool
 
-| Run User Acceptance Tests (UAT)
+| Run Performance Tests (Full)
 | #TODO - purpose#
 |
-* UAT Tool
-
-| Run Runtime Vulnerability Scans
-| #TODO - purpose#
-|
-* Runtime Vulnerability Scanning Tool
+* Performance Testing Tool
 
 | Create PROD Environment
 | #TODO - purpose#

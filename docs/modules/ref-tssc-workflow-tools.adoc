@@ -20,6 +20,12 @@ This section describes the category of tools need to implement the {ProjectShort
 | Identity Management
 | #TODO - purpose#
 
+| Authentication
+| #TODO - purpose#
+
+| Authorization
+| #TODO - purpose#
+
 | Artifact Repository
 | #TODO - purpose#
 
@@ -71,6 +77,9 @@ This section describes the category of tools need to implement the {ProjectShort
 | Runtime Vulnerability Scanning Tool
 | #TODO - purpose#
 
+| Performance Testing Tool
+| #TODO - purpose#
+
 | Integrated Development Environment (IDE)
 | #TODO - purpose#
 
@@ -101,10 +110,16 @@ h| Backend Application - JavaEE
 h| Frontend Application - JavaScript
 
 | Container Platform
-2+| Red Hat OpenShift Container Platform 4 (OCP)
+2+| Red Hat OpenShift Container Platform (OCP)
 
 | Identity Management
+2+| Red Hat Identity Manager (IdM)
+
+| Authentication
 2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+
+| Authorization
+2+| Red Hat OpenShift Container Platform (OCP) with LDAP Group Sync from Red Hat Identity Manager (IdM)
 
 | Artifact Repository
 2+| https://jfrog.com/open-source/[JFrog Artifactory]
