@@ -6,6 +6,8 @@ include::docs/vars/tsc.adoc[]
 
 Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
 
+We are awesome hello world!!
+
 include::docs/assembly-tssc.adoc[leveloffset=+1]
 
 include::docs/assembly-tisc.adoc[leveloffset=+1]
