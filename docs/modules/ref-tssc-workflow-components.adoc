@@ -67,9 +67,10 @@
 | Peer Review
 | #TODO#
 |
+* Mark Merge Request as Work In Progress (WIP)
 * Peer Review
 * Merge to Release Branch
-* Mark Merge Request as Work In Progress (WIP)
+* Delete MR#-DEV Deployment Environment
 
 | Continuous Deployment
 | #TODO#
@@ -255,6 +256,11 @@ Tool
 | #TODO - purpose#
 |
 * Source Control Tool
+
+| Delete MR#-DEV Deployment Environment
+| #TODO - purpose#
+|
+* Kubernetes Resources Creation Tool
 
 | Mark Merge Request as Work In Progress (WIP)
 | #TODO - purpose#
