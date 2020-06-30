@@ -4,14 +4,14 @@
 #TODO - description#
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
-== High Level Components
+== High Level Super Components
 #TODO - description#
 
 [cols="a,a,a",options="header"]
 |===
-| Component
+| Super Component / Predefined Process
 | Purpose
-| <<{ProjectNameID}-workflow-components-detailed-level-{context}, Sub Components>>
+| <<{ProjectNameID}-workflow-components-detailed-level-{context}, Components / Steps>>
 
 | Prioritize Ideas
 | #TODO#
@@ -99,7 +99,7 @@
 
 [cols="20a,50a,30a",options="header"]
 |===
-| Component
+| Component / Step
 | Purpose
 | <<{ProjectNameID}-workflow-tool-purposes-{context}, Implementing Tool Category>>
 
