@@ -1,7 +1,7 @@
 [id="{ProjectNameID}-workflow-tools-{context}"]
 = {ProjectShortName} Workflow Tools
 
-Once a <<{ProjectNameID}-workflow-{context}>> is decded upon then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.
+Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.
 
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
@@ -68,7 +68,7 @@ This section describes the category of tools need to implement the {ProjectShort
 | Kubernetes Resources Creation Tool
 | #TODO - purpose#
 
-| Continues Deployment Tool
+| Continuous Deployment Tool
 | #TODO - purpose#
 
 | User Acceptance Testing (UAT) Tool
@@ -171,7 +171,7 @@ h| Frontend Application - JavaScript
 | Kubernetes Resources Creation Tool
 2+| https://helm.sh[helm]
 
-| Continues Deploym (CD) Tool
+| Continuous Deploym (CD) Tool
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | User Acceptance Testing (UAT) Tool

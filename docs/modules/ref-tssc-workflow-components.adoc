@@ -46,7 +46,7 @@
 * Run Static Vulnerability Container Image Scan
 * Push Trusted Container Image to Repository with Metadata
 
-| Continuos Merge Request Deployment
+| Continuous Merge Request Deployment
 | #TODO#
 |
 * Create MR#-DEV Deployment Environment
@@ -56,7 +56,7 @@
 * Run Performance Tests (Limited)
 * Mark Merge Request Ready for Peer Review and Merging
 
-| Continuos Life Idea Development
+| Continuous Life Idea Development
 | #TODO#
 |
 * Remove "WIP" from Merge Request
@@ -205,7 +205,7 @@ Tool
 | Deploy to MR#-DEV Environment
 | #TODO - purpose#
 |
-* Continues Deployment Tool
+* Continuous Deployment Tool
 
 | Run User Acceptance Tests (UAT)
 | #TODO - purpose#
@@ -275,7 +275,7 @@ Tool
 | Deploy to TEST Environment
 | #TODO - purpose#
 |
-* Continues Deployment Tool
+* Continuous Deployment Tool
 
 | Run Performance Tests (Full)
 | #TODO - purpose#
@@ -290,7 +290,7 @@ Tool
 | Deploy to PROD Environment
 | #TODO - purpose#
 |
-* Continues Deployment Tool
+* Continuous Deployment Tool
 
 | Run Canary Testing
 | #TODO - purpose#
