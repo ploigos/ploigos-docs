@@ -6,7 +6,7 @@
 
 Documentation source for the Trusted  Supply Chain (TSC) projects.
 * Trusted Software Supply Chain (TSSC)
-* Trusted Infrastrcture Supply Chain (TISC)
+* Trusted Infrastructure Supply Chain (TISC)
 
 ## Links
 * Published Documentation: [https://rhtconsulting.github.io/tsc-docs/](https://rhtconsulting.github.io/tsc-docs/)
