@@ -6,7 +6,7 @@ Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next tas
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
 
-This section describes the category of tools need to implement the {ProjectShortName} and their purpose in dong so.
+This section describes the category of tools need to implement the {ProjectShortName} and their purpose in doing so.
 
 .{ProjectShortName} Workflow Tools Overview
 [cols="a,a",options="header"]
