@@ -10,6 +10,8 @@ include::docs/assembly-tssc.adoc[leveloffset=+1]
 
 include::docs/assembly-tisc.adoc[leveloffset=+1]
 
+include::docs/assembly-si.adoc[leveloffset=+1]
+
 [appendix]
 include::docs/modules/ref-tssc-workflow-examples.adoc[leveloffset=+1]
 
