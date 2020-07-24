@@ -458,7 +458,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#tisc">2. Trusted&#160;Infrastructure&#160;Supply&#160;Chain (TISC)</a></li>
+<li><a href="#tisc">2. Trusted&#160;Infrastructure&#160;Supply&#160;Chain (TISC)</a>
+<ul class="sectlevel2">
+<li><a href="#tisc-workflow-assembly-tisc">2.1. TISC Workflow</a>
+<ul class="sectlevel3">
+<li><a href="#tisc-tool-abstracted-workflow">2.1.1. Tool Abstracted Workflow</a></li>
+<li><a href="#tisc-workflow-components-assembly-tisc-workflow">2.1.2. TISC Workflow Components</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#si">3. Secure&#160;Infrastructure&#160; (SI)</a>
 <ul class="sectlevel2">
 <li><a href="#si-architecture-assembly-si">3.1. SI Architecture</a>
@@ -2322,8 +2331,407 @@ Tool</p>
 <div class="paragraph">
 <p>Information about the MVP for Trusted&#160;Infrastructure&#160;Supply&#160;Chain (TISC).</p>
 </div>
+<div class="sect2">
+<h3 id="tisc-workflow-assembly-tisc"><a class="anchor" href="#tisc-workflow-assembly-tisc"></a><a class="link" href="#tisc-workflow-assembly-tisc">2.1. TISC Workflow</a></h3>
 <div class="paragraph">
-<p><mark>TODO - include sub assemblies</mark></p>
+<p>At its core the TISC is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
+</div>
+<div class="sect3">
+<h4 id="tisc-tool-abstracted-workflow"><a class="anchor" href="#tisc-tool-abstracted-workflow"></a><a class="link" href="#tisc-tool-abstracted-workflow">2.1.1. Tool Abstracted Workflow</a></h4>
+<div class="paragraph">
+<p>As a derivative of the Trusted Software Supply Chain, infrastructure as code development and delivery/deployment is akin to software development. Instead of treating your enterprise infrastructure as unique or bespoke implementations, they can be viewed as immutable or standardized building blocks expressed in human readable "code".</p>
+</div>
+<div class="paragraph">
+<p>Traditionally, system administrators and engineers craft information systems by hand and collate details into documentation which is handed off to another human actor to perform its implementation; This process risks error and inconsistency to the delivery cycle and increases the amount of time it takes to get a new system into production environments.</p>
+</div>
+<div class="paragraph">
+<p>By adopting traditional software development conventions and workflows, breaking down vertical labor silos and creating teams with diverse member composition across the enterprise, you increase end to end accountability and introduce the "DevOps" culture or method of operating. The details defined in this section cover some of the tools within the supply chain needed to perform this infrastructure as code development controlled by those processes.</p>
+</div>
+<div class="sect4">
+<h5 id="tisc-tool-abstracted-workflow-high-level"><a class="anchor" href="#tisc-tool-abstracted-workflow-high-level"></a><a class="link" href="#tisc-tool-abstracted-workflow-high-level">High Level</a></h5>
+<div class="paragraph">
+<p>A high level rendering of the TISC workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <a href="#tisc-tool-abstracted-workflow-detailed">TISC Tool Abstracted Workflow - Detailed</a>. If something is needed that will fit on "one slide" this is it.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="tisc-tool-abstracted-workflow-detailed"><a class="anchor" href="#tisc-tool-abstracted-workflow-detailed"></a><a class="link" href="#tisc-tool-abstracted-workflow-detailed">Detailed</a></h5>
+<div class="paragraph">
+<p>If there is one artifact that defines what the TISC is, this is it. This is the detailed opinionated workflow for delivering infrastructure as code as defined by and implemented by the TISC.</p>
+</div>
+<div id="tisc-tool-abstracted-workflow-details-image" class="paragraph">
+<p><span class="image"><a class="image" href="images/TISC_Workflow_Details.png"><img src="images/TISC_Workflow_Details.png" alt="Trusted Infrastructure Supply Chain (TISC) Workflow - Details" title="Trusted Infrastructure Supply Chain (TISC) - Details"></a></span></p>
+</div>
+<div id="tisc-role-development-image" class="paragraph">
+<p><span class="image"><a class="image" href="images/TISC_Role_Development.png"><img src="images/TISC_Role_Development.png" alt="Trusted Infrastructure Supply Chain (TISC) Workflow - Details" title="Trusted Infrastructure Supply Chain (TISC) - Details"></a></span></p>
+</div>
+<div id="tisc-infrastructure-development-image" class="paragraph">
+<p><span class="image"><a class="image" href="images/TISC_Infrastructure_Development.png"><img src="images/TISC_Infrastructure_Development.png" alt="Trusted Infrastructure Supply Chain (TISC) Workflow - Details" title="Trusted Infrastructure Supply Chain (TISC) - Details"></a></span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_source_2"><a class="anchor" href="#_source_2"></a><a class="link" href="#_source_2">Source</a></h5>
+<div class="paragraph">
+<p>While the rendered images here are useful for starting the conversation and stating clearly the opinionated TISC workflow, it is recognized that every implementation of the TISC will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.</p>
+</div>
+<div class="paragraph">
+<p>To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the <a href="https://jgraph.github.io/mxgraph/">MXGraph</a> format using <a href="https://draw.io/">Draw.io</a> and provided here for consumption, modification, and re-use.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TISC Workflows</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/tisc_workflows.drawio">Draw.io - Compressed XML</a></p>
+</li>
+<li>
+<p><a href="images/tisc_workflows.xml">MXGraph - XML</a></p>
+</li>
+<li>
+<p>Contains</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Trusted Software Supply Chain (TISC) Workflow - Details - Tool Agnostic</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tisc-workflow-components-assembly-tisc-workflow"><a class="anchor" href="#tisc-workflow-components-assembly-tisc-workflow"></a><a class="link" href="#tisc-workflow-components-assembly-tisc-workflow">2.1.2. TISC Workflow Components</a></h4>
+<div class="paragraph">
+<p>The following details the toolchain and role of each stack component.</p>
+</div>
+<div class="sect4">
+<h5 id="tisc-workflow-components-tooling-assembly-tisc-workflow"><a class="anchor" href="#tisc-workflow-components-tooling-assembly-tisc-workflow"></a><a class="link" href="#tisc-workflow-components-tooling-assembly-tisc-workflow">Tooling</a></h5>
+<div class="paragraph">
+<p>The following table lists chosen tooling for the TISC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagrams for system architecture.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Tooling by Workflow Implementation</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top" colspan="2">Tools by Workflow Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role/Module</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stack</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Source Control</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/go-gitea/gitea">Gitea</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Container Orchestration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Red Hat OpenShift Container Platform 4 (OCP)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identity Management</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Red Hat Single Sign-On (RH SSO) (KeyCloak)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artifact Repository</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://jfrog.com/open-source/">JFrog Artifactory</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Integration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Jenkins</p>
+</li>
+<li>
+<p>Tekton</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Continuous Deployment</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Jenkins</p>
+</li>
+<li>
+<p>DroneCI</p>
+</li>
+<li>
+<p>GitlabCI</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Security Static Code Analysis</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Molecule</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Molecule</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Linting Satic Code Analysis</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ansible-Lint</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ansible-Lint</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Unit Testing</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Molecule</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Molecule</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Static Vulnerability Container Image Scanning</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>OpenSCAP</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>OpenSCAP</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>UAT</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cucumber</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selenium</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Runtime Vulnerability Scanning</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OWASP compliant (might be within CI tool)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OWASP compliant (might be within CI tool)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Canary Testing</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selenium</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selenium</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Development Workflow (IDE)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>TBD</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>TBD</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_development_infrastructure"><a class="anchor" href="#_development_infrastructure"></a><a class="link" href="#_development_infrastructure">Development Infrastructure</a></h5>
+<div class="sect5">
+<h6 id="_sizing_2"><a class="anchor" href="#_sizing_2"></a><a class="link" href="#_sizing_2">Sizing</a></h6>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Containerized Tool Sizing</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool</th>
+<th class="tableblock halign-left valign-top">CPUs</th>
+<th class="tableblock halign-left valign-top">Memory (GB)</th>
+<th class="tableblock halign-left valign-top">Sizing Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Red Hat SSO</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>WAG (<a href="https://access.redhat.com/solutions/3217681">Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JFrog Artifactory OSS</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware">JFrog Artifactory Docs - Recommended Hardware</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JFrog Artifactory OSS - DB (PostgreSQL)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>WAG since <a href="https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware">JFrog Artifactory Docs - Recommended Hardware</a> provides no recommendation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Tekton</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Operator Governed</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Operator Governed</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://openshift.github.io/pipelines-docs/docs/0.10.5/assembly_installing-pipelines.html">Tekton Pipelines Docs - Github Pages for Openshift 4</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Jenkins Master</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>WAG based on experince.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Jenkins Works</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Variable</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Variable</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cucumber</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>N/A (embeded in CI container)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>N/A (embeded in CI container)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2352,7 +2760,7 @@ Tool</p>
 <p>The following table lists chosen tooling for the Secure Infrastructure (Openshift) implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagram for system architecture.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Technology of Secure Infrastructure Implementation</caption>
+<caption class="title">Table 7. Technology of Secure Infrastructure Implementation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2597,7 +3005,7 @@ Tool</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-24 16:09:58 UTC
+Last updated 2020-07-24 17:06:51 UTC
 </div>
 </div>
 </body>
