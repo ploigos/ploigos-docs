@@ -18,7 +18,13 @@ A high level rendering of the {ProjectShortName} workflow where the majority of 
 If there is one artifact that defines what the {ProjectShortName} is, this is it. This is the detailed opinionated workflow for delivering infrastructure as code as defined by and implemented by the {ProjectShortName}.
 
 [id="{ProjectNameID}-tool-abstracted-workflow-details-image", reftext="{ProjectShortName} Tool Abstracted Workflow - Details Image"]
-image:{ProjectShortName}_Workflow_Details.png[alt="Trusted Software Supply Chain ({ProjectShortName}) Workflow - Details",title="Trusted Software Supply Chain ({ProjectShortName}) - Details",caption="Workflow Image: ",link=images/{ProjectShortName}_Workflow_Details.png]
+image:{ProjectShortName}_Workflow_Details.png[alt="Trusted Infrastructure Supply Chain ({ProjectShortName}) Workflow - Details",title="Trusted Infrastructure Supply Chain ({ProjectShortName}) - Details",caption="Workflow Image: ",link=images/{ProjectShortName}_Workflow_Details.png]
+
+[id="{ProjectNameID}-role-development-image", reftext="{ProjectShortName} Role Development - Image"]
+image:{ProjectShortName}_Role_Development.png[alt="Trusted Infrastructure Supply Chain ({ProjectShortName}) Workflow - Details",title="Trusted Infrastructure Supply Chain ({ProjectShortName}) - Details",caption="Role Development Image: ",link=images/{ProjectShortName}_Role_Development.png]
+
+[id="{ProjectNameID}-infrastructure-development-image", reftext="{ProjectShortName} Infrastructure Development - Image"]
+image:{ProjectShortName}_Infrastructure_Development.png[alt="Trusted Infrastructure Supply Chain ({ProjectShortName}) Workflow - Details",title="Trusted Infrastructure Supply Chain ({ProjectShortName}) - Details",caption="Infrastructure Development Image: ",link=images/{ProjectShortName}_Infrastructure_Development.png]
 
 == Source
 
