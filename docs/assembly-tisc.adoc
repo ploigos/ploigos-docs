@@ -13,7 +13,7 @@ include::vars/tisc.adoc[]
 
 Information about the MVP for {ProjectName} ({ProjectShortName}).
 
-#TODO - include sub assemblies#
+include::assembly-tisc-workflow.adoc[leveloffset=+1]
 
 // reload parent variables
 ifdef::parent-context[:context: {parent-context}]

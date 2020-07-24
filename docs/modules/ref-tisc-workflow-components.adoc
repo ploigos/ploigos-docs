@@ -1,0 +1,126 @@
+[id="{ProjectNameID}-workflow-components-{context}"]
+= {ProjectShortName} Workflow Components
+
+The following details the toolchain and role of each stack component.
+
+[id="{ProjectNameID}-workflow-components-tooling-{context}"]
+== Tooling
+
+The following table lists chosen tooling for the TISC MVP implementation.  A separate document will be used to list all implementations as the progress moves forward.  See diagrams for system architecture.
+
+.Tooling by Workflow Implementation
+[cols="a,a,a",options="header"]
+|===
+| Purpose
+2+| Tools by Workflow Type
+
+|
+h| *Role/Module*
+h| *Stack*
+
+| Source Control 
+2+| https://github.com/go-gitea/gitea[Gitea]
+
+| Container Orchestration
+2+| Red Hat OpenShift Container Platform 4 (OCP)
+
+| Identity Management
+2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+
+| Artifact Repository
+2+| https://jfrog.com/open-source/[JFrog Artifactory]
+
+| Continuous Integration
+2+|
+* Jenkins
+* Tekton
+
+| Continuous Deployment
+2+|
+* Jenkins
+* DroneCI
+* GitlabCI
+
+| Security Static Code Analysis
+| Molecule
+| Molecule
+
+| Linting Satic Code Analysis
+| Ansible-Lint
+| Ansible-Lint
+
+| Unit Testing
+| Molecule
+| Molecule
+
+| Static Vulnerability Container Image Scanning
+| OpenSCAP
+| OpenSCAP
+
+| UAT
+| Cucumber
+| Selenium
+
+| Runtime Vulnerability Scanning
+|
+* TBD
+** OWASP compliant (might be within CI tool)
+|
+* TBD
+** OWASP compliant (might be within CI tool)
+
+| Canary Testing
+a| Selenium
+a| Selenium
+
+| Development Workflow (IDE)
+a| TBD
+a| TBD
+|===
+
+== Development Infrastructure
+
+=== Sizing
+.Containerized Tool Sizing
+[cols="a,a,a,a",options="header"]
+|===
+| Tool
+| CPUs
+| Memory (GB)
+| Sizing Source
+
+| Red Hat SSO
+| 2
+| 2
+| WAG (https://access.redhat.com/solutions/3217681[Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO]
+
+| JFrog Artifactory OSS
+| 4
+| 4
+| https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware]
+
+| JFrog Artifactory OSS - DB (PostgreSQL)
+| 2
+| 2
+| WAG since https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware] provides no recommendation
+
+| Tekton
+| Operator Governed
+| Operator Governed
+| https://openshift.github.io/pipelines-docs/docs/0.10.5/assembly_installing-pipelines.html[Tekton Pipelines Docs - Github Pages for Openshift 4]
+
+| Jenkins Master
+| 2
+| 2
+| WAG based on experince.
+
+| Jenkins Works
+| Variable
+| Variable
+| 
+
+| Cucumber
+| N/A (embeded in CI container)
+| N/A (embeded in CI container)
+|
+|===
