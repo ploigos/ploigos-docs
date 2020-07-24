@@ -1,0 +1,12 @@
+ifdef::context[:parent-context: {context}]
+
+[id="{ProjectNameID}-architecture-{context}"]
+= {ProjectShortName} Architecture
+:context: assembly-{ProjectNameID}-architecture
+
+Information about the architecture for {ProjectName} ({ProjectShortName}).
+
+include::modules/si-architecture.adoc[leveloffset=+1]
+
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

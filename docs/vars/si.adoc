@@ -1,0 +1,4 @@
+:ProjectName: Secure{nbsp}Infrastructure{nbsp}
+:ProjectShortName: SI
+:ProjectNameID: si
+:ProjectVersion: 1.0
