@@ -106,8 +106,8 @@ This section describes the category of tools need to implement the {ProjectShort
 2+| Tool by Application Technology Stack
 
 |
-h| Backend Application - JavaEE
-h| Frontend Application - JavaScript
+h| Maven Packged App
+h| NPM Packged App
 
 | Container Platform
 2+| Red Hat OpenShift Container Platform (OCP)
@@ -143,18 +143,15 @@ h| Frontend Application - JavaScript
 
 | Application Language Packaging Tool
 | maven
-| #TODO - tbd#
+| npm
 
 | Application Language Unit Test Tool
-| JUnit
-|
-* #TODO - tbd#
-** Mocha?
-** Jest?
+| maven generating JUnit Report
+| NPM generating JUnit Report
 
 | Binary Artifact Upload Tool
 | maven
-| #TODO - tbd#
+| npm
 
 | Container Image Build Tool
 2+| https://buildah.io/[buildah]
@@ -175,8 +172,7 @@ h| Frontend Application - JavaScript
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | User Acceptance Testing (UAT) Tool
-| Cucumber
-| Selenium
+2+| Cucumber driving Selenium
 
 | Runtime Vulnerability Scanning Tool
 2+|
@@ -191,7 +187,7 @@ h| Frontend Application - JavaScript
 2+| https://github.com/go-gitea/gitea[Gitea]
 
 | Canary Testing Tool
-2+| Selenium
+2+| Cucumber driving Selenium
 
 | Discussion
 | #TODO - purpose#
