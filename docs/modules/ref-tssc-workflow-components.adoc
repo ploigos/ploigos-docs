@@ -4,12 +4,12 @@
 #TODO - description#
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
-== High Level Super Components
+== Predefined Processes
 #TODO - description#
 
 [cols="a,a,a",options="header"]
 |===
-| Super Component / Predefined Process
+| Predefined Process
 | Purpose
 | <<{ProjectNameID}-workflow-components-detailed-level-{context}, Components / Steps>>
 
@@ -49,8 +49,8 @@
 | Continuous Merge Request Deployment
 | #TODO#
 |
-* Create MR#-DEV Deployment Environment
-* Deploy to MR#-DEV Environment
+* Deploy or Update MR#-DEV Environment
+* Validate MR#-DEV Environment Configuration
 * Run User Acceptance Tests (UAT)
 * Run Runtime Vulnerability Scans
 * Run Performance Tests (Limited)
@@ -75,13 +75,13 @@
 | Continuous Deployment
 | #TODO#
 |
-* Create TEST Environment
-* Deploy to TEST Environment
+* Deploy or Update TEST Environment
+* Validate TEST Environment Configuration
 * Run User Acceptance Tests (UAT)
 * Run Runtime Vulnerability Scans
 * Run Performance Tests (Full)
-* Create PROD Environment
-* Deploy to PROD Environment
+* Deploy or Update PROD Environment
+* Validate PROD Environment Configuration
 * Run Canary Testing
 
 | Finish
@@ -94,12 +94,12 @@
 |===
 
 [id="{ProjectNameID}-workflow-components-detailed-level-{context}"]
-== Detailed Level Components
+== Steps
 #TODO - description#
 
 [cols="20a,50a,30a",options="header"]
 |===
-| Component / Step
+| Step
 | Purpose
 | <<{ProjectNameID}-workflow-tool-purposes-{context}, Implementing Tool Category>>
 
@@ -170,12 +170,6 @@ Tool
 |
 * Container Image Build Tool
 
-| Push Container Image to Repository with Metadata
-| #TODO - purpose#
-|
-* Container Image Upload Tool
-* Image Registry
-
 | Run Container Image Unit Tests
 | #TODO - purpose#
 |
@@ -197,15 +191,15 @@ Tool
 * Container Image Upload Tool
 * Image Registry
 
-| Create MR#-DEV Deployment Environment
-| #TODO - purpose#
-|
-* Kubernetes Resources Creation Tool
-
-| Deploy to MR#-DEV Environment
+| Deploy or Update MR#-DEV Environment
 | #TODO - purpose#
 |
 * Continuous Deployment Tool
+
+| Validate MR#-DEV Environment Configuration
+| #TODO - purpose#
+|
+* Environment Validation Tool
 
 | Run User Acceptance Tests (UAT)
 | #TODO - purpose#
@@ -267,15 +261,15 @@ Tool
 |
 * Source Control Tool
 
-| Create TEST Environment
-| #TODO - purpose#
-|
-* Kubernetes Resources Creation Tool
-
-| Deploy to TEST Environment
+| Deploy or Update TEST Environment
 | #TODO - purpose#
 |
 * Continuous Deployment Tool
+
+| Validate Test Environment Configuration
+| #TODO - purpose#
+|
+* Environment Validation Tool
 
 | Run Performance Tests (Full)
 | #TODO - purpose#
@@ -287,10 +281,15 @@ Tool
 |
 * Kubernetes Resources Creation Tool
 
-| Deploy to PROD Environment
+| Deploy or Update PROD Environment
 | #TODO - purpose#
 |
 * Continuous Deployment Tool
+
+| Validate Prod Environment Configuration
+| #TODO - purpose#
+|
+* Environment Validation Tool
 
 | Run Canary Testing
 | #TODO - purpose#

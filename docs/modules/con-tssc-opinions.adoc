@@ -1,0 +1,16 @@
+[id="{ProjectNameID}-opinions", reftext="{ProjectShortName} Opinions"]
+= {ProjectShortName} Opinions
+
+The {ProjectName} (ProjectShortName) is an opinionated software development and deployment workflow. The key being, opinionated. Which means it is filled with opinions, some direct, some less so. This document is meant to capture all of those opinions which feed into the design and implementation of the (ProjectShortName).
+
+*  The CI tool used does not, and should not, matter
+*  Trunk based development
+*  The minimum, and recommended, number of logical environments is
+   - `N` number of development environments, one per active feature branch
+   - Test
+   - Production
+
+[NOTE]
+====
+More Coming.
+====
