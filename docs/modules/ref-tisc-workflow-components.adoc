@@ -11,8 +11,8 @@ The following table lists chosen tooling for the TISC MVP implementation.  A sep
 .Tooling by Workflow Implementation
 [cols="a,a,a",options="header"]
 |===
-| Purpose
-2+| Tools by Workflow Type
+| Component Type
+2+| Implementing Tools by Workflow Type
 
 |
 h| *Role/Module*

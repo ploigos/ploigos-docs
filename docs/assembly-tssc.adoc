@@ -13,6 +13,7 @@ include::vars/tssc.adoc[]
 
 Information about the MVP for {ProjectName} ({ProjectShortName}).
 
+include::modules/con-tssc-opinions.adoc[leveloffset=+1]
 include::assembly-tssc-workflow.adoc[leveloffset=+1]
 include::assembly-tssc-mvp.adoc[leveloffset=+1]
 

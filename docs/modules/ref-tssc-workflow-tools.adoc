@@ -1,17 +1,17 @@
 [id="{ProjectNameID}-workflow-tools-{context}"]
 = {ProjectShortName} Workflow Tools
 
-Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.
+Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fullfil the required components needs.
 
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
 
-This section describes the category of tools need to implement the {ProjectShortName} and their purpose in doing so.
+This section describes the components needed to implement the {ProjectShortName} and their purpose in doing so.
 
-.{ProjectShortName} Workflow Tools Overview
+.{ProjectShortName} Required Components Overview
 [cols="a,a",options="header"]
 |===
-| Tool Category
+| Component
 | Purpose
 
 | Container Platform
@@ -95,15 +95,15 @@ This section describes the category of tools need to implement the {ProjectShort
 |===
 
 [id="{ProjectNameID}-workflow-tool-implementers-{context}"]
-== Tool Implementers
+== Component Implementers
 
 #TODO#
 
-.{ProjectShortName} Workflow Tool Implementers
+.{ProjectShortName} Component Implementers
 [cols="a,a,a",options="header"]
 |===
-| Tool Category
-2+| Tool by Application Technology Stack
+| Component
+2+| Component Implementers by Application Technology Stack
 
 |
 h| Maven Packged App
