@@ -1,10 +1,12 @@
 [id="{ProjectNameID}-opinions", reftext="{ProjectShortName} Opinions"]
 = {ProjectShortName} Opinions
 
-The {ProjectName} (ProjectShortName) is an opinionated software development and deployment workflow. The key being, opinionated. Which means it is filled with opinions, some direct, some less so. This document is meant to capture all of those opinions which feed into the design and implementation of the (ProjectShortName).
+The {ProjectName} {ProjectShortName} is an opinionated software development and deployment workflow. The key being, opinionated. Which means it is filled with opinions, some direct, some less so. This document is meant to capture all of those opinions which feed into the design and implementation of the {ProjectShortName}.
 
 *  The CI tool used does not, and should not, matter
 *  Trunk based development
+*  The workflow is based on a "Forking Workflow", often seen in public open source projects. The  forking workflow is different from "Gitflow workflow" because forking workflow involves a developer forking the primary repository into their own public repository. Developers push commits to a feature branch in their own repository, and merge requests generally occur from the feature branch of the forked repository into the release branch of the primary repository.
+*  The "Release Branch" is the branch that goes into production. This may be different from team to team.  There are many different naming conventions for a branch that goes to production (e.g. "main", "trunk", release branch, or "Release 1.0.3"). This documentation will use "Release branch" to refer to this branch.
 *  The minimum, and recommended, number of logical environments is
    - `N` number of development environments, one per active feature branch
    - Test
