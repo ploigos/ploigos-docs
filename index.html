@@ -444,16 +444,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#tssc">1. Trusted&#160;Software&#160;Supply&#160;Chain (TSSC)</a>
 <ul class="sectlevel2">
-<li><a href="#tssc-workflow-assembly-tssc">1.1. TSSC Workflow</a>
+<li><a href="#tssc-opinions">1.1. TSSC Opinions</a></li>
+<li><a href="#tssc-workflow-assembly-tssc">1.2. TSSC Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#tssc-tool-abstracted-workflow">1.1.1. Tool Abstracted Workflow</a></li>
-<li><a href="#tssc-workflow-components-assembly-tssc-workflow">1.1.2. TSSC Workflow Components</a></li>
-<li><a href="#tssc-workflow-tools-assembly-tssc-workflow">1.1.3. TSSC Workflow Tools</a></li>
+<li><a href="#tssc-tool-abstracted-workflow">1.2.1. Tool Abstracted Workflow</a></li>
+<li><a href="#tssc-workflow-components-assembly-tssc-workflow">1.2.2. TSSC Workflow Components</a></li>
+<li><a href="#tssc-workflow-tools-assembly-tssc-workflow">1.2.3. TSSC Workflow Tools</a></li>
 </ul>
 </li>
-<li><a href="#tssc-mvp">1.2. TSSC MVP</a>
+<li><a href="#tssc-mvp">1.3. TSSC MVP</a>
 <ul class="sectlevel3">
-<li><a href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.2.1. MVP Development Infrastructure</a></li>
+<li><a href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.3.1. MVP Development Infrastructure</a></li>
 </ul>
 </li>
 </ul>
@@ -503,12 +504,74 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Information about the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
 </div>
 <div class="sect2">
-<h3 id="tssc-workflow-assembly-tssc"><a class="anchor" href="#tssc-workflow-assembly-tssc"></a><a class="link" href="#tssc-workflow-assembly-tssc">1.1. TSSC Workflow</a></h3>
+<h3 id="tssc-opinions"><a class="anchor" href="#tssc-opinions"></a><a class="link" href="#tssc-opinions">1.1. TSSC Opinions</a></h3>
+<div class="paragraph">
+<p>The Trusted&#160;Software&#160;Supply&#160;Chain TSSC is an opinionated software development and deployment workflow. The key being, opinionated. Which means it is filled with opinions, some direct, some less so. This document is meant to capture all of those opinions which feed into the design and implementation of the TSSC.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The CI tool used does not, and should not, matter</p>
+</li>
+<li>
+<p><a href="https://trunkbaseddevelopment.com/">Trunk based development</a>, as opposed to</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvie.com/posts/a-successful-git-branching-model/">git-flow</a></p>
+</li>
+<li>
+<p><a href="https://guides.github.com/introduction/flow/">GitHub Flow</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When creating merge requests, crate feature branches on forks rather then on the primary repository, just as things are done in large open source projects</p>
+</li>
+<li>
+<p>The "Release Branch" is the branch that goes into production. This may be different from team to team.  There are many different naming conventions for a branch that goes to production (e.g. <code>main</code>, <code>trunk</code>, release branch, or "Release 1.0.3"). This documentation will use "Release branch" to refer to whichever branch(s) have the possibility of going all the way to production.</p>
+</li>
+<li>
+<p>The minimum, and recommended, number of logical environments is</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>N</code> number of development environments, one per active feature branch</p>
+</li>
+<li>
+<p>Test</p>
+</li>
+<li>
+<p>Production</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>More Coming.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tssc-workflow-assembly-tssc"><a class="anchor" href="#tssc-workflow-assembly-tssc"></a><a class="link" href="#tssc-workflow-assembly-tssc">1.2. TSSC Workflow</a></h3>
 <div class="paragraph">
 <p>At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
 </div>
 <div class="sect3">
-<h4 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.1.1. Tool Abstracted Workflow</a></h4>
+<h4 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.2.1. Tool Abstracted Workflow</a></h4>
 <div class="paragraph">
 <p>When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific TSSC workflow, and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that enviably arrases if an abstract concept is not concretely defined by drawing it.</p>
 </div>
@@ -574,12 +637,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.1.2. TSSC Workflow Components</a></h4>
+<h4 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.2.2. TSSC Workflow Components</a></h4>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
 <div class="sect4">
-<h5 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">High Level Super Components</a></h5>
+<h5 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">Predefined Processes</a></h5>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
@@ -591,7 +654,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Super Component / Predefined Process</th>
+<th class="tableblock halign-left valign-top">Predefined Process</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 <th class="tableblock halign-left valign-top"><a href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Components / Steps</a></th>
 </tr>
@@ -705,10 +768,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Create MR#-DEV Deployment Environment</p>
+<p>Deploy or Update MR#-DEV Environment</p>
 </li>
 <li>
-<p>Deploy to MR#-DEV Environment</p>
+<p>Validate MR#-DEV Environment Configuration</p>
 </li>
 <li>
 <p>Run User Acceptance Tests (UAT)</p>
@@ -783,10 +846,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Create TEST Environment</p>
+<p>Deploy or Update TEST Environment</p>
 </li>
 <li>
-<p>Deploy to TEST Environment</p>
+<p>Validate TEST Environment Configuration</p>
 </li>
 <li>
 <p>Run User Acceptance Tests (UAT)</p>
@@ -798,10 +861,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Performance Tests (Full)</p>
 </li>
 <li>
-<p>Create PROD Environment</p>
+<p>Deploy or Update PROD Environment</p>
 </li>
 <li>
-<p>Deploy to PROD Environment</p>
+<p>Validate PROD Environment Configuration</p>
 </li>
 <li>
 <p>Run Canary Testing</p>
@@ -834,7 +897,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect4">
-<h5 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Detailed Level Components</a></h5>
+<h5 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Steps</a></h5>
 <div class="paragraph">
 <p><mark>TODO - description</mark></p>
 </div>
@@ -846,7 +909,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Component / Step</th>
+<th class="tableblock halign-left valign-top">Step</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 <th class="tableblock halign-left valign-top"><a href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">Implementing Tool Category</a></th>
 </tr>
@@ -1041,24 +1104,6 @@ Tool</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Push Container Image to Repository with Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Container Image Upload Tool</p>
-</li>
-<li>
-<p>Image Registry</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Run Container Image Unit Tests</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1122,22 +1167,7 @@ Tool</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create MR#-DEV Deployment Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Kubernetes Resources Creation Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy to MR#-DEV Environment</p>
+<p>Deploy or Update MR#-DEV Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><mark>TODO - purpose</mark></p>
@@ -1146,6 +1176,21 @@ Tool</p>
 <ul>
 <li>
 <p>Continuous Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Validate MR#-DEV Environment Configuration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Environment Validation Tool</p>
 </li>
 </ul>
 </div></div></td>
@@ -1332,22 +1377,7 @@ Tool</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create TEST Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Kubernetes Resources Creation Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy to TEST Environment</p>
+<p>Deploy or Update TEST Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><mark>TODO - purpose</mark></p>
@@ -1356,6 +1386,21 @@ Tool</p>
 <ul>
 <li>
 <p>Continuous Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Validate Test Environment Configuration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Environment Validation Tool</p>
 </li>
 </ul>
 </div></div></td>
@@ -1392,7 +1437,7 @@ Tool</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy to PROD Environment</p>
+<p>Deploy or Update PROD Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><mark>TODO - purpose</mark></p>
@@ -1401,6 +1446,21 @@ Tool</p>
 <ul>
 <li>
 <p>Continuous Deployment Tool</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Validate Prod Environment Configuration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><mark>TODO - purpose</mark></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Environment Validation Tool</p>
 </li>
 </ul>
 </div></div></td>
@@ -1470,24 +1530,24 @@ Tool</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tssc-workflow-tools-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tools-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tools-assembly-tssc-workflow">1.1.3. TSSC Workflow Tools</a></h4>
+<h4 id="tssc-workflow-tools-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tools-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tools-assembly-tssc-workflow">1.2.3. TSSC Workflow Tools</a></h4>
 <div class="paragraph">
-<p>Once a <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a> is decided upon, then the next task is to determine all of the categories of tools needed to implement the workflow, and then finally, the actual tool implementers (aka, specific technology implementations). This section contains both the abstracted tool categories and their purposes as well as opinions on which actual tool implementations to use to fullfil the required categories.</p>
+<p>Once a <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fullfil the required components needs.</p>
 </div>
 <div class="sect4">
 <h5 id="tssc-workflow-tool-purposes-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-purposes-assembly-tssc-workflow">Tool Categories and Purposes</a></h5>
 <div class="paragraph">
-<p>This section describes the category of tools need to implement the TSSC and their purpose in doing so.</p>
+<p>This section describes the components needed to implement the TSSC and their purpose in doing so.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. TSSC Workflow Tools Overview</caption>
+<caption class="title">Table 1. TSSC Required Components Overview</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Tool Category</th>
+<th class="tableblock halign-left valign-top">Component</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 </tr>
 </thead>
@@ -1704,12 +1764,12 @@ Tool</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="tssc-workflow-tool-implementers-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">Tool Implementers</a></h5>
+<h5 id="tssc-workflow-tool-implementers-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-tool-implementers-assembly-tssc-workflow">Component Implementers</a></h5>
 <div class="paragraph">
 <p><mark>TODO</mark></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. TSSC Workflow Tool Implementers</caption>
+<caption class="title">Table 2. TSSC Component Implementers</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1717,8 +1777,8 @@ Tool</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Tool Category</th>
-<th class="tableblock halign-left valign-top" colspan="2">Tool by Application Technology Stack</th>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top" colspan="2">Component Implementers by Application Technology Stack</th>
 </tr>
 </thead>
 <tbody>
@@ -1955,12 +2015,12 @@ Tool</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tssc-mvp"><a class="anchor" href="#tssc-mvp"></a><a class="link" href="#tssc-mvp">1.2. TSSC MVP</a></h3>
+<h3 id="tssc-mvp"><a class="anchor" href="#tssc-mvp"></a><a class="link" href="#tssc-mvp">1.3. TSSC MVP</a></h3>
 <div class="paragraph">
 <p>Information about the MVP for Trusted&#160;Software&#160;Supply&#160;Chain (TSSC).</p>
 </div>
 <div class="sect3">
-<h4 id="tssc-mvp-development-infrastructure-assembly-tssc-mvp"><a class="anchor" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp"></a><a class="link" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.2.1. MVP Development Infrastructure</a></h4>
+<h4 id="tssc-mvp-development-infrastructure-assembly-tssc-mvp"><a class="anchor" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp"></a><a class="link" href="#tssc-mvp-development-infrastructure-assembly-tssc-mvp">1.3.1. MVP Development Infrastructure</a></h4>
 <div class="paragraph">
 <p>Reference information on the infrastructure used to develop and test the MVP of the <a href="#tssc-workflow-assembly-tssc-workflow">[tssc-workflow-assembly-tssc-workflow]</a>.</p>
 </div>
@@ -2407,8 +2467,8 @@ Tool</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Purpose</th>
-<th class="tableblock halign-left valign-top" colspan="2">Tools by Workflow Type</th>
+<th class="tableblock halign-left valign-top">Component Type</th>
+<th class="tableblock halign-left valign-top" colspan="2">Implementing Tools by Workflow Type</th>
 </tr>
 </thead>
 <tbody>
@@ -2988,7 +3048,7 @@ Tool</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-31 15:05:55 UTC
+Last updated 2020-08-11 19:57:37 UTC
 </div>
 </div>
 </body>
