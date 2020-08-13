@@ -1,7 +1,7 @@
 [id="{ProjectNameID}-workflow-components-{context}"]
 = {ProjectShortName} Workflow Components
 
-#The {ProjectShortName} Workflow Components are ...
+#The {ProjectShortName} Workflow Components are the ...
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
 == Predefined Processes
