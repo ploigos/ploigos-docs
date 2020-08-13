@@ -1,0 +1,48 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/hdaems/podman-asciidoctor:1.1
+
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Generate HTML 🛠
+      run: asciidoctor -D site -o index.html master.adoc
+    
+    - name: Copy images to site/ 🖼️
+      run: cp -r images site/
+    
+    - name: Upload Site 🔺
+      uses: actions/upload-artifact@v1
+      with:
+        name: site
+        path: site
+    
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+    
+    - name: Download Site 🔻
+      uses: actions/download-artifact@v1
+      with:
+        name: site
+    
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages 
+        FOLDER: "site" 
