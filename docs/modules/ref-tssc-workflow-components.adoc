@@ -1,11 +1,11 @@
 [id="{ProjectNameID}-workflow-components-{context}"]
 = {ProjectShortName} Workflow Components
 
-#The {ProjectShortName} Workflow Components are the ...
+The {ProjectShortName} Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized. 
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
 == Predefined Processes
-#TODO - description#
+Each predefined processes represents an encapsulation of work that is typically necessary in the assembly of a complete end-to-end pipeline  
 
 [cols="a,a,a",options="header"]
 |===
@@ -14,8 +14,8 @@
 | <<{ProjectNameID}-workflow-components-detailed-level-{context}, Components / Steps>>
 
 | Prioritize Ideas
-| #TODO#
-| #TODO#
+| Move idea from a person's head, into the backlog of items that a developer will implement. Must go through proper vetting, and a work item created (in work management tool) that can track item through to completion.     
+| Define work items to bring idea to reality Cost and track work items using work tracking tool of choice 
 
 | Initialize New Idea
 | #TODO#
@@ -56,7 +56,7 @@
 * Run Performance Tests (Limited)
 * Mark Merge Request Ready for Peer Review and Merging
 
-| Continuous Life Idea Development
+| Continuous Live Idea Development
 | #TODO#
 |
 * Remove "WIP" from Merge Request
