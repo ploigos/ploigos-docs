@@ -5,7 +5,7 @@ The {ProjectShortName} Workflow Components are the high level groupings of more 
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
 == Predefined Processes
-Each predefined processes represents an encapsulation of work that is typically necessary in the assembly of a complete end-to-end pipeline  
+Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 
 [cols="a,a,a",options="header"]
 |===
@@ -14,23 +14,23 @@ Each predefined processes represents an encapsulation of work that is typically 
 | <<{ProjectNameID}-workflow-components-detailed-level-{context}, Components / Steps>>
 
 | Prioritize Ideas
-| Move idea from a person's head, into the backlog of items that a developer will implement. Must go through proper vetting, and a work item created (in work management tool) that can track item through to completion.     
-| Define work items to bring idea to reality Cost and track work items using work tracking tool of choice 
+| Move idea from person's head into a work management tool to track item through to completion. 
+| Steps vary based on team's backlog prioritization and work planning process 
 
 | Initialize New Idea
-| #TODO#
+| Lay foundation for isolated developement environment for developer to begin coding 
 | 
 * <<detailed-component-fork-repository>>
 * <<detailed-component-create-idea-branch>>
 * <<detailed-component-create-wip-merge-request>>
 
 | Detect Change
-| #TODO#
+| Allows pipeline to detect and respond to a defined set of changes in source code repository   
 |
 * <<detailed-component-detect-changed-merge-request>>
 
 | Continuous Integration
-| #TODO#
+| Build artifacts are created and tested automatically on a continual basis   
 |
 * Generate Metadata
 * Tag Source Code with Metadata
@@ -47,7 +47,7 @@ Each predefined processes represents an encapsulation of work that is typically 
 * Push Trusted Container Image to Repository with Metadata
 
 | Continuous Merge Request Deployment
-| #TODO#
+| Deployment of build artifacts into a temporary environment will occur when a merge request is created (from a feature branch to the primary release branch), and for any subsequent changes to the feature branch to be merged   
 |
 * Deploy or Update MR#-DEV Environment
 * Validate MR#-DEV Environment Configuration
