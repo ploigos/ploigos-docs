@@ -4,7 +4,7 @@ ifdef::context[:parent-context: {context}]
 = {ProjectShortName} Workflow
 :context: assembly-{ProjectNameID}-workflow
 
-At its core the {ProjectShortName} is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.
+At its core the {ProjectShortName} is an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that opinionated workflow is.
 
 include::modules/con-tssc-workflow-tool-abstracted.adoc[leveloffset=+1]
 
