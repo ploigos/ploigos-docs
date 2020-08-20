@@ -527,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>When creating merge requests, crate feature branches on forks rather then on the primary repository, just as things are done in large open source projects</p>
+<p>When creating merge requests, create feature branches on forks rather then on the primary repository, just as things are done in large open source projects</p>
 </li>
 <li>
 <p>The "Release Branch" is the branch that goes into production. This may be different from team to team.  There are many different naming conventions for a branch that goes to production (e.g. <code>main</code>, <code>trunk</code>, release branch, or "Release 1.0.3"). This documentation will use "Release branch" to refer to whichever branch(s) have the possibility of going all the way to production.</p>
@@ -568,12 +568,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="tssc-workflow-assembly-tssc"><a class="anchor" href="#tssc-workflow-assembly-tssc"></a><a class="link" href="#tssc-workflow-assembly-tssc">1.2. TSSC Workflow</a></h3>
 <div class="paragraph">
-<p>At its core the TSSC is an opinionated workflow used to delivery software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
+<p>At its core the TSSC is an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that opinionated workflow is.</p>
 </div>
 <div class="sect3">
 <h4 id="tssc-tool-abstracted-workflow"><a class="anchor" href="#tssc-tool-abstracted-workflow"></a><a class="link" href="#tssc-tool-abstracted-workflow">1.2.1. Tool Abstracted Workflow</a></h4>
 <div class="paragraph">
-<p>When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific TSSC workflow, and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that enviably arrases if an abstract concept is not concretely defined by drawing it.</p>
+<p>When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the TSSC opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific TSSC workflow, and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that enviably arises if an abstract concept is not concretely defined by drawing it.</p>
 </div>
 <div class="sect4">
 <h5 id="tssc-tool-abstracted-workflow-high-level"><a class="anchor" href="#tssc-tool-abstracted-workflow-high-level"></a><a class="link" href="#tssc-tool-abstracted-workflow-high-level">High Level</a></h5>
@@ -639,12 +639,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="tssc-workflow-components-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-assembly-tssc-workflow">1.2.2. TSSC Workflow Components</a></h4>
 <div class="paragraph">
-<p><mark>TODO - description</mark></p>
+<p>The TSSC Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized.</p>
 </div>
 <div class="sect4">
 <h5 id="tssc-workflow-components-high-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-high-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-high-level-assembly-tssc-workflow">Predefined Processes</a></h5>
 <div class="paragraph">
-<p><mark>TODO - description</mark></p>
+<p>Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -665,10 +665,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Prioritize Ideas</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Move idea from person&#8217;s head into a work management tool to track item through to completion.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Steps vary based on team&#8217;s backlog prioritization and work planning process</p>
 </div></div></td>
 </tr>
 <tr>
@@ -676,7 +676,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Initialize New Idea</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Lay foundation for isolated developement environment for developer to begin coding</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -697,7 +697,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Detect Change</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Allows pipeline to detect and respond to a defined set of changes in source code repository</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -712,7 +712,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Continuous Integration</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Build artifacts are created and tested automatically on a continual basis</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -763,7 +763,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Continuous Merge Request Deployment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Deployment of build artifacts into a temporary development environment that will occur when a merge request is created (from a feature branch to the primary release branch), and for any subsequent changes to the merging feature branch</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -790,10 +790,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Continuous Life Idea Development</p>
+<p>Continuous Live Idea Development</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Provide developer with ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -817,7 +817,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Peer Review</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>To collaborate with others in the process of reviewing code in order to make sure it works, and in order to improve it where possible</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -841,7 +841,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Continuous Deployment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Deployment of build artifacts into a shared test or release environment that will occur when a change is made to the primary release branch.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -877,7 +877,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Finish</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO</mark></p>
+<p>Post deployment activity that serves to validate the tasks performed and/or improve the process</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -899,7 +899,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect4">
 <h5 id="tssc-workflow-components-detailed-level-assembly-tssc-workflow"><a class="anchor" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow"></a><a class="link" href="#tssc-workflow-components-detailed-level-assembly-tssc-workflow">Steps</a></h5>
 <div class="paragraph">
-<p><mark>TODO - description</mark></p>
+<p>The Predefined Processes are further broken down into discrete units of work.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -950,7 +950,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Create WIP Merge Request to Release Branch on prime repository</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -965,7 +965,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Detect new, changed, or merged,  Merge Request to Release Branch</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -3048,7 +3048,7 @@ Tool</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-11 19:57:37 UTC
+Last updated 2020-08-20 19:29:24 UTC
 </div>
 </div>
 </body>
