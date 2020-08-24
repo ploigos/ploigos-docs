@@ -18,7 +18,7 @@ Each predefined process represents an encapsulation of steps that are typically 
 | Steps vary based on team's backlog prioritization and work planning process 
 
 | Initialize New Idea
-| Lay foundation for isolated developement environment for developer to begin coding 
+| Lay foundation for isolated development environment for developer to begin coding 
 | 
 * <<detailed-component-fork-repository>>
 * <<detailed-component-create-idea-branch>>
