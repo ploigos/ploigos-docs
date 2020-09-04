@@ -105,13 +105,13 @@ The Predefined Processes are further broken down into discrete units of work.
 
 | [[detailed-component-fork-repository, Fork Repository]]
 Fork Repository
-| #TODO - purpose#
+| Common with open source projects, a developer will not have direct access to the original repository, so developer will fork the repo and make the changes in own version of the repo and then "pull request" change back to the original repo.  
 |
 * Source Control Tool
 
 | [[detailed-component-create-idea-branch, Create Idea Branch on Fork of Repository]]
 Create Idea Branch on Fork of Repository
-| #TODO - purpose#
+| Changes are made to a new branch in forked repo.  The branch will follow naming convention that conveys the feature being worked on. 
 |
 * Source Control Tool
 
@@ -129,22 +129,22 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Generate Metadata
-| #TODO - purpose#
+| The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. 
 |
 * CI Tool
 
 | Tag Source Code with Metadata
-| #TODO - purpose#
+| This step will take the version created in the "generate metadata" step to tag the source in source control. 
 |
 * Source Control Tool
 
 | Security Static Code Analysis
-| #TODO - purpose#
+| The pipeline will perform static analysis on source code to catch defects and vulnerabilities as early in the development lifecycle as possible, prior to deploying and running the code. 
 |
 * Static Security Scanning Tool
 
 | Linting Static Code Analysis
-| #TODO - purpose#
+| Catch programatic and stylistic errors in code
 |
 * Static Code Linting
 Tool
