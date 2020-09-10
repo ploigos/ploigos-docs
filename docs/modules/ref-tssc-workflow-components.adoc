@@ -34,8 +34,7 @@ Each predefined process represents an encapsulation of steps that are typically 
 |
 * Generate Metadata
 * Tag Source Code with Metadata
-* Security Static Code Analysis
-* Linting Static Code Analysis
+* Static Code Analysis
 * Package Application
 * Run Unit Tests
 * Push Packaged Application to Repository with Metadata
@@ -138,16 +137,10 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 |
 * Source Control Tool
 
-| Security Static Code Analysis
+| Static Code Analysis
 | #TODO - purpose#
 |
-* Static Security Scanning Tool
-
-| Linting Static Code Analysis
-| #TODO - purpose#
-|
-* Static Code Linting
-Tool
+* Static Code Analysis Tool
 
 | Package Application
 | #TODO - purpose#
@@ -199,7 +192,7 @@ Tool
 | Validate MR#-DEV Environment Configuration
 | #TODO - purpose#
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run User Acceptance Tests (UAT)
 | #TODO - purpose#
@@ -269,7 +262,7 @@ Tool
 | Validate Test Environment Configuration
 | #TODO - purpose#
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run Performance Tests (Full)
 | #TODO - purpose#
@@ -289,7 +282,7 @@ Tool
 | Validate Prod Environment Configuration
 | #TODO - purpose#
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run Canary Testing
 | #TODO - purpose#
