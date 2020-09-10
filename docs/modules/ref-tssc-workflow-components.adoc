@@ -34,9 +34,9 @@ Each predefined process represents an encapsulation of steps that are typically 
 |
 * Generate Metadata
 * Tag Source Code with Metadata
-* Static Code Analysis
-* Package Application
 * Run Unit Tests
+* Package Application
+* Static Code Analysis
 * Push Packaged Application to Repository with Metadata
 * Create Container Image
 * Push Container Image to Repository with Metadata
@@ -137,20 +137,20 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 |
 * Source Control Tool
 
-| Static Code Analysis
+| Run Unit Tests
 | #TODO - purpose#
 |
-* Static Code Analysis Tool
+* Application Language Unit Test Tool
 
 | Package Application
 | #TODO - purpose#
 |
 * Application Language Packaging Tool
 
-| Run Unit Tests
+| Static Code Analysis
 | #TODO - purpose#
 |
-* Application Language Unit Test Tool
+* Static Code Analysis Tool
 
 | Push Packaged Application to Repository with Metadata
 | #TODO - purpose#
