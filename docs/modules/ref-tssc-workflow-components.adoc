@@ -143,7 +143,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Application Language Unit Test Tool
 
 | Package Application
-| #TODO - purpose#
+| Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.
 |
 * Application Language Packaging Tool
 
@@ -151,11 +151,6 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 | The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
 |
 * Static Code Analysis Tool
-
-| Package Application
-| Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.
-|
-* Application Language Packaging Tool
 
 | Push Packaged Application to Repository with Metadata
 | Transfer runtime artifacts into a centralized artifact repository for distribution.  
