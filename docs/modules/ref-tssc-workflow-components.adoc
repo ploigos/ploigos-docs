@@ -34,10 +34,9 @@ Each predefined process represents an encapsulation of steps that are typically 
 |
 * Generate Metadata
 * Tag Source Code with Metadata
-* Security Static Code Analysis
-* Linting Static Code Analysis
-* Package Application
 * Run Unit Tests
+* Package Application
+* Static Code Analysis
 * Push Packaged Application to Repository with Metadata
 * Create Container Image
 * Push Container Image to Repository with Metadata
@@ -138,21 +137,20 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 |
 * Source Control Tool
 
-| Security Static Code Analysis
-| The pipeline will perform static analysis on source code to catch defects and vulnerabilities as early in the development lifecycle as possible, prior to deploying and running the code. 
-|
-* Static Security Scanning Tool
-
-| Linting Static Code Analysis
-| Catch programatic and stylistic errors in code
-|
-* Static Code Linting
-Tool
-
 | Run Unit Tests
 | Validate that each unit of the software performs as designed.  
 |
 * Application Language Unit Test Tool
+
+| Package Application
+| #TODO - purpose#
+|
+* Application Language Packaging Tool
+
+| Static Code Analysis
+| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
+|
+* Static Code Analysis Tool
 
 | Package Application
 | Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.
@@ -199,7 +197,7 @@ Tool
 | Validate MR#-DEV Environment Configuration
 | To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team. 
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run User Acceptance Tests (UAT)
 | Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage. 
@@ -269,7 +267,7 @@ Tool
 | Validate Test Environment Configuration
 | #TODO - purpose#
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run Performance Tests (Full)
 | #TODO - purpose#
@@ -289,7 +287,7 @@ Tool
 | Validate Prod Environment Configuration
 | #TODO - purpose#
 |
-* Environment Validation Tool
+* Validate Environment Configuration Tool
 
 | Run Canary Testing
 | #TODO - purpose#

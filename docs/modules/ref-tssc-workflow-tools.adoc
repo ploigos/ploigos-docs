@@ -38,10 +38,7 @@ This section describes the components needed to implement the {ProjectShortName}
 | Continuous Integration (CI) Tool
 | #TODO - purpose#
 
-| Static Security Scanning Tool
-| #TODO - purpose#
-
-| Static Code Linting Tool
+| Static Code Analysis Tool
 | #TODO - purpose#
 
 | Application Language Packaging Tool
@@ -135,11 +132,8 @@ h| NPM Packged App
 * Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
 * Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
 
-| Static Security Scanning Tool
-2+| SonarQube
-
-| Static Code Linting Tool
-2+| SonarQube
+| Static Code Analysis Tool
+2+| https://www.sonarqube.org/[SonarQube]
 
 | Application Language Packaging Tool
 | maven
@@ -170,6 +164,9 @@ h| NPM Packged App
 
 | Continuous Deploym (CD) Tool
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
+
+| Validate Environment Configuration Tool
+2+| https://stelligent.github.io/config-lint/#/[config-lint]
 
 | User Acceptance Testing (UAT) Tool
 2+| Cucumber driving Selenium
