@@ -222,12 +222,12 @@ Tool
 * Source Control Tool
 
 | Remove "WIP" from Merge Request
-| This step is an indicator that the new code is of sufficient quality to be considered a candidate for merging into the main branch of the primary repository. Typically this step is done by the developer, and involves a change of the name/label and state of the merge request within the source control tool. 
+| This step is an indicator that the new code is of sufficient quality (in developer's opinion) to be merged into the main branch of the primary repository. Typically this step is done by the developer, and involves a change to the name and state (from "draft" merge request) within the source control tool. 
 |
 * Source Control Tool
 
 | Connect IDE to MR#-DEV Environment
-| The developer's IDE should support (typically via plugins) the ability to connect directly to the development environment. 
+| If the merge request is still considered by the developer to be a work in progress, development will continue. The developer's IDE should support (typically via plugins) the ability to connect directly to the development environment. 
 |
 * IDE & Container Platform
 
@@ -237,27 +237,27 @@ Tool
 * IDE & Container Platform
 
 | Commit Change to Idea Branch on Fork of Repository
-| An idea branch (or feature branch) is a place for developer to perform work to complete a single feature. Forked repository allows developer without direct access to primary repo to implement contributions that can then be pulled into primary. 
+| The developer will make updates to idea branch (or feature branch) on his/her forked repository. This action will cause the pipeline to run against the feature branch, and allows development to perform code update/deploy iterations until code is suitable for review and merge to main branch.  
 |
 * Source Control Tool
 
 | Peer Review
-| #TODO - purpose#
+| Collaborate with teamates on code change to ensure the quality and completeness of the solution.
 |
 * Peer Review Tool
 
 | Merge to Release Branch
-| #TODO - purpose#
+| Once peer review determines code ready, the developer will merge code from feature branch into the main branch of the primary repo.  This action will cause the pipeline to run against the release branch and trigger deployment to shared test environment. 
 |
 * Source Control Tool
 
 | Delete MR#-DEV Deployment Environment
-| #TODO - purpose#
+| Once merge from feature branch to main branch is complete, clean up the environment infrastructure, so as to minimize resource consumption.  
 |
 * Kubernetes Resources Creation Tool
 
 | Mark Merge Request as Work In Progress (WIP)
-| #TODO - purpose#
+| Generally, a merge request will initially be created in this draft state, and remain in this state for several development iteration of code update, deploy, test, and peer review.    
 |
 * Source Control Tool
 
