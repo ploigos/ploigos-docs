@@ -104,13 +104,13 @@ The Predefined Processes are further broken down into discrete units of work.
 
 | [[detailed-component-fork-repository, Fork Repository]]
 Fork Repository
-| #TODO - purpose#
+| Common with open source projects, a developer will not have direct access to the original repository, so developer will fork the repo and make the changes in own version of the repo and then "pull request" change back to the original repo.  
 |
 * Source Control Tool
 
 | [[detailed-component-create-idea-branch, Create Idea Branch on Fork of Repository]]
 Create Idea Branch on Fork of Repository
-| #TODO - purpose#
+| Changes are made to a new branch in forked repo.  The branch will follow naming convention that conveys the feature being worked on. 
 |
 * Source Control Tool
 
@@ -128,129 +128,129 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Generate Metadata
-| #TODO - purpose#
+| The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.
 |
 * CI Tool
 
 | Tag Source Code with Metadata
-| #TODO - purpose#
+| This step will take the version created in the "generate metadata" step to tag the source in source control. 
 |
 * Source Control Tool
 
 | Run Unit Tests
-| #TODO - purpose#
+| Validate that each unit of the software performs as designed.  
 |
 * Application Language Unit Test Tool
 
 | Package Application
-| #TODO - purpose#
+| Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.
 |
 * Application Language Packaging Tool
 
 | Static Code Analysis
-| #TODO - purpose#
+| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
 |
 * Static Code Analysis Tool
 
 | Push Packaged Application to Repository with Metadata
-| #TODO - purpose#
+| Transfer runtime artifacts into a centralized artifact repository for distribution.  
 |
 * Binary Artifact Upload Tool
 * Artifact Repository
 
 | Create Container Image
-| #TODO - purpose#
+| Create the minimal container image that the application will need to run, including the packaged application artifacts.
 |
 * Container Image Build Tool
 
 | Run Container Image Unit Tests
-| #TODO - purpose#
+| Test container images, verify functionality, and validate the structure and content of the container themselves. 
 |
 * Container Image Unit Test Tool
 
 | Run Static Compliance Container Image Scan
-| #TODO - purpose#
+| Ensure adherence to an organization's security compliance policy by your container image.
 |
 * Container Image Scanning Tool
 
 | Run Static Vulnerability Container Image Scan
-| #TODO - purpose#
+| Identify software vulnerabilities in your container image.
 |
 * Container Image Scanning Tool
 
 | Push Trusted Container Image to Repository with Metadata
-| #TODO - purpose#
+| Transfer the verified image to centralized repository with metadata applied as labels to the image.    
 |
 * Container Image Upload Tool
 * Image Registry
 
 | Deploy or Update MR#-DEV Environment
-| #TODO - purpose#
+| Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.
 |
 * Continuous Deployment Tool
 
 | Validate MR#-DEV Environment Configuration
-| #TODO - purpose#
+| To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team. 
 |
 * Validate Environment Configuration Tool
 
 | Run User Acceptance Tests (UAT)
-| #TODO - purpose#
+| Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage. 
 |
 * UAT Tool
 
 | Run Runtime Vulnerability Scans
-| #TODO - purpose#
+| Analyze the run-time activity of a container for any vulnerabilities or weak runtime security that may not manifest during static analysis. 
 |
 * Runtime Vulnerability Scanning Tool
 
 | Run Performance Tests (Limited)
-| #TODO - purpose#
+| To identify and eliminate the performance bottlenecks in the application.
 |
 * Performance Testing Tool
 
 | Mark Merge Request Ready for Peer Review and Merging
-| #TODO - purpose#
+| The new code must have a specific number of approving reviewers before the code can be merged. This ensures the quality and completeness of the solution. Typically the peer review process is managed by the source control tool.   
 |
 * Source Control Tool
 
 | Remove "WIP" from Merge Request
-| #TODO - purpose#
+| This step is an indicator that the new code is of sufficient quality (in developer's opinion) to be merged into the main branch of the primary repository. Typically this step is done by the developer, and involves a change to the name and state (from "draft" merge request) within the source control tool. 
 |
 * Source Control Tool
 
 | Connect IDE to MR#-DEV Environment
-| #TODO - purpose#
+| If the merge request is still considered by the developer to be a work in progress, development will continue. The developer's IDE should support (typically via plugins) the ability to connect directly to the development environment. 
 |
 * IDE & Container Platform
 
 | Live Development and Testing in MR#-DEV Environment
-| #TODO - purpose#
+| Code changes made inside the developer's IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should fascilitate iterating and deploying new versions of the code, as well as testing. 
 |
 * IDE & Container Platform
 
 | Commit Change to Idea Branch on Fork of Repository
-| #TODO - purpose#
+| The developer will make updates to idea branch (or feature branch) on his/her forked repository. This action will cause the pipeline to run against the feature branch, and allows development to perform code update/deploy iterations until code is suitable for review and merge to main branch.  
 |
 * Source Control Tool
 
 | Peer Review
-| #TODO - purpose#
+| Collaborate with teamates on code change to ensure the quality and completeness of the solution.
 |
 * Peer Review Tool
 
 | Merge to Release Branch
-| #TODO - purpose#
+| Once peer review determines code ready, the developer will merge code from feature branch into the main branch of the primary repo.  This action will cause the pipeline to run against the release branch and trigger deployment to shared test environment. 
 |
 * Source Control Tool
 
 | Delete MR#-DEV Deployment Environment
-| #TODO - purpose#
+| Once merge from feature branch to main branch is complete, clean up the environment infrastructure, so as to minimize resource consumption.  
 |
 * Kubernetes Resources Creation Tool
 
 | Mark Merge Request as Work In Progress (WIP)
-| #TODO - purpose#
+| Generally, a merge request will initially be created in this draft state, and remain in this state for several development iteration of code update, deploy, test, and peer review.    
 |
 * Source Control Tool
 
