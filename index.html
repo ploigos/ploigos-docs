@@ -917,7 +917,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Fork Repository</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Common with open source projects, a developer will not have direct access to the original repository, so developer will fork the repo and make the changes in own version of the repo and then "pull request" change back to the original repo.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -932,7 +932,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Create Idea Branch on Fork of Repository</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Changes are made to a new branch in forked repo.  The branch will follow naming convention that conveys the feature being worked on.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -980,7 +980,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Generate Metadata</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -995,7 +995,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Tag Source Code with Metadata</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>This step will take the version created in the "generate metadata" step to tag the source in source control.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1010,7 +1010,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Unit Tests</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Validate that each unit of the software performs as designed.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1025,7 +1025,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Package Application</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1040,7 +1040,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Static Code Analysis</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1055,7 +1055,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Push Packaged Application to Repository with Metadata</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Transfer runtime artifacts into a centralized artifact repository for distribution.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1073,7 +1073,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Create Container Image</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Create the minimal container image that the application will need to run, including the packaged application artifacts.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1088,7 +1088,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Container Image Unit Tests</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Test container images, verify functionality, and validate the structure and content of the container themselves.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1103,7 +1103,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Static Compliance Container Image Scan</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Ensure adherence to an organization&#8217;s security compliance policy by your container image.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1118,7 +1118,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Static Vulnerability Container Image Scan</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Identify software vulnerabilities in your container image.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1133,7 +1133,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Push Trusted Container Image to Repository with Metadata</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Transfer the verified image to centralized repository with metadata applied as labels to the image.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1151,7 +1151,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Deploy or Update MR#-DEV Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1166,7 +1166,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Validate MR#-DEV Environment Configuration</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1181,7 +1181,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run User Acceptance Tests (UAT)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1196,7 +1196,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Runtime Vulnerability Scans</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Analyze the run-time activity of a container for any vulnerabilities or weak runtime security that may not manifest during static analysis.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1211,7 +1211,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Run Performance Tests (Limited)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>To identify and eliminate the performance bottlenecks in the application.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1226,7 +1226,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Mark Merge Request Ready for Peer Review and Merging</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>The new code must have a specific number of approving reviewers before the code can be merged. This ensures the quality and completeness of the solution. Typically the peer review process is managed by the source control tool.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1241,7 +1241,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Remove "WIP" from Merge Request</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>This step is an indicator that the new code is of sufficient quality (in developer&#8217;s opinion) to be merged into the main branch of the primary repository. Typically this step is done by the developer, and involves a change to the name and state (from "draft" merge request) within the source control tool.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1256,7 +1256,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Connect IDE to MR#-DEV Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>If the merge request is still considered by the developer to be a work in progress, development will continue. The developer&#8217;s IDE should support (typically via plugins) the ability to connect directly to the development environment.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1271,7 +1271,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Live Development and Testing in MR#-DEV Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Code changes made inside the developer&#8217;s IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should fascilitate iterating and deploying new versions of the code, as well as testing.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1286,7 +1286,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Commit Change to Idea Branch on Fork of Repository</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>The developer will make updates to idea branch (or feature branch) on his/her forked repository. This action will cause the pipeline to run against the feature branch, and allows development to perform code update/deploy iterations until code is suitable for review and merge to main branch.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1301,7 +1301,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Peer Review</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Collaborate with teamates on code change to ensure the quality and completeness of the solution.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1316,7 +1316,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Merge to Release Branch</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Once peer review determines code ready, the developer will merge code from feature branch into the main branch of the primary repo.  This action will cause the pipeline to run against the release branch and trigger deployment to shared test environment.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1331,7 +1331,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Delete MR#-DEV Deployment Environment</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Once merge from feature branch to main branch is complete, clean up the environment infrastructure, so as to minimize resource consumption.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1346,7 +1346,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Mark Merge Request as Work In Progress (WIP)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><mark>TODO - purpose</mark></p>
+<p>Generally, a merge request will initially be created in this draft state, and remain in this state for several development iteration of code update, deploy, test, and peer review.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -3021,7 +3021,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-10 19:22:53 UTC
+Last updated 2020-09-14 16:22:05 UTC
 </div>
 </div>
 </body>
