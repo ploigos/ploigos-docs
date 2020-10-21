@@ -11,12 +11,15 @@ The {ProjectName} {ProjectShortName} is an opinionated software development and 
 
 *  When creating merge requests, create feature branches on forks rather then on the primary repository, just as things are done in large open source projects
 
-*  The "Release Branch" is the branch that goes into production. This may be different from team to team.  There are many different naming conventions for a branch that goes to production (e.g. `main`, `trunk`, release branch, or "Release 1.0.3"). This documentation will use "Release branch" to refer to whichever branch(s) have the possibility of going all the way to production.
+*  The "Release Branch" is the branch that goes into production. The term "main" will be used to refer to the release branch. The name of this branch may be different from team to team.  There are many different naming conventions for a branch that goes to production (e.g. "master", "trunk", "release", etc.) 
 
 *  The minimum, and recommended, number of logical environments is
    - `N` number of development environments, one per active feature branch
    - Test
    - Production
+
+*  For UAT testbed infrastructure (e.g. Selenium Grid), such infrastructure, when possible, should be dynamically created on-demand (by infrastructure-as-code) using TSSC step. There will be cases where UAT infrastructure already exists in-house. In such cased, the use of pre-existing/static infrastructure is a supported alternative for UAT testing.  
+
 
 [NOTE]
 ====

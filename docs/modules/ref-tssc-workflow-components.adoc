@@ -255,52 +255,52 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Deploy or Update TEST Environment
-| #TODO - purpose#
+| Deploy code to shared test environment with latest feature available for shared testing
 |
 * Continuous Deployment Tool
 
 | Validate Test Environment Configuration
-| #TODO - purpose#
+| Verify that the test environment has been built successfully and configured according to pre-defined specifications and rules
 |
 * Validate Environment Configuration Tool
 
 | Run Performance Tests (Full)
-| #TODO - purpose#
+| To determining the speed, responsiveness and stability impact of new development when under workload
 |
 * Performance Testing Tool
 
 | Create PROD Environment
-| #TODO - purpose#
+| Create PROD Environment as-needed
 |
 * Kubernetes Resources Creation Tool
 
 | Deploy or Update PROD Environment
-| #TODO - purpose#
+| Deploy tested code to shared prod environment with latest feature available to end users
 |
 * Continuous Deployment Tool
 
 | Validate Prod Environment Configuration
-| #TODO - purpose#
+| Verify that the deployment environment has been built successfully and configured according to pre-defined specifications and rules
 |
 * Validate Environment Configuration Tool
 
 | Run Canary Testing
-| #TODO - purpose#
+| Allows you to roll out new code/features to a subset of end-users as an initial test.
 |
 * Canary Testing Tool
 
 | Collect, Bundle, & Publish Test Reports and Metadata
-| #TODO - purpose#
+| Provide central dashboard with published test results as an indicator of overall health of system
 |
 * CI Tool
 
 | Collect Lessons Learned
-| #TODO - purpose#
+| Collect, understand and act upon positive and negative lessons learned. 
 |
 * Discussion
 
 | Celebrate
-| #TODO - purpose#
+| Work hard - now play hard!  
 |
 * Discussion
 
