@@ -1,12 +1,12 @@
 [id="{ProjectNameID}-workflow-tools-{context}"]
 = {ProjectShortName} Workflow Tools
 
-Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fullfil the required components needs.
+Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fulfill the required components needs.
 
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
 
-This section describes the components needed to implement the {ProjectShortName} and their purpose in doing so.
+This section describes the components needed to implement the steps of the {ProjectShortName} and their purpose in doing so.
 
 .{ProjectShortName} Required Components Overview
 [cols="a,a",options="header"]
@@ -15,79 +15,79 @@ This section describes the components needed to implement the {ProjectShortName}
 | Purpose
 
 | Container Platform
-| #TODO - purpose#
+| Serves as runtime infrastructure for containers
 
 | Identity Management
-| #TODO - purpose#
+| Allows organization to manage identity and access of users and groups to enterprise resources to keep systems and data secure  
 
 | Authentication
-| #TODO - purpose#
+| To verify the identity of a user or process
 
 | Authorization
-| #TODO - purpose#
+| The use of access control rules to decide whether access requests from (authenticated) consumers shall be approved or disapproved.
 
 | Artifact Repository
-| #TODO - purpose#
+| Supports pushing, pulling and storing of software artifacts/packages and accompanying meta data 
 
 | Image Registry
-| #TODO - purpose#
+| Supports pushing, pulling and storing of OCI compliant images and accompanying meta data  
 
 | Source Control Tool
-| #TODO - purpose#
+| Responsible for managing changes to source code 
 
 | Continuous Integration (CI) Tool
-| #TODO - purpose#
+| Automated tasks that verify new code’s correctness before integration
 
 | Static Code Analysis Tool
-| #TODO - purpose#
+| The analysis of software to catch defects, bugs, or security issues before actually executing the programs
 
 | Application Language Packaging Tool
-| #TODO - purpose#
+| Performs the process of binding relevant files and components together to create a consistent, standardized deliverable for a software application. 
 
 | Application Language Unit Test Tool
-| #TODO - purpose#
+| Tools to support testing the smallest part or individual unit to determine if the component is fit for use. 
 
 | Binary Artifact Upload Tool
-| #TODO - purpose#
+| Pushes binary artifacts and accompanying metadata via network into a storage repository
 
 | Container Image Build Tool
-| #TODO - purpose#
+| Packages application into a binary OCI compliant image suitable to run inside any OCI compliant container platform
 
 | Container Image Upload Tool
-| #TODO - purpose#
+| Pushes container image and accompanying metadata via network into a storage repository
 
 | Container Image Unit Test Tool
-| #TODO - purpose#
+| Runs automated unit tests either as part of the image build process, or against the built images
 
 | Container Image Scanning Tool
-| #TODO - purpose#
+| Analysis on a container image's packages and other dependencies to determine if there are any known vulnerabilities in those packages or dependencies
 
 | Kubernetes Resources Creation Tool
-| #TODO - purpose#
+| Creates the necessary Kubernetes resources needed to deploy and run an application inside a container platform 
 
 | Continuous Deployment Tool
-| #TODO - purpose#
+| Detects code changes and based on those changes, will automatically run pipeline to deploy code to chosen deployment environments
 
 | User Acceptance Testing (UAT) Tool
-| #TODO - purpose#
+| Tests to verify user-facing functionality and that the software meets real-world requirements
 
 | Runtime Vulnerability Scanning Tool
-| #TODO - purpose#
+| Identifies vulnerabilities and scan your containers for malware at runtime (dynamic) as opposed to static analysis.
 
 | Performance Testing Tool
-| #TODO - purpose#
+| Tests software for performance issues 
 
 | Integrated Development Environment (IDE)
-| #TODO - purpose#
+| Provides a comprehensive suite of commonly used development functionality into a single application to assist developer's efficiency and productivity  
 
 | Peer Review Tool
-| #TODO - purpose#
+| Facilitates and assists developers with management of the peer code review process. 
 
 | Canary Testing Tool
-| #TODO - purpose#
+| Allows slow roll-out of new code to a small subset of users to reduce the risk of introducing a new software version in production 
 
 | Discussion
-| #TODO - purpose#
+| A forum for debate and discussion to keep developers informed and aware of what is happening.
 
 |===
 
@@ -103,8 +103,8 @@ This section describes the components needed to implement the {ProjectShortName}
 2+| Component Implementers by Application Technology Stack
 
 |
-h| Maven Packged App
-h| NPM Packged App
+h| Maven Packaged App
+h| NPM Packaged App
 
 | Container Platform
 2+| Red Hat OpenShift Container Platform (OCP)
@@ -162,7 +162,7 @@ h| NPM Packged App
 | Kubernetes Resources Creation Tool
 2+| https://helm.sh[helm]
 
-| Continuous Deploym (CD) Tool
+| Continuous Deployment (CD) Tool
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | Validate Environment Configuration Tool

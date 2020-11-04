@@ -148,7 +148,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Application Language Packaging Tool
 
 | Static Code Analysis
-| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
+| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible, prior to deploying and running the code.
 |
 * Static Code Analysis Tool
 
@@ -225,7 +225,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * IDE & Container Platform
 
 | Live Development and Testing in MR#-DEV Environment
-| Code changes made inside the developer's IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should fascilitate iterating and deploying new versions of the code, as well as testing. 
+| Code changes made inside the developer's IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should facilitate iterating and deploying new versions of the code, as well as testing. 
 |
 * IDE & Container Platform
 
@@ -235,7 +235,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Peer Review
-| Collaborate with teamates on code change to ensure the quality and completeness of the solution.
+| Collaborate with teammates on code change to ensure the quality and completeness of the solution.
 |
 * Peer Review Tool
 
@@ -260,7 +260,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Continuous Deployment Tool
 
 | Validate Test Environment Configuration
-| Verify that the test environment has been built successfully and configured according to pre-defined specifications and rules
+| Verify that the test environment has been built successfully and configured according to predefined specifications and rules
 |
 * Validate Environment Configuration Tool
 
@@ -280,7 +280,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Continuous Deployment Tool
 
 | Validate Prod Environment Configuration
-| Verify that the deployment environment has been built successfully and configured according to pre-defined specifications and rules
+| Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules
 |
 * Validate Environment Configuration Tool
 
