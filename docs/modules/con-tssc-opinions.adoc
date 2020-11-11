@@ -18,7 +18,9 @@ The {ProjectName} {ProjectShortName} is an opinionated software development and 
    - Test
    - Production
 
-*  For UAT testbed infrastructure (e.g. Selenium Grid), such infrastructure, when possible, should be dynamically created on-demand (by infrastructure-as-code) using TSSC step. There will be cases where UAT infrastructure already exists in-house. In such cased, the use of pre-existing/static infrastructure is a supported alternative for UAT testing.  
+* A "step runner" is the implementation of all the necessary work associated with common steps in a CI/CD pipeline. Examples of step runners include: package, tag source, unit test, etc. The implementation of the step runner is abstracted away from the user, and available as reusable modules via the step runner library.   
+
+*  For UAT testbed infrastructure (e.g. Selenium Grid), such infrastructure, when possible, should be dynamically created on-demand (by infrastructure-as-code) using a step runner from the step runner library. There will be cases where UAT infrastructure already exists in-house. In such cases, the use of pre-existing/static infrastructure is a supported alternative for UAT testing.  For example, if your company already has an established deployment of selenium grid, that instance of selenium grid can be used rather than have the framework dynamically stand up additional instances.  
 
 
 [NOTE]

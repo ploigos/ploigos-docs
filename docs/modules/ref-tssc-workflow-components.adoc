@@ -148,7 +148,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Application Language Packaging Tool
 
 | Static Code Analysis
-| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible, prior to deploying and running the code.
+| The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.
 |
 * Static Code Analysis Tool
 
@@ -255,17 +255,17 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Deploy or Update TEST Environment
-| Deploy code to shared test environment with latest feature available for shared testing
+| Deploy image built from the latest release branch to the test environment.
 |
 * Continuous Deployment Tool
 
 | Validate Test Environment Configuration
-| Verify that the test environment has been built successfully and configured according to predefined specifications and rules
+| Using predefined rules, validate the configuration files used to deploy the test environment
 |
 * Validate Environment Configuration Tool
 
 | Run Performance Tests (Full)
-| To determining the speed, responsiveness and stability impact of new development when under workload
+| Execute tests to determine the speed, responsiveness and stability
 |
 * Performance Testing Tool
 
