@@ -1,0 +1,4 @@
+:ProjectName: Ploigos{nbsp}
+:ProjectShortName: PL
+:ProjectNameID: ploigos
+:ProjectVersion: 1.0

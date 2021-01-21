@@ -1,0 +1,192 @@
+[id="{ProjectNameID}-workflow-tools-{context}"]
+= {ProjectShortName} Workflow Tools
+
+Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fullfil the required components needs.
+
+[id="{ProjectNameID}-workflow-tool-purposes-{context}"]
+== Tool Categories and Purposes
+
+This section describes the components needed to implement the {ProjectShortName} and their purpose in doing so.
+
+.{ProjectShortName} Required Components Overview
+[cols="a,a",options="header"]
+|===
+| Component
+| Purpose
+
+| Container Platform
+| #TODO - purpose#
+
+| Identity Management
+| #TODO - purpose#
+
+| Authentication
+| #TODO - purpose#
+
+| Authorization
+| #TODO - purpose#
+
+| Artifact Repository
+| #TODO - purpose#
+
+| Image Registry
+| #TODO - purpose#
+
+| Source Control Tool
+| #TODO - purpose#
+
+| Continuous Integration (CI) Tool
+| #TODO - purpose#
+
+| Static Code Analysis Tool
+| #TODO - purpose#
+
+| Application Language Packaging Tool
+| #TODO - purpose#
+
+| Application Language Unit Test Tool
+| #TODO - purpose#
+
+| Binary Artifact Upload Tool
+| #TODO - purpose#
+
+| Container Image Build Tool
+| #TODO - purpose#
+
+| Container Image Upload Tool
+| #TODO - purpose#
+
+| Container Image Unit Test Tool
+| #TODO - purpose#
+
+| Container Image Scanning Tool
+| #TODO - purpose#
+
+| Kubernetes Resources Creation Tool
+| #TODO - purpose#
+
+| Continuous Deployment Tool
+| #TODO - purpose#
+
+| User Acceptance Testing (UAT) Tool
+| #TODO - purpose#
+
+| Runtime Vulnerability Scanning Tool
+| #TODO - purpose#
+
+| Performance Testing Tool
+| #TODO - purpose#
+
+| Integrated Development Environment (IDE)
+| #TODO - purpose#
+
+| Peer Review Tool
+| #TODO - purpose#
+
+| Canary Testing Tool
+| #TODO - purpose#
+
+| Discussion
+| #TODO - purpose#
+
+|===
+
+[id="{ProjectNameID}-workflow-tool-implementers-{context}"]
+== Component Implementers
+
+#TODO#
+
+.{ProjectShortName} Component Implementers
+[cols="a,a,a",options="header"]
+|===
+| Component
+2+| Component Implementers by Application Technology Stack
+
+|
+h| Maven Packged App
+h| NPM Packged App
+
+| Container Platform
+2+| Red Hat OpenShift Container Platform (OCP)
+
+| Identity Management
+2+| Red Hat Identity Manager (IdM)
+
+| Authentication
+2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+
+| Authorization
+2+| Red Hat OpenShift Container Platform (OCP) with LDAP Group Sync from Red Hat Identity Manager (IdM)
+
+| Artifact Repository
+2+| https://jfrog.com/open-source/[JFrog Artifactory]
+
+| Image Registry
+2+| Red Hat Quay (+ Clair)
+
+| Source Control Tool
+2+| https://github.com/go-gitea/gitea[Gitea]
+
+| Continuous Integration (CI) Tool
+2+|
+* Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
+* Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
+
+| Static Code Analysis Tool
+2+| https://www.sonarqube.org/[SonarQube]
+
+| Application Language Packaging Tool
+| maven
+| npm
+
+| Application Language Unit Test Tool
+| maven generating JUnit Report
+| NPM generating JUnit Report
+
+| Binary Artifact Upload Tool
+| maven
+| npm
+
+| Container Image Build Tool
+2+| https://buildah.io/[buildah]
+
+| Container Image Upload Tool
+2+| https://github.com/containers/skopeo[skopeo]
+
+| Container Image Unit Test Tool
+2+| #TODO - tbd#
+
+| Container Image Scanning Tool
+2+| OpenSCAP
+
+| Kubernetes Resources Creation Tool
+2+| https://helm.sh[helm]
+
+| Continuous Deploym (CD) Tool
+2+| https://argoproj.github.io/argo-cd/[ArgoCD]
+
+| Validate Environment Configuration Tool
+2+| https://stelligent.github.io/config-lint/#/[config-lint]
+
+| User Acceptance Testing (UAT) Tool
+2+| Cucumber driving Selenium
+
+| Runtime Vulnerability Scanning Tool
+2+|
+* TBD
+** OWASP compliant (might be within CI tool)
+
+| Integrated Development Environment (IDE)
+| #TODO - tbd#
+| #TODO - tbd#
+
+| Peer Review Tool
+2+| https://github.com/go-gitea/gitea[Gitea]
+
+| Canary Testing Tool
+2+| Cucumber driving Selenium
+
+| Discussion
+| #TODO - purpose#
+
+|===

@@ -2,15 +2,15 @@
 
 # Trusted Supply Chain Documentation (tsc-docs)
 
-![GitHub Pages](https://github.com/rhtconsulting/tsc-docs/workflows/GitHub%20Pages/badge.svg?branch=master&event=push)
+![GitHub Pages](https://github.com/twling/tsc-docs/workflows/GitHub%20Pages/badge.svg?branch=master&event=push)
 
-Documentation source for the Trusted  Supply Chain (TSC) projects.
-* Trusted Software Supply Chain (TSSC)
+Documentation source for the Ploigos projects.
+* Ploigos 
 * Trusted Infrastructure Supply Chain (TISC)
 * Secure Infrastructure (SI)
 
 ## Links
-* Published Documentation: [https://rhtconsulting.github.io/tsc-docs/](https://rhtconsulting.github.io/tsc-docs/)
+* Published Documentation: [https://twling.github.io/tsc-docs/](https://twling.github.io/tsc-docs/)
 * Raw Documentation: [master.adoc](master.adoc)
 
 ## Documentation Standards
