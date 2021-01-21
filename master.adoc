@@ -1,5 +1,5 @@
 include::attributes.adoc[]
-include::docs/vars/tsc.adoc[]
+include::docs/vars/ploigos.adoc[]
 
 = Documentation for {ProjectName} ({ProjectShortName})
 :context: {ProjectNameID}

@@ -1,6 +1,6 @@
 
 
-# Trusted Supply Chain Documentation (tsc-docs)
+# Ploigos Documentation (ploigos-docs)
 
 ![GitHub Pages](https://github.com/twling/tsc-docs/workflows/GitHub%20Pages/badge.svg?branch=master&event=push)
 
