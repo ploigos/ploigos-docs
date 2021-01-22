@@ -10,7 +10,7 @@ Documentation source for the Trusted  Supply Chain (TSC) projects.
 * Secure Infrastructure (SI)
 
 ## Links
-* Published Documentation: [https://rhtconsulting.github.io/tsc-docs/](https://rhtconsulting.github.io/tsc-docs/)
+* Published Documentation: [https://ploigos.github.io/ploigos-docs/](https://rhtconsulting.github.io/tsc-docs/)
 * Raw Documentation: [master.adoc](master.adoc)
 
 ## Documentation Standards
