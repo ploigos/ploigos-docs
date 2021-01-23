@@ -1,14 +1,14 @@
-[id="{ProjectNameID}-workflow-tools-{context}"]
-= {ProjectShortName} Workflow Tools
+[id="{ProjectNameID}-workflow-tools", reftext="{ProjectName} Tools"]
+= {ProjectName} Workflow Tools
 
 Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fullfil the required components needs.
 
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
 
-This section describes the components needed to implement the {ProjectShortName} and their purpose in doing so.
+This section describes the components needed to implement {ProjectName} and their purpose in doing so.
 
-.{ProjectShortName} Required Components Overview
+.{ProjectName} Required Components Overview
 [cols="a,a",options="header"]
 |===
 | Component
@@ -96,7 +96,7 @@ This section describes the components needed to implement the {ProjectShortName}
 
 #TODO#
 
-.{ProjectShortName} Component Implementers
+.{ProjectName} Component Implementers
 [cols="a,a,a",options="header"]
 |===
 | Component

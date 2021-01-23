@@ -1,0 +1,40 @@
+# User Stories 
+
+  
+These stories are used to define the organization of the modular documentation.
+  
+* As a devops engineer, I want to provide a CI/CD workflow for software developers to improve speed of development and application quality  
+
+** As a devops engineer, I want to deploy a production grade workflow for a CI/CD capability
+*** Concept: Workflow - High Level and detailed
+*** Reference: Tools/components of the workflow
+*** Concept: Required infrastructure for reference implementation 
+*** Procedure: Deploy Reference Implementation
+*** Procedure: Demo/HOWTO on using deployed reference implementation
+*** Reference: Terms and definitions
+
+** As a devops engineer, I want to deploy the Ploigos workflow utilizing my existing infrastructure for application developers
+*** Concept: Workflow - Overview of changing default workflow
+*** Procedure: Add/Modify existing opinions
+*** Procedure: Process for tool/service selection
+*** Reference: Pre-defined workflow processes
+*** Reference: Workflow Steps
+
+** As a devops engineer, I want to change or add to the workflow 
+*** Concept: Establishing Opinions on workflow/pipeline
+*** Procedure: Process for Opinion formation
+*** Procedure: Process for changing workflow
+*** Procedure: Add/Modify step runner
+*** Procedure: Add/Modify container images
+     
+** As a developer, I want to contribute to the Ploigos project
+*** Concept: Contribution guide
+*** Reference: Links to Ploigos Sub-projects 
+
+
+
+* As a software developer, I want to write code for applications that is tested, validated, hardened, and deployed to a production environment
+** As a software developer, I want to submit code to a repository and have it automatically built into an application
+** As a software developer, I want an environment to easily test built applications
+** As a software developer, I want to ensure my application meets security requirements
+
