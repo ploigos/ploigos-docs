@@ -1,45 +1,23 @@
 [id="{ProjectNameID}-workflow-abstracted", reftext="{ProjectName} Abstracted Workflow"]
 
-When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the {ProjectName} opinionated workflow in an abstract form, that is without any specific technologies or tools. The intent being this can be used as a primer for a team to first discuss and decide on their own specific {ProjectName} workflow, and then use the provided templates to draw it to avoid the https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png["I'm glad we all agree"] problem that enviably arises if an abstract concept is not concretely defined by drawing it.
+When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the {ProjectName} opinionated workflow in an abstract form, without any specific technologies or tools. This can be used as a primer for a team to first discuss and decide on their own specific {ProjectName} workflow, and then use the provided templates to draw it to avoid the https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png["I'm glad we all agree"] problem that enviably arises if an abstract concept is not concretely defined by drawing it.
 
 
 [id="{ProjectNameID}-workflow-abstracted-high-level", reftext="{ProjectName} Abstracted Workflow - High Level"]
-== High Level
+== High Level Workflow
 
 A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-tool-abstracted-workflow-detailed>>. If something is needed that will fit on "one slide" this is it.
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
-image::{ProjectName}_Workflow_High_Level.png[alt="Ploigos ({ProjectName}) Workflow - High Level ",title="Ploigos ({ProjectName}) - High Level ",caption="Workflow Image: ",link=images/{ProjectName}_Workflow_High_Level.png]
-
-[id="{ProjectNameID}-workflow-abstracted-detailed", reftext="{ProjectName} Abstracted Workflow - Detailed"]
-== Detailed
-
-If there is one artifact that defines what the {ProjectName} is, this is it. This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the {ProjectName}.
-
-[id="{ProjectNameID}-workflow-abstracted-details-image", reftext="{ProjectName} Abstracted Workflow - Details Image"]
-image:{ProjectName}_Workflow_Details.png[alt="Ploigos ({ProjectName}) Workflow - Details",title="Ploigos ({ProjectName}) - Details",caption="Workflow Image: ",link=images/{ProjectName}_Workflow_Details.png]
-
-== Source
-
-While the rendered PNGs here are useful for starting the conversation and stating clearly the opinionated {ProjectName} workflow, it is recognized that every implementation of the {ProjectName} will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.
-
-To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MXGraph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
-
-* Ploigos Workflows
-** link:images/ploigos_cworkflows.drawio[Draw.io - Compressed XML]
-** link:images/ploigos_workflows.xml[MXGraph - XML]
-** Contains
-*** Ploigos ({ProjectName}) Workflow - High Level
-*** Ploigos ({ProjectName}) Workflow - Details - Tool Agnostic
-
-
+image::{ProjectName}_Workflow_High_Level.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level ",caption="Workflow Image: ",link=images/{ProjectName}_Workflow_High_Level.png]
 
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
 
 The {ProjectName} Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized. 
 
-== Predefined Processes
+=== High Level Workflow Steps
+
 Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 
 [cols="a,a,a",options="header"]
@@ -127,9 +105,19 @@ Each predefined process represents an encapsulation of steps that are typically 
 
 |===
 
+
+[id="{ProjectNameID}-workflow-abstracted-detailed", reftext="{ProjectName} Abstracted Workflow - Detailed"]
+
+== Detailed Workflow
+
+This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the {ProjectName}. If there is one artifact that defines what the {ProjectName} is, this is it. This workflow follows the High Level workflow above, but breaks down individual steps that represent discrete unites of work. 
+
+[id="{ProjectNameID}-workflow-abstracted-details-image", reftext="{ProjectName} Abstracted Workflow - Details Image"]
+image:{ProjectName}_Workflow_Details.png[alt="({ProjectName}) Workflow - Details",title="({ProjectName}) - Details",caption="Workflow Image:",link=images/{ProjectName}_Workflow_Details.png]
+
 [id="{ProjectNameID}-workflow-components-detailed-level-{context}"]
-== Steps
-The Predefined Processes are further broken down into discrete units of work.   
+
+=== Detailed Workflow Steps
 
 [cols="20a,50a,30a",options="header"]
 |===
@@ -183,7 +171,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Application Language Packaging Tool
 
 | Static Code Analysis
-| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
+| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programmatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
 |
 * Static Code Analysis Tool
 
@@ -260,7 +248,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * IDE & Container Platform
 
 | Live Development and Testing in MR#-DEV Environment
-| Code changes made inside the developer's IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should fascilitate iterating and deploying new versions of the code, as well as testing. 
+| Code changes made inside the developer's IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should facilitate iterating and deploying new versions of the code, as well as testing. 
 |
 * IDE & Container Platform
 
@@ -270,7 +258,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Peer Review
-| Collaborate with teamates on code change to ensure the quality and completeness of the solution.
+| Collaborate with teammates on code change to ensure the quality and completeness of the solution.
 |
 * Peer Review Tool
 
@@ -340,3 +328,17 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Discussion
 
 |===
+
+
+== Workflow Source Files
+
+While the rendered PNGs here are useful for starting the conversation and stating clearly the opinionated {ProjectName} workflow, it is recognized that every implementation of the {ProjectName} will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.
+
+To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MXGraph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
+
+* Ploigos Workflows
+** link:images/ploigos_workflows.drawio[Draw.io - Compressed XML]
+** link:images/ploigos_workflows.xml[MXGraph - XML]
+** Contains
+*** Ploigos ({ProjectName}) Workflow - High Level
+*** Ploigos ({ProjectName}) Workflow - Details - Tool Agnostic

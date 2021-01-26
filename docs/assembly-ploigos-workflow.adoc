@@ -10,14 +10,14 @@ include::vars/ploigos.adoc[]
 = {ProjectName} - Opinionated Workflow
 :context: assembly-{ProjectNameID}
 
-At its core the {ProjectName} is an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that opinionated workflow is.
+At its core the {ProjectName} defines an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that that opinionated workflow is.
 
-include::modules/con-ploigos-workflow-abstracted.adoc[leveloffset=+1]
-include::modules/ref-ploigos-workflow-tools.adoc[leveloffset=+1]
-include::modules/con-ploigos-workflow-infrastructure.adoc[leveloffset=+1]
-include::modules/proc-ploigos-workflow-reference-impl.adoc[leveloffset=+1]
-include::modules/proc-ploigos-workflow-reference-ops.adoc[leveloffset=+1]
-include::modules/ref-ploigos-workflow-terms.adoc[leveloffset=+1]
+include::modules/workflow/con-ploigos-workflow-abstracted.adoc[]
+include::modules/workflow/ref-ploigos-workflow-tools.adoc[leveloffset=+1]
+include::modules/workflow/con-ploigos-workflow-infrastructure.adoc[leveloffset=+1]
+include::modules/workflow/proc-ploigos-workflow-reference-impl.adoc[leveloffset=+1]
+include::modules/workflow/proc-ploigos-workflow-reference-ops.adoc[leveloffset=+1]
+include::modules/workflow/ref-ploigos-workflow-terms.adoc[leveloffset=+1]
 
 
 // reload parent variables

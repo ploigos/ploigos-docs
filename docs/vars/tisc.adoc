@@ -1,4 +1,0 @@
-:ProjectName: Trusted{nbsp}Infrastructure{nbsp}Supply{nbsp}Chain
-:ProjectShortName: TISC
-:ProjectNameID: tisc
-:ProjectVersion: 1.0
