@@ -10,11 +10,11 @@ include::vars/ploigos.adoc[]
 = {ProjectName} - Deploy using existing infrastructure
 :context: assembly-{ProjectNameID}
 
-include::modules/con-ploigos-deploy-changes.adoc[leveloffset=+1]
-include::modules/proc-ploigos-deploy-opinions.adoc[leveloffset=+1]
-include::modules/proc-ploigos-deploy-toolselection.adoc[leveloffset=+1]
-include::modules/ref-ploigos-deploy-predefined.adoc[leveloffset=+1]
-include::modules/ref-ploigos-deploy-workflowsteps.adoc[leveloffset=+1]
+include::modules/deploy/con-ploigos-deploy-changes.adoc[leveloffset=+1]
+include::modules/deploy/proc-ploigos-deploy-opinions.adoc[leveloffset=+1]
+include::modules/deploy/proc-ploigos-deploy-toolselection.adoc[leveloffset=+1]
+include::modules/deploy/ref-ploigos-deploy-predefined.adoc[leveloffset=+1]
+include::modules/deploy/ref-ploigos-deploy-workflowsteps.adoc[leveloffset=+1]
 
 // reload parent variables
 ifdef::parent-context[:context: {parent-context}]

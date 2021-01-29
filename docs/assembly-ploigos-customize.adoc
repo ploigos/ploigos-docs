@@ -10,11 +10,11 @@ include::vars/ploigos.adoc[]
 = {ProjectName} - Customize Workflow
 :context: assembly-{ProjectNameID}
 
-include::modules/con-ploigos-customize-opinions-establish.adoc[leveloffset=+1]
-include::modules/proc-ploigos-customize-opinions-formation.adoc[leveloffset=+1]
-include::modules/proc-ploigos-customize-workflow.adoc[leveloffset=+1]
-include::modules/proc-ploigos-customize-steprunner.adoc[leveloffset=+1]
-include::modules/proc-ploigos-customize-container.adoc[leveloffset=+1]
+include::modules/customize/con-ploigos-customize-opinions-establish.adoc[leveloffset=+1]
+include::modules/customize/proc-ploigos-customize-opinions-formation.adoc[leveloffset=+1]
+include::modules/customize/proc-ploigos-customize-workflow.adoc[leveloffset=+1]
+include::modules/customize/proc-ploigos-customize-steprunner.adoc[leveloffset=+1]
+include::modules/customize/proc-ploigos-customize-container.adoc[leveloffset=+1]
 
 
 // reload parent variables

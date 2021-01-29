@@ -4,9 +4,9 @@ When discussing methods for getting ideas from peoples' heads to production, gro
 
 
 [id="{ProjectNameID}-workflow-abstracted-high-level", reftext="{ProjectName} Abstracted Workflow - High Level"]
-== High Level Workflow
+= High Level Workflow
 
-A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-tool-abstracted-workflow-detailed>>. If something is needed that will fit on "one slide" this is it.
+A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. If something is needed that will fit on "one slide" this is it.
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
 image::{ProjectName}_Workflow_High_Level.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level ",caption="Workflow Image: ",link=images/{ProjectName}_Workflow_High_Level.png]
@@ -16,7 +16,7 @@ image::{ProjectName}_Workflow_High_Level.png[alt="({ProjectName}) Workflow - Hig
 
 The {ProjectName} Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized. 
 
-=== High Level Workflow Steps
+== High Level Workflow Steps
 
 Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 
@@ -108,7 +108,7 @@ Each predefined process represents an encapsulation of steps that are typically 
 
 [id="{ProjectNameID}-workflow-abstracted-detailed", reftext="{ProjectName} Abstracted Workflow - Detailed"]
 
-== Detailed Workflow
+= Detailed Workflow
 
 This is the detailed opinionated workflow for delivering "ideas to production" as defined by and implemented by the {ProjectName}. If there is one artifact that defines what the {ProjectName} is, this is it. This workflow follows the High Level workflow above, but breaks down individual steps that represent discrete unites of work. 
 
@@ -117,7 +117,7 @@ image:{ProjectName}_Workflow_Details.png[alt="({ProjectName}) Workflow - Details
 
 [id="{ProjectNameID}-workflow-components-detailed-level-{context}"]
 
-=== Detailed Workflow Steps
+== Detailed Workflow Steps
 
 [cols="20a,50a,30a",options="header"]
 |===
@@ -330,7 +330,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 |===
 
 
-== Workflow Source Files
+= Workflow Source Files
 
 While the rendered PNGs here are useful for starting the conversation and stating clearly the opinionated {ProjectName} workflow, it is recognized that every implementation of the {ProjectName} will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.
 
@@ -338,7 +338,5 @@ To facilitate ease of adoption, consistency, re-use, and contribution back to th
 
 * Ploigos Workflows
 ** link:images/ploigos_workflows.drawio[Draw.io - Compressed XML]
-** link:images/ploigos_workflows.xml[MXGraph - XML]
-** Contains
-*** Ploigos ({ProjectName}) Workflow - High Level
-*** Ploigos ({ProjectName}) Workflow - Details - Tool Agnostic
+
+

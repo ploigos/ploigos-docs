@@ -10,8 +10,8 @@ include::vars/ploigos.adoc[]
 = {ProjectName} - Contributing
 :context: assembly-{ProjectNameID}
 
-include::modules/con-ploigos-contribute-guide.adoc[leveloffset=+1]
-include::modules/ref-ploigos-contribute-subprojects.adoc[leveloffset=+1]
+include::modules/contribute/con-ploigos-contribute-guide.adoc[leveloffset=+1]
+include::modules/contribute/ref-ploigos-contribute-subprojects.adoc[leveloffset=+1]
 
 
 // reload parent variables

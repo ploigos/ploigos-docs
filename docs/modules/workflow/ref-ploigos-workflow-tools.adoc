@@ -103,8 +103,8 @@ This section describes the components needed to implement {ProjectName} and thei
 2+| Component Implementers by Application Technology Stack
 
 |
-h| Maven Packged App
-h| NPM Packged App
+h| Maven Packaged App
+h| NPM Packaged App
 
 | Container Platform
 2+| Red Hat OpenShift Container Platform (OCP)
@@ -162,7 +162,7 @@ h| NPM Packged App
 | Kubernetes Resources Creation Tool
 2+| https://helm.sh[helm]
 
-| Continuous Deploym (CD) Tool
+| Continuous Deployment (CD) Tool
 2+| https://argoproj.github.io/argo-cd/[ArgoCD]
 
 | Validate Environment Configuration Tool

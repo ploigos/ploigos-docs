@@ -12,7 +12,7 @@ include::vars/ploigos.adoc[]
 
 At its core the {ProjectName} defines an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that that opinionated workflow is.
 
-include::modules/workflow/con-ploigos-workflow-abstracted.adoc[]
+include::modules/workflow/con-ploigos-workflow-abstracted.adoc[leveloffset=+1]
 include::modules/workflow/ref-ploigos-workflow-tools.adoc[leveloffset=+1]
 include::modules/workflow/con-ploigos-workflow-infrastructure.adoc[leveloffset=+1]
 include::modules/workflow/proc-ploigos-workflow-reference-impl.adoc[leveloffset=+1]
