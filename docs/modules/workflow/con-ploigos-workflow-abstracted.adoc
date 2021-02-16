@@ -171,7 +171,7 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Application Language Packaging Tool
 
 | Static Code Analysis
-| The pipeline will perform static analysis on source code to catch defects, vulnerabilities, programmatic and stylistic problems as early in the development lifecycle as possible, prior to deploying and running the code.
+| The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.
 |
 * Static Code Analysis Tool
 
@@ -278,52 +278,52 @@ Detect new, changed, or merged,  Merge Request to Release Branch
 * Source Control Tool
 
 | Deploy or Update TEST Environment
-| #TODO - purpose#
+| Deploy image built from the latest release branch to the test environment.
 |
 * Continuous Deployment Tool
 
 | Validate Test Environment Configuration
-| #TODO - purpose#
+| Using predefined rules, validate the configuration files used to deploy the test environment
 |
 * Validate Environment Configuration Tool
 
 | Run Performance Tests (Full)
-| #TODO - purpose#
+| Execute tests to determine the speed, responsiveness and stability
 |
 * Performance Testing Tool
 
 | Create PROD Environment
-| #TODO - purpose#
+| Create PROD Environment as-needed
 |
 * Kubernetes Resources Creation Tool
 
 | Deploy or Update PROD Environment
-| #TODO - purpose#
+| Deploy tested code to shared prod environment with latest feature available to end users
 |
 * Continuous Deployment Tool
 
 | Validate Prod Environment Configuration
-| #TODO - purpose#
+| Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules
 |
 * Validate Environment Configuration Tool
 
 | Run Canary Testing
-| #TODO - purpose#
+| Allows you to roll out new code/features to a subset of end-users as an initial test.
 |
 * Canary Testing Tool
 
 | Collect, Bundle, & Publish Test Reports and Metadata
-| #TODO - purpose#
+| Provide central dashboard with published test results as an indicator of overall health of system
 |
 * CI Tool
 
 | Collect Lessons Learned
-| #TODO - purpose#
+| Collect, understand and act upon positive and negative lessons learned. 
 |
 * Discussion
 
 | Celebrate
-| #TODO - purpose#
+| Work hard - now play hard!  
 |
 * Discussion
 
