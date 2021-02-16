@@ -8,7 +8,7 @@ Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next tas
 
 This section describes the components needed to implement {ProjectName} and their purpose in doing so.
 
-.{ProjectName} Required Components Overview
+.Required Components Overview
 [cols="a,a",options="header"]
 |===
 | Component

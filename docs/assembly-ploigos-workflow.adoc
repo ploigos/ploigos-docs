@@ -7,7 +7,7 @@ ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 include::vars/ploigos.adoc[]
 
 [id="{ProjectNameID}"]
-= {ProjectName} - Opinionated Workflow
+= {ProjectName} - An Opinionated CI/CD Workflow
 :context: assembly-{ProjectNameID}
 
 At its core the {ProjectName} defines an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that that opinionated workflow is.

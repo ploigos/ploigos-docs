@@ -1,5 +1,5 @@
 [id="{ProjectNameID}-reference-impl", reftext="{ProjectName} Reference Implementation"]
 
-= {ProjectName}  - Reference Implementation
+= Reference Implementation
 
 TODO

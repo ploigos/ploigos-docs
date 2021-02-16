@@ -1,5 +1,5 @@
 [id="{ProjectNameID}-workflow-infrastructure", reftext="{ProjectName} Infrastructure Requirements"]
-= {ProjectName}  - Infrastructure Requirements 
+= Infrastructure Requirements 
 
 Reference information on the infrastructure used to develop and test the MVP of the <<{ProjectNameID}-workflow-assembly-{ProjectNameID}-workflow>>.
 

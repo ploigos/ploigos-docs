@@ -1,5 +1,5 @@
 [id="{ProjectNameID}-workflow-terms", reftext="{ProjectName} Terminology"]
-= {ProjectName} Terms and Definitions
+= Terms and Definitions
 
 TODO
 
