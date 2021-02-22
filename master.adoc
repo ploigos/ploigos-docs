@@ -11,7 +11,4 @@ include::docs/assembly-ploigos-contribute.adoc[leveloffset=+1]
 
 
 [appendix]
-include::docs/modules/ref-ploigos-workflow-examples.adoc[leveloffset=+1]
-
-[appendix]
-include::docs/common/ploigos-definitions.adoc[leveloffset=+1]
+include::docs/common/ploigos-terms-definitions.adoc[leveloffset=+1]

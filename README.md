@@ -12,6 +12,6 @@ The Workflow results are published in the `gh-pages` branch.
 This repository uses the [Modular Documentation Reference Guide](https://redhat-documentation.github.io/modular-docs/) for how to organize the documentation. For a great example repository to look at for reference if unsure how to organize any new documentation based on the Reference Guide check out https://github.com/EnMasseProject/enmasse/.
 
 ## Links
-* Published Documentation: [https://twling.github.io/ploigos-docs/](https://twling.github.io/ploigos-docs/)
+* Published Documentation: [https://ploigos.github.io/ploigos-docs/](https://ploigos.github.io/ploigos-docs/)
 * Raw Documentation: [master.adoc](master.adoc)
 
