@@ -129,8 +129,7 @@ h| NPM Packaged App
 
 | Continuous Integration (CI) Tool
 2+|
-* Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
-* Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
+* Jenkins (https://github.com/ploigos/ploigos-jenkins-library[pipelines])
 
 | Static Code Analysis Tool
 2+| https://www.sonarqube.org/[SonarQube]

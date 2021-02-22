@@ -1,6 +1,37 @@
 [id="{ProjectNameID}-contribute-guide", reftext="{ProjectName} Contribution Guide"]
 
 
-= {ProjectName}  - Contribution Guide
+= Contribution Guide
 
-TODO
+This document implements the Red Hat Modular Documentation system. Full details of this documentation style can be found https://redhat-documentation.github.io/modular-docs/[HERE]. In addition, the chosen format for all documentation within this repository is Asciidoc. An Asciidoc quick reference can be found https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference[HERE]
+
+In summary, this modular documentation is based around the concept of dividing documentation content around user stories. Once the user stories are identified, each story is then developed into an *Assembly*. Each *Assembly* is made up of one or more of the 3 *Module* types:
+
+* Concept Modules - Documentation sections for descriptions and explanations
+* Procedure Modules - Documentation in the form of procedures or step-by-step instructions
+* Reference Modules - Lists, tables, definitions and other information that users would need to reference
+
+== Adding to the Documentation
+
+. Fork the documentation repository
+** Once the repository is forked, ensure GitHub actions is enabled for the repository to build and publish the documentation.
+
+. Perform edits to the documentation
+** Follow the guidelines established by the Modular Documentation system
+*** Refine existing user stories - modify existing documentation assemblies
+*** Establish new user stories - add additional assemblies into the documentation
+
+. Review Changes in GitHub Pages
+
+. Submitting a pull request to the repository
+
+
+== Building the Documentation
+
+This document repository is designed to use GitHub Actions to automatically generate a static HTML site using a container image with asciidoctor tools. The generated HTML is pushed back into the repository under the 'gh-pages' branch. Finally, The 'gh-pages' branch is published to GitHub Pages using a 3rd party GitHub Action https://github.com/JamesIves/github-pages-deploy-action[HERE].
+
+NOTE: The build action will only kick off on a push to the 'main' branch.
+
+
+
+

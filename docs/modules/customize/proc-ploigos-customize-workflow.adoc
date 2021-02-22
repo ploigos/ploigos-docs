@@ -1,6 +1,6 @@
 [id="{ProjectNameID}-customize-workflow", reftext="{ProjectName} Process for changing the workflow"]
 
 
-= {ProjectName}  - Process for changing the workflow
+= Process for changing the workflow
 
 TODO

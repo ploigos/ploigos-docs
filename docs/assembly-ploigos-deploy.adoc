@@ -7,7 +7,7 @@ ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 include::vars/ploigos.adoc[]
 
 [id="{ProjectNameID}"]
-= {ProjectName} - Deploy using existing infrastructure
+= Deploy using existing infrastructure
 :context: assembly-{ProjectNameID}
 
 include::modules/deploy/con-ploigos-deploy-changes.adoc[leveloffset=+1]

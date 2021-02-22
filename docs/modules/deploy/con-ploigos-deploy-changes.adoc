@@ -1,6 +1,6 @@
 [id="{ProjectNameID}-deploy-changes", reftext="{ProjectName} Changing the default workflow"]
 
 
-= {ProjectName}  - Changing the default workflow
+= Changing the default workflow
 
 TODO

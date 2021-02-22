@@ -7,7 +7,7 @@ ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 include::vars/ploigos.adoc[]
 
 [id="{ProjectNameID}"]
-= {ProjectName} - Customize Workflow
+= Customize Workflow
 :context: assembly-{ProjectNameID}
 
 include::modules/customize/con-ploigos-customize-opinions-establish.adoc[leveloffset=+1]

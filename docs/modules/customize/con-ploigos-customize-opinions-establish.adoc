@@ -1,5 +1,5 @@
 [id="{ProjectNameID}-opinions-establish", reftext="{ProjectName} Establish Opinions for the workflow"]
-= {ProjectName} Opinions
+= Opinions
 
 The {ProjectName} is an opinionated software development and deployment workflow. The key being, opinionated. Which means it is filled with opinions, some direct, some less so. This document is meant to capture all of those opinions which feed into the design and implementation of the {ProjectShortName}.
 
@@ -24,7 +24,7 @@ The {ProjectName} is an opinionated software development and deployment workflow
 
 
 
-= {ProjectName}  - Process for establishing workflow opinions
+= Process for establishing workflow opinions
 
 
 [NOTE]

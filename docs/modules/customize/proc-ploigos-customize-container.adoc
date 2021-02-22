@@ -1,6 +1,6 @@
 [id="{ProjectNameID}-customize-container", reftext="{ProjectName} Process for adding or changing a container image"]
 
 
-= {ProjectName}  - Process for adding or changing a container image
+= Process for adding or changing a container image
 
 TODO

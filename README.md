@@ -15,8 +15,3 @@ This repository uses the [Modular Documentation Reference Guide](https://redhat-
 * Published Documentation: [https://twling.github.io/ploigos-docs/](https://twling.github.io/ploigos-docs/)
 * Raw Documentation: [master.adoc](master.adoc)
 
-
-## Contributing
-
-TODO - Set standards for how to fork this repo, build resulting documentation, and contributing
-
