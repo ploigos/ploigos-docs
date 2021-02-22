@@ -1,19 +1,14 @@
 include::attributes.adoc[]
-include::docs/vars/tsc.adoc[]
+include::docs/vars/ploigos.adoc[]
 
-= Documentation for {ProjectName} ({ProjectShortName})
+= Documentation for {ProjectName}
 :context: {ProjectNameID}
 
-Welcome to the documentation for the {ProjectName} ({ProjectShortName}).
+include::docs/assembly-ploigos-workflow.adoc[leveloffset=+1]
+include::docs/assembly-ploigos-deploy.adoc[leveloffset=+1]
+include::docs/assembly-ploigos-customize.adoc[leveloffset=+1]
+include::docs/assembly-ploigos-contribute.adoc[leveloffset=+1]
 
-include::docs/assembly-tssc.adoc[leveloffset=+1]
-
-include::docs/assembly-tisc.adoc[leveloffset=+1]
-
-include::docs/assembly-si.adoc[leveloffset=+1]
 
 [appendix]
-include::docs/modules/ref-tssc-workflow-examples.adoc[leveloffset=+1]
-
-[appendix]
-include::docs/common/tssc-terms-definitions.adoc[leveloffset=+1]
+include::docs/common/ploigos-terms-definitions.adoc[leveloffset=+1]

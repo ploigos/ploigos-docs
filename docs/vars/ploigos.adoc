@@ -1,0 +1,3 @@
+:ProjectName: Ploigos
+:ProjectNameID: ploigos
+:ProjectVersion: 0.16.0

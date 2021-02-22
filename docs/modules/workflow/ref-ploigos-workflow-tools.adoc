@@ -1,14 +1,14 @@
-[id="{ProjectNameID}-workflow-tools-{context}"]
-= {ProjectShortName} Workflow Tools
+[id="{ProjectNameID}-workflow-tools", reftext="{ProjectName} Tools"]
+= {ProjectName} Workflow Tools
 
 Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fulfill the required components needs.
 
 [id="{ProjectNameID}-workflow-tool-purposes-{context}"]
 == Tool Categories and Purposes
 
-This section describes the components needed to implement the steps of the {ProjectShortName} and their purpose in doing so.
+This section describes the components needed to implement the steps of the {ProjectName} and their purpose in doing so.
 
-.{ProjectShortName} Required Components Overview
+.Required Components Overview
 [cols="a,a",options="header"]
 |===
 | Component
@@ -96,7 +96,7 @@ This section describes the components needed to implement the steps of the {Proj
 
 #TODO#
 
-.{ProjectShortName} Component Implementers
+.{ProjectName} Component Implementers
 [cols="a,a,a",options="header"]
 |===
 | Component
@@ -129,8 +129,7 @@ h| NPM Packaged App
 
 | Continuous Integration (CI) Tool
 2+|
-* Jenkins (https://github.com/rhtconsulting/tssc-jenkins[pipelines])
-* Tekton (https://github.com/rhtconsulting/tssc-tekton[pipelines])
+* Jenkins (https://github.com/ploigos/ploigos-jenkins-library[pipelines])
 
 | Static Code Analysis Tool
 2+| https://www.sonarqube.org/[SonarQube]

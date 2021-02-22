@@ -1,27 +1,26 @@
 // save parent variables
 ifdef::context[:parent-context: {context}]
 ifdef::ProjectName[:parent-ProjectName: {ProjectName}]
-ifdef::ProjectShortName[:parent-ProjectShortName: {ProjectShortName}]
 ifdef::ProjectNameID[:parent-ProjectNameID: {ProjectNameID}]
 ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 
-include::vars/si.adoc[]
+include::vars/ploigos.adoc[]
 
 [id="{ProjectNameID}"]
-= {ProjectName} ({ProjectShortName})
+= Deploy using existing infrastructure
 :context: assembly-{ProjectNameID}
 
-Information about the MVP for {ProjectName} ({ProjectShortName}).
-
-include::assembly-si-architecture.adoc[leveloffset=+1]
+include::modules/deploy/con-ploigos-deploy-changes.adoc[leveloffset=+1]
+include::modules/deploy/proc-ploigos-deploy-opinions.adoc[leveloffset=+1]
+include::modules/deploy/proc-ploigos-deploy-toolselection.adoc[leveloffset=+1]
+include::modules/deploy/ref-ploigos-deploy-predefined.adoc[leveloffset=+1]
+include::modules/deploy/ref-ploigos-deploy-workflowsteps.adoc[leveloffset=+1]
 
 // reload parent variables
 ifdef::parent-context[:context: {parent-context}]
 ifndef::parent-context[:!context:]
 ifdef::parent-ProjectName[:ProjectName: {parent-ProjectName}]
 ifndef::parent-ProjectName[:!ProjectName:]
-ifdef::parent-ProjectShortName[:ProjectShortName: {parent-ProjectShortName}]
-ifndef::parent-ProjectShortName[:!ProjectShortName:]
 ifdef::parent-ProjectNameID[:ProjectNameID: {parent-ProjectNameID}]
 ifndef::parent-ProjectNameID[:!ProjectNameID:]
 ifdef::parent-ProjectVersion[:ProjectVersion: {parent-ProjectVersion}]

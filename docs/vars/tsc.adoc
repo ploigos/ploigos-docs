@@ -1,4 +1,0 @@
-:ProjectName: Trusted{nbsp}Supply{nbsp}Chain
-:ProjectShortName: TSC
-:ProjectNameID: tsc
-:ProjectVersion: 1.0

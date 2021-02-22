@@ -1,0 +1,31 @@
+// save parent variables
+ifdef::context[:parent-context: {context}]
+ifdef::ProjectName[:parent-ProjectName: {ProjectName}]
+ifdef::ProjectNameID[:parent-ProjectNameID: {ProjectNameID}]
+ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
+
+include::vars/ploigos.adoc[]
+
+[id="{ProjectNameID}"]
+= {ProjectName} - An Opinionated CI/CD Workflow
+:context: assembly-{ProjectNameID}
+
+At its core the {ProjectName} defines an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that that opinionated workflow is.
+
+include::modules/workflow/con-ploigos-workflow-abstracted.adoc[leveloffset=+1]
+include::modules/workflow/ref-ploigos-workflow-tools.adoc[leveloffset=+1]
+include::modules/workflow/con-ploigos-workflow-infrastructure.adoc[leveloffset=+1]
+include::modules/workflow/proc-ploigos-workflow-reference-impl.adoc[leveloffset=+1]
+include::modules/workflow/proc-ploigos-workflow-reference-ops.adoc[leveloffset=+1]
+include::modules/workflow/ref-ploigos-workflow-terms.adoc[leveloffset=+1]
+
+
+// reload parent variables
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]
+ifdef::parent-ProjectName[:ProjectName: {parent-ProjectName}]
+ifndef::parent-ProjectName[:!ProjectName:]
+ifdef::parent-ProjectNameID[:ProjectNameID: {parent-ProjectNameID}]
+ifndef::parent-ProjectNameID[:!ProjectNameID:]
+ifdef::parent-ProjectVersion[:ProjectVersion: {parent-ProjectVersion}]
+ifndef::parent-ProjectVersion[:!ProjectVersion:]

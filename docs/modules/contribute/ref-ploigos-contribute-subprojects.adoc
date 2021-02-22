@@ -1,0 +1,23 @@
+[id="{ProjectNameID}-contribute-subprojects", reftext="{ProjectName} Reference list of Ploigos Subprojects"]
+
+
+= Reference list of subprojects
+
+* https://github.com/ploigos/ploigos-step-runner[ploigos-step-runner] +
+Python library that for the ploigos 'step-runner'. The step runner abstracts execution of each step in the defined pipeline by utilizing step implementers for defining the operation of specific tools
+
+* https://github.com/ploigos/ploigos-software-factory-operator[ploigos-software-factory-operator] +
+Kubernetes/OCP operator for deploying the Ploigos platform (opinionated CI/CD pipeline)
+
+* https://github.com/ploigos/ploigos-containers[ploigos-containers] +
+Repository for build files (podman) to build containers for ploigos, published to quay.io/ploigos
+
+* https://github.com/ploigos/ploigos-charts[ploigos-charts] +
+Helm Charts for deploying Ploigos components to a kubernetes cluster
+
+* https://github.com/ploigos/ploigos-roadmap[ploigos-roadmap]
+
+* https://github.com/ploigos/ploigos-jenkins-library[ploigos-jenkins-library] +
+Library for Jenkins that defines domain specific language for the implementation of the Ploigos workflow
+
+* https://github.com/ploigos/ploigos-example-oscap-content[ploigos-example-oscap-content]
