@@ -6,7 +6,7 @@ When discussing methods for getting ideas from peoples' heads to production, gro
 [id="{ProjectNameID}-workflow-abstracted-high-level", reftext="{ProjectName} Abstracted Workflow - High Level"]
 = Idea Delivery Workflow
 
-A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. If something is needed that will fit on "one slide" this is it.
+A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. This is a "one slide" view of the workflow.
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
 image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level ",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png]
