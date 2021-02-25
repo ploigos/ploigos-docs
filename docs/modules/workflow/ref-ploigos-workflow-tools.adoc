@@ -119,7 +119,7 @@ h| NPM Packaged App
 2+| Red Hat OpenShift Container Platform (OCP) with LDAP Group Sync from Red Hat Identity Manager (IdM)
 
 | Artifact Repository
-2+| https://jfrog.com/open-source/[JFrog Artifactory]
+2+| https://www.sonatype.com/nexus/repository-oss-download[Sonatype Nexus OSS]
 
 | Image Registry
 2+| Red Hat Quay (+ Clair)
