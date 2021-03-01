@@ -1,5 +1,13 @@
 [id="{ProjectNameID}-workflow-abstracted", reftext="{ProjectName} Abstracted Workflow"]
 
+= Abstract
+
+_What is Ploigos?_
+
+Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the abstract process and the implemented CI/CD pipeline. The abstract process is about creating a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without 
+
+
+
 When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the {ProjectName} opinionated workflow in an abstract form, without any specific technologies or tools. This can be used as a primer for a team to first discuss and decide on their own specific {ProjectName} workflow, and then use the provided templates to draw it to avoid the https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png["I'm glad we all agree"] problem that enviably arises if an abstract concept is not concretely defined by drawing it.
 
 
