@@ -1,30 +1,33 @@
-[id="{ProjectNameID}-workflow-abstracted", reftext="{ProjectName} Abstracted Workflow"]
-
-= Abstract
+[id="{ProjectNameID}-workflow-overview", reftext="{ProjectName} Overview"]
+= Overview
 
 _What is Ploigos?_
 
-Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the abstract process and the implemented CI/CD pipeline. The abstract process is about creating a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without 
+Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow. 
+
+The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. 
 
 
+The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more 'Steps' in the CD/CD workflow, and automating the *Step* by creating a *StepImplementer*. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.
 
-When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the {ProjectName} opinionated workflow in an abstract form, without any specific technologies or tools. This can be used as a primer for a team to first discuss and decide on their own specific {ProjectName} workflow, and then use the provided templates to draw it to avoid the https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png["I'm glad we all agree"] problem that enviably arises if an abstract concept is not concretely defined by drawing it.
 
+[id="{ProjectNameID}-workflow-idea-delivery-high-level", reftext="{ProjectName} Idea Delivery Workflow - High Level"]
+= Idea Delivery Workflow
 
-[id="{ProjectNameID}-workflow-abstracted-high-level", reftext="{ProjectName} Abstracted Workflow - High Level"]
-= Ideation Delivery Workflow
-
-A high level rendering of the {ProjectName} workflow where the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. If something is needed that will fit on "one slide" this is it.
+In this high level rendering of the {ProjectName} workflow, the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. This is a "one slide" view of the workflow.
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
-image::ploigos_workflows-Ploigos_Ideation_Delivery_Workflow-vertical.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level ",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Ideation_Delivery_Workflow-vertical.png]
+
+image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[]
+
+[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png]
 
 
 [id="{ProjectNameID}-workflow-components-high-level-{context}"]
 
 The {ProjectName} Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized. 
 
-== Ideation Workflow Steps
+== Idea Delivery Workflow Steps
 
 Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 

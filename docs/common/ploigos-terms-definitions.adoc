@@ -1,8 +1,10 @@
 [id="ploigos-terms-definitions-{context}"]
 = {ProjectName} Terms and Definitions
 
-Workflow:: A {ProjectName} procedure as represented by a drawing.
+{ProjectShortName}:: {ProjectName}
 
-Workflow Abstraction:: A {ProjectName} Workflow as represented by a drawing with no specified tooling to implement that steps of the workflow.
+Workflow:: A {ProjectShortName} procedure as represented by a drawing.
 
-Workflow Implementation:: An implementation of a {ProjectName} Workflow Abstraction with specific tooling.
+Workflow Abstraction:: A {ProjectShortName} Workflow as represented by a drawing with no specified tooling to implement that steps of the workflow.
+
+Workflow Implimentaiton:: An implimentation of a {ProjectShortName} Workflow Abstraction with specific tooling.

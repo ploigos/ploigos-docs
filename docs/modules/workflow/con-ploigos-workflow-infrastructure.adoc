@@ -17,10 +17,10 @@ Reference information on the infrastructure used to develop and test the MVP of 
 | 2
 | WAG (https://access.redhat.com/solutions/3217681[Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO]
 
-| JFrog Artifactory OSS
-| 4
-| 4
-| https://www.jfrog.com/confluence/display/JFROG/System+Requirements#SystemRequirements-RecommendedHardware[JFrog Artifactory Docs - Recommended Hardware]
+| Sonatype Nexus Repository Manager 3 OSS
+| 8
+| 16-32+
+| https://help.sonatype.com/repomanager3/installation/system-requirements[Sonatype Nexus Repository Manager 3 OSS - System Requirments]
 
 | JFrog Artifactory OSS - DB (PostgreSQL)
 | 2

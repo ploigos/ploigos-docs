@@ -6,7 +6,7 @@ ifdef::ProjectVersion[:parent-ProjectVersion: {ProjectVersion}]
 
 include::vars/ploigos.adoc[]
 
-[id="{ProjectNameID}"]
+[id="{ProjectNameID}-contribute"]
 = Contributing
 :context: assembly-{ProjectNameID}
 
