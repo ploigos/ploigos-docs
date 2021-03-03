@@ -5,52 +5,42 @@ _What is Ploigos?_
 
 Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow. 
 
-The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. 
+The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. A workflow first approach identifies the organizational behaviors and expected outcomes to define what quality is.  The workflow codifies and enforces these to ensure all aspects of security, compliance, trust, and privacy are addressed.
 
-
-The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more 'Steps' in the CD/CD workflow, and automating the *Step* by creating a *StepImplementer*. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.
+The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more '*Steps*' in the CD/CD workflow, and automating the *Step* by creating a *StepImplementer*. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.
 
 
 [id="{ProjectNameID}-workflow-idea-delivery-high-level", reftext="{ProjectName} Idea Delivery Workflow - High Level"]
 = Idea Delivery Workflow
 
-In this high level rendering of the {ProjectName} workflow, the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <<{ProjectNameID}-workflow-abstracted-detailed>>. This is a "one slide" view of the workflow.
+Ploigos defines a reference high level workflow that covers the process of taking the genesis of an idea, idea development, integration, and review. In this high level rendering of the {ProjectName} workflow, the majority of steps are _Predefined Procedures_. These procedures are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in later sections. This simplification allows for a 'one slide' view of the workflow.
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
 
-image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[]
-
-[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png]
+image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png]
 
 
-[id="{ProjectNameID}-workflow-components-high-level-{context}"]
-
-The {ProjectName} Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized. 
-
+[id="{ProjectNameID}-workflow-idea-steps-{context}"]
 == Idea Delivery Workflow Steps
 
 Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 
-[cols="a,a,a",options="header"]
+[width="80%",cols="a,a,a",options="header"]
 |===
 | Predefined Process
-| Purpose
-| <<{ProjectNameID}-workflow-components-detailed-level-{context}, Components / Steps>>
+| Details
 
 | Prioritize Ideas
-| Move idea from person's head into a work management tool to track item through to completion. 
-| Steps vary based on team's backlog prioritization and work planning process 
+| New ideas are placed in a work management tool, refined, and prioritized. The work management tool allows for organization and tracking of ideas as they move through the workflow. Steps will vary based on existing organizational structure and specific tool chosen, but basic requirements involve being able to: record new ideas, backlog management, assign ideas to developers, and track progress and status.
 
 | Development
-| Lay foundation for isolated development environment for developer to begin coding 
-| 
+| Lay foundation for isolated development environment for developer to begin coding  
 * <<detailed-component-fork-repository>>
 * <<detailed-component-create-idea-branch>>
 * <<detailed-component-create-wip-merge-request>>
 
 | Create or update Merge Request to Release Branch
 | Deployment of build artifacts into a temporary development environment that will occur when a merge request is created (from a feature branch to the primary release branch), and for any subsequent changes to the merging feature branch   
-|
 * Deploy or Update MR#-DEV Environment
 * Validate MR#-DEV Environment Configuration
 * Run User Acceptance Tests (UAT)
@@ -60,12 +50,10 @@ Each predefined process represents an encapsulation of steps that are typically 
 
 | Detect Change
 | Allows pipeline to detect and respond to a defined set of changes in source code repository   
-|
 * <<detailed-component-detect-changed-merge-request>>
 
 | CI/CD
 | Build artifacts are created and tested automatically on a continual basis . Provide developer with ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.   
-|
 * Generate Metadata
 * Tag Source Code with Metadata
 * Run Unit Tests
@@ -87,22 +75,21 @@ Each predefined process represents an encapsulation of steps that are typically 
 * Validate PROD Environment Configuration
 * Run Canary Testing
 
+| Retrospective
+|
 
 | Peer Review
 | To collaborate with others in the process of reviewing code in order to make sure it works, and in order to improve it where possible
-|
 * Mark Merge Request as Work In Progress (WIP)
 * Peer Review
 * Merge to Release Branch
 * Delete MR#-DEV Deployment Environment
 
-| Retrospective
-|
-|
+
 
 | Release
 |
-|
+
 
 |===
 
