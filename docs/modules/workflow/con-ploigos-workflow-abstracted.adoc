@@ -25,7 +25,7 @@ image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[alt="({Proj
 
 Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
 
-[width="80%",cols="a,a,a",options="header"]
+[width="80%",cols="a,a",options="header"]
 |===
 | Predefined Process
 | Details
