@@ -1,7 +1,61 @@
 [id="{ProjectNameID}-workflow-infrastructure", reftext="{ProjectName} Infrastructure Requirements"]
 = Infrastructure Requirements 
 
-Reference information on the infrastructure used to develop and test the MVP of the <<{ProjectNameID}-workflow-assembly-{ProjectNameID}-workflow>>.
+Below is the infrastructure used to develop and test the Minimum Viable Product(MVP) of the Ploigos CI/CD Workflow Reference Implementation. The most basic requirement for the deployment of the Ploigos CI/CD Workflow is an operational OCP 4.x cluster. 
+
+.Red Hat OpenShift Sizing
+[cols="a,a,a,a,a,a",options="header"]
+|===
+| Node
+| CPUs
+| Memory (GB)
+| Disk (GB)
+| AWS EC2 Instance Type
+| Sizing Source
+
+| Master 0
+| 8
+| 32
+| 120
+| m4.2xlarge
+| https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Master 1
+| 8
+| 32
+| 120
+| m4.2xlarge
+| https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Master 2
+| 8
+| 32
+| 120
+| m4.2xlarge
+| https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
+
+| Compute 0
+| 8
+| 32
+| 120
+| m4.2xlarge
+| Based on Containerized Tool Sizing needs
+
+| Compute 1
+| 8
+| 32
+| 120
+| m4.2xlarge
+| Based on Containerized Tool Sizing needs
+
+| Compute 2
+| 8
+| 32
+| 120
+| m4.2xlarge
+| Based on Containerized Tool Sizing needs
+|===
+
 
 == Suggested Sizing
 .Containerized Tool Sizing
@@ -77,57 +131,4 @@ https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat
 | N/A (embedded in CI container)
 | N/A (embedded in CI container)
 |
-|===
-
-.Red Hat OpenShift Sizing
-[cols="a,a,a,a,a,a",options="header"]
-|===
-| Node
-| CPUs
-| Memory (GB)
-| Disk (GB)
-| AWS EC2 Instance Type
-| Sizing Source
-
-| Master 0
-| 8
-| 32
-| 120
-| m4.2xlarge
-| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
-
-| Master 1
-| 8
-| 32
-| 120
-| m4.2xlarge
-| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
-
-| Master 2
-| 8
-| 32
-| 120
-| m4.2xlarge
-| https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_[OCP 4 Docs - Master Node Sizing]
-
-| Compute 0
-| 8
-| 32
-| 120
-| m4.2xlarge
-| Based on Containerized Tool Sizing needs
-
-| Compute 1
-| 8
-| 32
-| 120
-| m4.2xlarge
-| Based on Containerized Tool Sizing needs
-
-| Compute 2
-| 8
-| 32
-| 120
-| m4.2xlarge
-| Based on Containerized Tool Sizing needs
 |===

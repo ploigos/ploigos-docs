@@ -2,4 +2,71 @@
 
 = Reference Implementation
 
-TODO
+== Prerequisites
+
+* Operational OCP 4.x cluster
+
+
+== Installing the Ploigos Software Factory Operator
+
+See https://github.com/ploigos/ploigos-software-factory-operator[ploigos-software-factory-operator] for latest information.
+
+
+. Login to an OCP cluster as `cluster-admin`
+. Import the RedHatGov Operator Catalog (Create a custom `CatalogSource`)
++
+----
+oc apply -f - << EOF
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: redhatgov-operators
+  namespace: openshift-marketplace
+spec:
+  sourceType: grpc
+  image: quay.io/redhatgov/operator-catalog:latest
+  displayName: Red Hat NAPS Community Operators
+  publisher: RedHatGov
+EOF
+----
++
+. Create a project named *devsecops* for the pipeline tooling+
++
+----
+oc new-project devsecops
+----
++
+. (Optional) Remove too-restrictive limit ranges *NOTE: Required for RHPDS clusters*
++
+----
+oc delete limitrange --all -n devsecops
+----
++
+. Install the 'Ploigos Software Factory Operator'
+* In the OCP Web Console, navigate to:
+** *Operators -> OperatorHub*
+** Search for "Ploigos Software Factor Operator"
+** Select Operator and click *Install*
+
+== Deploy the Ploigos Platform and Pipeline
+
+. In the OCP WebUI, Select the *devsecops* namespace
+. Deploy the Ploigos Platform
+* Navigate to *Installed Operators -> Ploigos Software Factory*
+* Inside the software factory operator screen, click *[+ TSSCPlatform]*
+* Wait for the deployment to finish
+** Navigate to the _tssc-operator-controller-manager_ pod and watch the logs for the "PLAY RECAP " line
+. Deploy the Ploigos Pipeline
+* Navigate to *Installed Operators -> Ploigos Software Factory*
+* Inside the software factory operator screen, click *[+ TSSCPipeline]*
+. Access the deployed Jenkins pod to watch progress
+* Navigate to *Routes -> Jenkins* and click the Jenkins Route
+* Login to Jenkins with Openshift Credentials
+* Navigate to *platform -> reference-quarkus-mvn_jekins_workflow-standard -> main*
+* Click "Open Blue Ocean" (Vertical menu on left side)
+* Watch the pipeline progress and wait for 100%
+
+== Add SSH Key to Gitea
+
+. Obtain the Gitea credentials
+* In the *devsecops* namespace, navigate to *Secrets*
