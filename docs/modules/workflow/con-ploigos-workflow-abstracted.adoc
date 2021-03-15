@@ -68,14 +68,23 @@ image::ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png[
 
 Setup::
 
+Initial setup of the CI/CD pipeline. This step includes deployment and configuration of a pipeline using Ploigos
+
 Continuous Integration::
+
+Development work that happens on the deployed CI/CD pipeline
 
 Continuous Deployment - DEV::
 
+Deployment of the application into a development environment for the developer to review
+
 Continuous Deployment - TEST::
+
+Deployment of the application into the testing environment for functionality, performance, and acceptance testing.
 
 Continuous Deployment - PROD::
 
+Deployment of the application into the production environment.
 
 = Minimum Workflow
 
@@ -120,15 +129,23 @@ Continuous Integration::
  
 Continuous Deployment - DEV (Feature Branch)::
  - Deploy or Update to dev environment
+
+ Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.
  
 Continuous Deployment - TEST (Release Branch)::
  - Deploy or Update to test environment
 
+ Deploy image built from the latest release branch to the test environment.
+
 Continuous Deployment - PROD (Release Branch)::
  - Deploy or Update to production environment
  
+ Deploy tested code to shared prod environment with latest feature available to end users
+
 Report::
  - Generate and publish workflow report
+
+ Provide central dashboard with published test results as an indicator of overall health of system
 
 = Standard Workflow
 
