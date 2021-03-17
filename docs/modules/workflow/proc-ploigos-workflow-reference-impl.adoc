@@ -39,7 +39,7 @@ EOF
 oc new-project devsecops
 ----
 +
-. (Optional) Remove too-restrictive limit ranges *NOTE: Required for RHPDS clusters*
+. Remove restrictive limit ranges *NOTE: Required for RHPDS clusters*
 +
 ----
 oc delete limitrange --all -n devsecops
@@ -48,7 +48,7 @@ oc delete limitrange --all -n devsecops
 . Install the 'Ploigos Software Factory Operator'
 * In the OCP Web Console, navigate to:
 ** *Operators -> OperatorHub*
-** Search for "Ploigos Software Factor Operator"
+** Search for "Ploigos Software Factory Operator"
 ** Select Operator and click *Install*
 
 == Deploy the Ploigos Platform and Pipeline
