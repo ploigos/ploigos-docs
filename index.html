@@ -442,42 +442,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#ploigos">1. Ploigos - An Opinionated CI/CD Workflow</a>
+<li><a href="#ploigos-workflow">1. Ploigos - An Opinionated CI/CD Workflow</a>
 <ul class="sectlevel2">
-<li><a href="#ploigos-workflow-abstracted-high-level">1.1. Idea Delivery Workflow</a>
+<li><a href="#ploigos-workflow-overview">1.1. Overview</a></li>
+<li><a href="#ploigos-workflow-idea-delivery-high-level">1.2. Idea Delivery Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#_idea_delivery_workflow_steps">1.1.1. Idea Delivery Workflow Steps</a></li>
+<li><a href="#ploigos-workflow-idea-steps-assembly-ploigos">1.2.1. Idea Delivery Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#_cicd_process_workflow">1.2. CI/CD Process Workflow</a></li>
-<li><a href="#ploigos-workflow-components-processes-level-assembly-ploigos">1.3. Minimum Workflow</a>
+<li><a href="#_cicd_process_workflow">1.3. CI/CD Process Workflow</a></li>
+<li><a href="#_minimum_workflow">1.4. Minimum Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#_minimum_workflow_steps">1.3.1. Minimum Workflow Steps</a></li>
+<li><a href="#_minimum_workflow_steps">1.4.1. Minimum Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#_standard_workflow">1.4. Standard Workflow</a>
+<li><a href="#_standard_workflow">1.5. Standard Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#_standard_workflow_steps">1.4.1. Standard Workflow Steps</a></li>
+<li><a href="#_standard_workflow_steps">1.5.1. Standard Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#_workflow_source_files">1.5. Workflow Source Files</a></li>
-<li><a href="#ploigos-workflow-tools">1.6. Ploigos Workflow Tools</a>
+<li><a href="#_workflow_source_files">1.6. Workflow Source Files</a></li>
+<li><a href="#ploigos-workflow-tools">1.7. Ploigos Workflow Tools</a>
 <ul class="sectlevel3">
-<li><a href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.6.1. Tool Categories and Purposes</a></li>
-<li><a href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.6.2. Component Implementers</a></li>
+<li><a href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.7.1. Tool Categories and Purposes</a></li>
+<li><a href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.7.2. Component Implementers</a></li>
 </ul>
 </li>
-<li><a href="#ploigos-workflow-infrastructure">1.7. Infrastructure Requirements</a>
+<li><a href="#ploigos-workflow-infrastructure">1.8. Infrastructure Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_suggested_sizing">1.7.1. Suggested Sizing</a></li>
+<li><a href="#_suggested_sizing">1.8.1. Suggested Sizing</a></li>
 </ul>
 </li>
-<li><a href="#ploigos-reference-impl">1.8. Reference Implementation</a></li>
-<li><a href="#ploigos-workflow-reference-ops">1.9. Operating the Reference Implementation</a></li>
-<li><a href="#ploigos-workflow-terms">1.10. Terms and Definitions</a></li>
+<li><a href="#ploigos-reference-impl">1.9. Reference Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisites">1.9.1. Prerequisites</a></li>
+<li><a href="#_installing_the_ploigos_software_factory_operator">1.9.2. Installing the Ploigos Software Factory Operator</a></li>
+<li><a href="#_deploy_the_ploigos_platform_and_pipeline">1.9.3. Deploy the Ploigos Platform and Pipeline</a></li>
+<li><a href="#_add_ssh_key_to_gitea">1.9.4. Add SSH Key to Gitea</a></li>
+<li><a href="#_setup_the_development_environment_with_reference_application">1.9.5. Setup the Development Environment with reference application</a></li>
+<li><a href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.9.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></li>
 </ul>
 </li>
-<li><a href="#ploigos">2. Deploy using existing infrastructure</a>
+<li><a href="#ploigos-workflow-reference-ops">1.10. Operating the Reference Implementation</a></li>
+<li><a href="#ploigos-workflow-terms">1.11. Terms and Definitions</a></li>
+</ul>
+</li>
+<li><a href="#ploigos-deploy">2. Deploy using existing infrastructure</a>
 <ul class="sectlevel2">
 <li><a href="#ploigos-deploy-changes">2.1. Changing the default workflow</a></li>
 <li><a href="#ploigos-deploy-opinions">2.2. Adding or modifying Opinions in the workflow</a></li>
@@ -486,7 +496,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#ploigos-deploy-workflowsteps">2.5. Workflow Step Reference</a></li>
 </ul>
 </li>
-<li><a href="#ploigos">3. Customize Workflow</a>
+<li><a href="#ploigos-customize">3. Customize Workflow</a>
 <ul class="sectlevel2">
 <li><a href="#ploigos-opinions-establish">3.1. Opinions</a></li>
 <li><a href="#_process_for_establishing_workflow_opinions">3.2. Process for establishing workflow opinions</a></li>
@@ -496,7 +506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#ploigos-customize-container">3.6. Process for adding or changing a container image</a></li>
 </ul>
 </li>
-<li><a href="#ploigos">4. Contributing</a>
+<li><a href="#ploigos-contribute">4. Contributing</a>
 <ul class="sectlevel2">
 <li><a href="#ploigos-contribute-guide">4.1. Contribution Guide</a>
 <ul class="sectlevel3">
@@ -513,204 +523,70 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="ploigos"><a class="anchor" href="#ploigos"></a><a class="link" href="#ploigos">1. Ploigos - An Opinionated CI/CD Workflow</a></h2>
+<h2 id="ploigos-workflow"><a class="anchor" href="#ploigos-workflow"></a><a class="link" href="#ploigos-workflow">1. Ploigos - An Opinionated CI/CD Workflow</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="ploigos-workflow-overview"><a class="anchor" href="#ploigos-workflow-overview"></a><a class="link" href="#ploigos-workflow-overview">1.1. Overview</a></h3>
 <div class="paragraph">
-<p>At its core the Ploigos defines an opinionated workflow used to deliver software from peoples heads to production. This documentation module defines what that that opinionated workflow is.</p>
+<p><em>What is Ploigos?</em></p>
 </div>
-<div id="ploigos-workflow-abstracted" class="paragraph">
-<p>When discussing methods for getting ideas from peoples' heads to production, groups often get lost in talking about technology and tools and avoid the hard work of deciding on the abstract process, or workflow. This section has pictorial renderings of the Ploigos opinionated workflow in an abstract form, without any specific technologies or tools. This can be used as a primer for a team to first discuss and decide on their own specific Ploigos workflow, and then use the provided templates to draw it to avoid the <a href="https://www.jpattonassociates.com/wp-content/uploads/2018/07/glad-we-all-agree-1.png">"I&#8217;m glad we all agree"</a> problem that inevitably arises if an abstract concept is not concretely defined by drawing it.</p>
+<div class="paragraph">
+<p>Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow.</p>
+</div>
+<div class="paragraph">
+<p>The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. A workflow first approach identifies the organizational behaviors and expected outcomes to define what quality is.  The workflow codifies and enforces these to ensure all aspects of security, compliance, trust, and privacy are addressed.</p>
+</div>
+<div class="paragraph">
+<p>The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more '<strong>Steps</strong>' in the CD/CD workflow, and automating the <strong>Step</strong> by creating a <strong>StepImplementer</strong>. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-abstracted-high-level"><a class="anchor" href="#ploigos-workflow-abstracted-high-level"></a><a class="link" href="#ploigos-workflow-abstracted-high-level">1.1. Idea Delivery Workflow</a></h3>
+<h3 id="ploigos-workflow-idea-delivery-high-level"><a class="anchor" href="#ploigos-workflow-idea-delivery-high-level"></a><a class="link" href="#ploigos-workflow-idea-delivery-high-level">1.2. Idea Delivery Workflow</a></h3>
 <div class="paragraph">
-<p>In this high level rendering of the Ploigos workflow, the majority of steps are Predefined Procedures. That is, they are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in <a href="#ploigos-workflow-abstracted-detailed">[ploigos-workflow-abstracted-detailed]</a>. This is a "one slide" view of the workflow.</p>
+<p>Ploigos defines a reference high level workflow that covers the process of taking the genesis of an idea, idea development, integration, and review. In this high level rendering of the Ploigos workflow, the majority of steps are <em>Predefined Procedures</em>. These procedures are placeholders for more complex sub workflows containing multiple Procedures, the details of which are defined in later sections. This simplification allows for a 'one slide' view of the workflow.</p>
 </div>
 <div id="ploigos-workflow-abstracted-high-level-image" class="imageblock">
 <div class="content">
 <a class="image" href="images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png"><img src="images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png" alt="(Ploigos) Workflow - High Level"></a>
 </div>
-<div class="title">Workflow Image: (Ploigos) - High Level </div>
-</div>
-<div id="ploigos-workflow-components-high-level-assembly-ploigos" class="paragraph">
-<p>The Ploigos Workflow Components are the high level groupings of more complex sub workflows. The following table defines the purpose of these high-level components without emphasis on the more detailed steps each component encapsulates, or the technology of how those get realized.</p>
+<div class="title">Workflow Image: (Ploigos) - High Level</div>
 </div>
 <div class="sect3">
-<h4 id="_idea_delivery_workflow_steps"><a class="anchor" href="#_idea_delivery_workflow_steps"></a><a class="link" href="#_idea_delivery_workflow_steps">1.1.1. Idea Delivery Workflow Steps</a></h4>
+<h4 id="ploigos-workflow-idea-steps-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-idea-steps-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-idea-steps-assembly-ploigos">1.2.1. Idea Delivery Workflow Steps</a></h4>
 <div class="paragraph">
 <p>Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Predefined Process</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-<th class="tableblock halign-left valign-top"><a href="#ploigos-workflow-components-detailed-level-assembly-ploigos">Components / Steps</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Prioritize Ideas</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Move idea from person&#8217;s head into a work management tool to track item through to completion.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Steps vary based on team&#8217;s backlog prioritization and work planning process</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Development</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Lay foundation for isolated development environment for developer to begin coding</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="#detailed-component-fork-repository">Fork Repository</a></p>
-</li>
-<li>
-<p><a href="#detailed-component-create-idea-branch">Create Idea Branch on Fork of Repository</a></p>
-</li>
-<li>
-<p><a href="#detailed-component-create-wip-merge-request">Create WIP Merge Request to Release Branch on prime repository</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create or update Merge Request to Release Branch</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deployment of build artifacts into a temporary development environment that will occur when a merge request is created (from a feature branch to the primary release branch), and for any subsequent changes to the merging feature branch</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Deploy or Update MR#-DEV Environment</p>
-</li>
-<li>
-<p>Validate MR#-DEV Environment Configuration</p>
-</li>
-<li>
-<p>Run User Acceptance Tests (UAT)</p>
-</li>
-<li>
-<p>Run Runtime Vulnerability Scans</p>
-</li>
-<li>
-<p>Run Performance Tests (Limited)</p>
-</li>
-<li>
-<p>Mark Merge Request Ready for Peer Review and Merging</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Detect Change</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Allows pipeline to detect and respond to a defined set of changes in source code repository</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="#detailed-component-detect-changed-merge-request">Detect new, changed, or merged,  Merge Request to Release Branch</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>CI/CD</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Build artifacts are created and tested automatically on a continual basis . Provide developer with ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Generate Metadata</p>
-</li>
-<li>
-<p>Tag Source Code with Metadata</p>
-</li>
-<li>
-<p>Run Unit Tests</p>
-</li>
-<li>
-<p>Package Application</p>
-</li>
-<li>
-<p>Static Code Analysis</p>
-</li>
-<li>
-<p>Push Packaged Application to Repository with Metadata</p>
-</li>
-<li>
-<p>Create Container Image</p>
-</li>
-<li>
-<p>Push Container Image to Repository with Metadata</p>
-</li>
-<li>
-<p>Run Container Image Unit Tests</p>
-</li>
-<li>
-<p>Run Static Compliance Container Image Scan</p>
-</li>
-<li>
-<p>Run Static Vulnerability Container Image Scan</p>
-</li>
-<li>
-<p>Push Trusted Container Image to Repository with Metadata</p>
-</li>
-<li>
-<p>Deploy or Update TEST Environment</p>
-</li>
-<li>
-<p>Validate TEST Environment Configuration</p>
-</li>
-<li>
-<p>Run User Acceptance Tests (UAT)</p>
-</li>
-<li>
-<p>Run Runtime Vulnerability Scans</p>
-</li>
-<li>
-<p>Run Performance Tests (Full)</p>
-</li>
-<li>
-<p>Deploy or Update PROD Environment</p>
-</li>
-<li>
-<p>Validate PROD Environment Configuration</p>
-</li>
-<li>
-<p>Run Canary Testing</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Peer Review</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To collaborate with others in the process of reviewing code in order to make sure it works, and in order to improve it where possible</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Prioritize Ideas</dt>
+<dd>
+<p>New ideas are placed in a work management tool, refined, and prioritized. The work management tool allows for organization and tracking of ideas as they move through the workflow. Steps will vary based on existing organizational structure and specific tool chosen, but basic requirements involve being able to: record new ideas, backlog management, assign ideas to developers, and track progress and status.</p>
+</dd>
+<dt class="hdlist1">Development</dt>
+<dd>
+<p>The development procedure where an idea is implemented in software. This includes an isolated development environment for developer to begin coding.</p>
+</dd>
+<dt class="hdlist1">Create or Update Merge Request to Release Branch</dt>
+<dd>
+<p>The procedure for how merges happen into the release branch in the source code repository. Deployment of build artifacts into a temporary development environment that will occur when a merge request is created (from a feature branch to the primary release branch), and for any subsequent changes to the merging feature branch. Acceptance of a merge request is automated, contingent on passing all gates defined in the CI/CD pipeline for the merging branch, and passing all gates of the CI/CD pipeline after the merge into the primary branch is complete.</p>
+</dd>
+<dt class="hdlist1">Detect Change</dt>
+<dd>
+<p>The procedure for detecting change in the source code repository, and using that event to initiate appropriate action in the CI/CD procedure. The event can be a change in a feature branch, release branch, a new merge request, etc.</p>
+</dd>
+<dt class="hdlist1">CI/CD</dt>
+<dd>
+<p>Build artifacts are created and tested automatically on a continual basis. This provides developers with the ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.
+The detailed CI/CD Process Workflow section provides more details on this predefined process.</p>
+</dd>
+<dt class="hdlist1">Retrospective</dt>
+<dd>
+<p>An introspection of the processes used by the team to deliver the software to evaluate the effectiveness of the overall process itself. Allows for modifying a predefined procedure or even modifying the Idea Delivery Workflow itself based on team feedback.</p>
+</dd>
+<dt class="hdlist1">Peer Review</dt>
+<dd>
+<p>Collaborate with others in the process of reviewing code in order to make sure it works, the code conforms to organizational coding standards, and in order to improve the code where possible.</p>
+<div class="ulist">
 <ul>
 <li>
 <p>Mark Merge Request as Work In Progress (WIP)</p>
@@ -725,37 +601,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Delete MR#-DEV Deployment Environment</p>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Retrospective</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Release</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
+</div>
+</dd>
+<dt class="hdlist1">Release</dt>
+<dd>
+<p>Predefined process for how software is released.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cicd_process_workflow"><a class="anchor" href="#_cicd_process_workflow"></a><a class="link" href="#_cicd_process_workflow">1.2. CI/CD Process Workflow</a></h3>
+<h3 id="_cicd_process_workflow"><a class="anchor" href="#_cicd_process_workflow"></a><a class="link" href="#_cicd_process_workflow">1.3. CI/CD Process Workflow</a></h3>
 <div id="ploigos-workflow-process-image" class="imageblock">
 <div class="content">
 <a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png" alt="(Ploigos) Workflow - Processes"></a>
 </div>
 <div class="title">Workflow Image:(Ploigos) - Processes</div>
 </div>
+<div id="ploigos-workflow-components-processes-level-assembly-ploigos" class="dlist">
+<dl>
+<dt class="hdlist1">Setup</dt>
+<dd>
+<p>Initial setup of the CI/CD pipeline. This step includes deployment and configuration of a pipeline using Ploigos</p>
+</dd>
+<dt class="hdlist1">Continuous Integration</dt>
+<dd>
+<p>Development work that happens on the deployed CI/CD pipeline</p>
+</dd>
+<dt class="hdlist1">Continuous Deployment - DEV</dt>
+<dd>
+<p>Deployment of the application into a development environment for the developer to review</p>
+</dd>
+<dt class="hdlist1">Continuous Deployment - TEST</dt>
+<dd>
+<p>Deployment of the application into the testing environment for functionality, performance, and acceptance testing.</p>
+</dd>
+<dt class="hdlist1">Continuous Deployment - PROD</dt>
+<dd>
+<p>Deployment of the application into the production environment.</p>
+</dd>
+</dl>
+</div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-components-processes-level-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-components-processes-level-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-components-processes-level-assembly-ploigos">1.3. Minimum Workflow</a></h3>
+<h3 id="_minimum_workflow"><a class="anchor" href="#_minimum_workflow"></a><a class="link" href="#_minimum_workflow">1.4. Minimum Workflow</a></h3>
 <div id="ploigos-workflow-minimum-image" class="imageblock">
 <div class="content">
 <a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png" alt="(Ploigos) Workflow - Minimum"></a>
@@ -763,12 +653,156 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Workflow Image:(Ploigos) - Minimum</div>
 </div>
 <div class="sect3">
-<h4 id="_minimum_workflow_steps"><a class="anchor" href="#_minimum_workflow_steps"></a><a class="link" href="#_minimum_workflow_steps">1.3.1. Minimum Workflow Steps</a></h4>
-
+<h4 id="_minimum_workflow_steps"><a class="anchor" href="#_minimum_workflow_steps"></a><a class="link" href="#_minimum_workflow_steps">1.4.1. Minimum Workflow Steps</a></h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Detect Change</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Detect new/changed/merged branches</p>
+<div class="literalblock">
+<div class="content">
+<pre>To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start CI/CD workflow for changed branch</p>
+<div class="literalblock">
+<div class="content">
+<pre>The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Setup</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup workflow step runner</p>
+</li>
+<li>
+<p>Setup PGP keys</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Integration</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate metadata</p>
+<div class="literalblock">
+<div class="content">
+<pre>The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Tag Source Code</p>
+<div class="literalblock">
+<div class="content">
+<pre>This step will take the version created in the "generate metadata" step to tag the source in source control.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Package Application Artifact</p>
+<div class="literalblock">
+<div class="content">
+<pre>Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push Application Artifact to repository</p>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer runtime artifacts into a centralized artifact repository for distribution.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create Container Image</p>
+</li>
+<li>
+<p>Push container image to registry</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - DEV (Feature Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to dev environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - TEST (Release Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to test environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy image built from the latest release branch to the test environment.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - PROD (Release Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to production environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy tested code to shared prod environment with latest feature available to end users</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Report</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate and publish workflow report</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide central dashboard with published test results as an indicator of overall health of system</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_standard_workflow"><a class="anchor" href="#_standard_workflow"></a><a class="link" href="#_standard_workflow">1.4. Standard Workflow</a></h3>
+<h3 id="_standard_workflow"><a class="anchor" href="#_standard_workflow"></a><a class="link" href="#_standard_workflow">1.5. Standard Workflow</a></h3>
 <div id="ploigos-workflow-standard-image" class="imageblock">
 <div class="content">
 <a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png" alt="(Ploigos) Workflow - Standard"></a>
@@ -776,621 +810,270 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Workflow Image:(Ploigos) - Standard</div>
 </div>
 <div class="sect3">
-<h4 id="_standard_workflow_steps"><a class="anchor" href="#_standard_workflow_steps"></a><a class="link" href="#_standard_workflow_steps">1.4.1. Standard Workflow Steps</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 50%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Step</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-<th class="tableblock halign-left valign-top"><a href="#ploigos-workflow-tool-purposes-assembly-ploigos">Implementing Tool Category</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-fork-repository" class="paragraph">
-<p>Fork Repository</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Common with open source projects, a developer will not have direct access to the original repository, so developer will fork the repo and make the changes in own version of the repo and then "pull request" change back to the original repo.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<h4 id="_standard_workflow_steps"><a class="anchor" href="#_standard_workflow_steps"></a><a class="link" href="#_standard_workflow_steps">1.5.1. Standard Workflow Steps</a></h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Detect Change</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Source Control Tool</p>
+<p>Detect new/changed/merged branches</p>
+<div class="literalblock">
+<div class="content">
+<pre>To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start CI/CD workflow for changed branch</p>
+<div class="literalblock">
+<div class="content">
+<pre>The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-create-idea-branch" class="paragraph">
-<p>Create Idea Branch on Fork of Repository</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Changes are made to a new branch in forked repo.  The branch will follow naming convention that conveys the feature being worked on.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Setup</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Source Control Tool</p>
+<p>Setup workflow step runner</p>
+</li>
+<li>
+<p>Setup PGP keys</p>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-create-wip-merge-request" class="paragraph">
-<p>Create WIP Merge Request to Release Branch on prime repository</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Continuous Integration</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div id="detailed-component-detect-changed-merge-request" class="paragraph">
-<p>Detect new, changed, or merged,  Merge Request to Release Branch</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>CI Tool</p>
+<p>Generate metadata</p>
+<div class="literalblock">
+<div class="content">
+<pre>The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Source Control Tool</p>
+<p>Tag Source Code</p>
+<div class="literalblock">
+<div class="content">
+<pre>This step will take the version created in the "generate metadata" step to tag the source in source control.</pre>
+</div>
+</div>
 </li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Generate Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
-<p>CI Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Tag Source Code with Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This step will take the version created in the "generate metadata" step to tag the source in source control.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Run Unit Tests</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validate that each unit of the software performs as designed.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Application Language Unit Test Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Package Application</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Application Language Packaging Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Static Code Analysis</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Static Code Analysis Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Push Packaged Application to Repository with Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Transfer runtime artifacts into a centralized artifact repository for distribution.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Binary Artifact Upload Tool</p>
+<div class="literalblock">
+<div class="content">
+<pre>Validate that each unit of the software performs as designed.</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Artifact Repository</p>
+<p>Package Application Artifact</p>
+<div class="literalblock">
+<div class="content">
+<pre>Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.</pre>
+</div>
+</div>
 </li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<li>
+<p>Run Static Code Analysis</p>
+<div class="literalblock">
+<div class="content">
+<pre>The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push Application Artifact to repository</p>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer runtime artifacts into a centralized artifact repository for distribution.</pre>
+</div>
+</div>
+</li>
+<li>
 <p>Create Container Image</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create the minimal container image that the application will need to run, including the packaged application artifacts.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
+<div class="literalblock">
+<div class="content">
+<pre>Assemble the minimal container image that the application will need to run, including the packaged application artifacts. Test container images, verify functionality, and validate the structure and content of the container themselves.</pre>
+</div>
+</div>
+</li>
 <li>
-<p>Container Image Build Tool</p>
+<p>Run Static Image Scan: Compliance</p>
+<div class="literalblock">
+<div class="content">
+<pre>Ensure adherence to an organization's security compliance policy by your container image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run Static Image Scan: Vulnerability</p>
+<div class="literalblock">
+<div class="content">
+<pre>Identify software vulnerabilities in your container image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push container image to registry</p>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer the verified image to centralized repository with metadata applied as labels to the image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Sign Container Image</p>
+<div class="literalblock">
+<div class="content">
+<pre>Sign the container image to allow validating image source and ensure image has not been tampered with.</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Container Image Unit Tests</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Test container images, verify functionality, and validate the structure and content of the container themselves.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - DEV (Feature Branch)</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Container Image Unit Test Tool</p>
+<p>Deploy or Update to dev environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run user acceptance tests</p>
+<div class="literalblock">
+<div class="content">
+<pre>Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run performance tests (limited)</p>
+<div class="literalblock">
+<div class="content">
+<pre>Run limited performance tests to ensure basic performance requirements are met</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Static Compliance Container Image Scan</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Ensure adherence to an organization&#8217;s security compliance policy by your container image.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - TEST (Release Branch)</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Container Image Scanning Tool</p>
+<p>Deploy or Update to test environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy image built from the latest release branch to the test environment.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>Using predefined rules, validate the configuration files used to deploy the test environment</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run user acceptance tests</p>
+<div class="literalblock">
+<div class="content">
+<pre>Run automated user accepting tests</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run performance tests (full)</p>
+<div class="literalblock">
+<div class="content">
+<pre>To identify and eliminate the performance bottlenecks in the application.</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Static Vulnerability Container Image Scan</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Identify software vulnerabilities in your container image.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - PROD (Release Branch)</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>Container Image Scanning Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Push Trusted Container Image to Repository with Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Transfer the verified image to centralized repository with metadata applied as labels to the image.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Container Image Upload Tool</p>
+<p>Deploy or Update to production environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy tested code to shared prod environment with latest feature available to end users</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Image Registry</p>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules</pre>
+</div>
+</div>
 </li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy or Update MR#-DEV Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
-<p>Continuous Deployment Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validate MR#-DEV Environment Configuration</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Validate Environment Configuration Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run User Acceptance Tests (UAT)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UAT Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Runtime Vulnerability Scans</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Analyze the run-time activity of a container for any vulnerabilities or weak runtime security that may not manifest during static analysis.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Runtime Vulnerability Scanning Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Performance Tests (Limited)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To identify and eliminate the performance bottlenecks in the application.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Performance Testing Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mark Merge Request Ready for Peer Review and Merging</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The new code must have a specific number of approving reviewers before the code can be merged. This ensures the quality and completeness of the solution. Typically the peer review process is managed by the source control tool.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Remove "WIP" from Merge Request</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This step is an indicator that the new code is of sufficient quality (in developer&#8217;s opinion) to be merged into the main branch of the primary repository. Typically this step is done by the developer, and involves a change to the name and state (from "draft" merge request) within the source control tool.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Connect IDE to MR#-DEV Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the merge request is still considered by the developer to be a work in progress, development will continue. The developer&#8217;s IDE should support (typically via plugins) the ability to connect directly to the development environment.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>IDE &amp; Container Platform</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Live Development and Testing in MR#-DEV Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Code changes made inside the developer&#8217;s IDE should automatically be moved to a live environment quickly and with minimal friction. The development tooling should facilitate iterating and deploying new versions of the code, as well as testing.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>IDE &amp; Container Platform</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Commit Change to Idea Branch on Fork of Repository</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The developer will make updates to idea branch (or feature branch) on his/her forked repository. This action will cause the pipeline to run against the feature branch, and allows development to perform code update/deploy iterations until code is suitable for review and merge to main branch.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Peer Review</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Collaborate with teammates on code change to ensure the quality and completeness of the solution.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Peer Review Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Merge to Release Branch</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Once peer review determines code ready, the developer will merge code from feature branch into the main branch of the primary repo.  This action will cause the pipeline to run against the release branch and trigger deployment to shared test environment.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Delete MR#-DEV Deployment Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Once merge from feature branch to main branch is complete, clean up the environment infrastructure, so as to minimize resource consumption.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Kubernetes Resources Creation Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mark Merge Request as Work In Progress (WIP)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Generally, a merge request will initially be created in this draft state, and remain in this state for several development iteration of code update, deploy, test, and peer review.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Source Control Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy or Update TEST Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy image built from the latest release branch to the test environment.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Continuous Deployment Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validate Test Environment Configuration</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Using predefined rules, validate the configuration files used to deploy the test environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Validate Environment Configuration Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Run Performance Tests (Full)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Execute tests to determine the speed, responsiveness and stability</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Performance Testing Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create PROD Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create PROD Environment as-needed</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Kubernetes Resources Creation Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy or Update PROD Environment</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deploy tested code to shared prod environment with latest feature available to end users</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Continuous Deployment Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validate Prod Environment Configuration</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Validate Environment Configuration Tool</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Run Canary Testing</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Allows you to roll out new code/features to a subset of end-users as an initial test.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Canary Testing Tool</p>
+<div class="literalblock">
+<div class="content">
+<pre>Allows you to roll out new code/features to a subset of end-users as an initial test.</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Collect, Bundle, &amp; Publish Test Reports and Metadata</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Provide central dashboard with published test results as an indicator of overall health of system</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+</dd>
+<dt class="hdlist1">Report</dt>
+<dd>
+<div class="ulist">
 <ul>
 <li>
-<p>CI Tool</p>
+<p>Generate and publish workflow report</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide central dashboard with published test results as an indicator of overall health of system</pre>
+</div>
+</div>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Collect Lessons Learned</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Collect, understand and act upon positive and negative lessons learned.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Discussion</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Celebrate</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Work hard - now play hard!</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Discussion</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow_source_files"><a class="anchor" href="#_workflow_source_files"></a><a class="link" href="#_workflow_source_files">1.5. Workflow Source Files</a></h3>
+<h3 id="_workflow_source_files"><a class="anchor" href="#_workflow_source_files"></a><a class="link" href="#_workflow_source_files">1.6. Workflow Source Files</a></h3>
 <div class="paragraph">
 <p>While the rendered PNGs here are useful for starting the conversation and stating clearly the opinionated Ploigos workflow, it is recognized that every implementation of the Ploigos will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.</p>
 </div>
@@ -1413,12 +1096,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-tools"><a class="anchor" href="#ploigos-workflow-tools"></a><a class="link" href="#ploigos-workflow-tools">1.6. Ploigos Workflow Tools</a></h3>
+<h3 id="ploigos-workflow-tools"><a class="anchor" href="#ploigos-workflow-tools"></a><a class="link" href="#ploigos-workflow-tools">1.7. Ploigos Workflow Tools</a></h3>
 <div class="paragraph">
 <p>Once a <a href="#ploigos-workflow-assembly-ploigos">[ploigos-workflow-assembly-ploigos]</a> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fulfill the required components needs.</p>
 </div>
 <div class="sect3">
-<h4 id="ploigos-workflow-tool-purposes-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-purposes-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.6.1. Tool Categories and Purposes</a></h4>
+<h4 id="ploigos-workflow-tool-purposes-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-purposes-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.7.1. Tool Categories and Purposes</a></h4>
 <div class="paragraph">
 <p>This section describes the components needed to implement the steps of the Ploigos and their purpose in doing so.</p>
 </div>
@@ -1639,7 +1322,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect3">
-<h4 id="ploigos-workflow-tool-implementers-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-implementers-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.6.2. Component Implementers</a></h4>
+<h4 id="ploigos-workflow-tool-implementers-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-implementers-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.7.2. Component Implementers</a></h4>
 <div class="paragraph">
 <p><mark>TODO</mark></p>
 </div>
@@ -1886,14 +1569,157 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-infrastructure"><a class="anchor" href="#ploigos-workflow-infrastructure"></a><a class="link" href="#ploigos-workflow-infrastructure">1.7. Infrastructure Requirements</a></h3>
+<h3 id="ploigos-workflow-infrastructure"><a class="anchor" href="#ploigos-workflow-infrastructure"></a><a class="link" href="#ploigos-workflow-infrastructure">1.8. Infrastructure Requirements</a></h3>
 <div class="paragraph">
-<p>Reference information on the infrastructure used to develop and test the MVP of the <a href="#ploigos-workflow-assembly-ploigos-workflow">[ploigos-workflow-assembly-ploigos-workflow]</a>.</p>
+<p>Below is the infrastructure used to develop and test the Minimum Viable Product(MVP) of the Ploigos CI/CD Workflow Reference Implementation. The most basic requirement for the deployment of the Ploigos CI/CD Workflow is an operational OCP 4.x cluster.</p>
 </div>
-<div class="sect3">
-<h4 id="_suggested_sizing"><a class="anchor" href="#_suggested_sizing"></a><a class="link" href="#_suggested_sizing">1.7.1. Suggested Sizing</a></h4>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Containerized Tool Sizing</caption>
+<caption class="title">Table 3. Red Hat OpenShift Sizing</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Node</th>
+<th class="tableblock halign-left valign-top">CPUs</th>
+<th class="tableblock halign-left valign-top">Memory (GB)</th>
+<th class="tableblock halign-left valign-top">Disk (GB)</th>
+<th class="tableblock halign-left valign-top">AWS EC2 Instance Type</th>
+<th class="tableblock halign-left valign-top">Sizing Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Control 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Control 1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Control 2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://docs.openshift.com/container-platform/latest/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Compute 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Based on Containerized Tool Sizing needs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Compute 1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Based on Containerized Tool Sizing needs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Compute 2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>120</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>m4.2xlarge</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Based on Containerized Tool Sizing needs</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_suggested_sizing"><a class="anchor" href="#_suggested_sizing"></a><a class="link" href="#_suggested_sizing">1.8.1. Suggested Sizing</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Containerized Tool Sizing</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1968,7 +1794,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Red Hat Quay - Operator Based - DB (Crunchy Data PostgrSQL)</p>
+<p>Red Hat Quay - Operator Based - DB (Crunchy Data PostgreSQL)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2 / Operator Governed</p>
@@ -2086,165 +1912,412 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Red Hat OpenShift Sizing</caption>
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Node</th>
-<th class="tableblock halign-left valign-top">CPUs</th>
-<th class="tableblock halign-left valign-top">Memory (GB)</th>
-<th class="tableblock halign-left valign-top">Disk (GB)</th>
-<th class="tableblock halign-left valign-top">AWS EC2 Instance Type</th>
-<th class="tableblock halign-left valign-top">Sizing Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Master 0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Master 1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Master 2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.3/scalability_and_performance/recommended-host-practices.html#master-node-sizing_">OCP 4 Docs - Master Node Sizing</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Compute 0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Based on Containerized Tool Sizing needs</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Compute 1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Based on Containerized Tool Sizing needs</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Compute 2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>120</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>m4.2xlarge</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Based on Containerized Tool Sizing needs</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-reference-impl"><a class="anchor" href="#ploigos-reference-impl"></a><a class="link" href="#ploigos-reference-impl">1.8. Reference Implementation</a></h3>
+<h3 id="ploigos-reference-impl"><a class="anchor" href="#ploigos-reference-impl"></a><a class="link" href="#ploigos-reference-impl">1.9. Reference Implementation</a></h3>
+<div class="paragraph">
+<p>The following guide shows how to deploy the reference implementation of the Ploigos Standard Workflow into an OCP 4.x cluster with a simple quarkus application as a demo.</p>
+</div>
+<div class="sect3">
+<h4 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><a class="link" href="#_prerequisites">1.9.1. Prerequisites</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Operational OCP 4.x cluster</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_installing_the_ploigos_software_factory_operator"><a class="anchor" href="#_installing_the_ploigos_software_factory_operator"></a><a class="link" href="#_installing_the_ploigos_software_factory_operator">1.9.2. Installing the Ploigos Software Factory Operator</a></h4>
+<div class="paragraph">
+<p>See <a href="https://github.com/ploigos/ploigos-software-factory-operator">ploigos-software-factory-operator</a> for latest information.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to an OCP cluster as <code>cluster-admin</code></p>
+</li>
+<li>
+<p>Import the RedHatGov Operator Catalog (Create a custom <code>CatalogSource</code>)</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc apply -f - &lt;&lt; EOF
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: redhatgov-operators
+  namespace: openshift-marketplace
+spec:
+  sourceType: grpc
+  image: quay.io/redhatgov/operator-catalog:latest
+  displayName: Red Hat NAPS Community Operators
+  publisher: RedHatGov
+EOF</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a project named <strong>devsecops</strong> for the pipeline tooling+</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc new-project devsecops</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove restrictive limit ranges <strong>NOTE: Required for RHPDS clusters</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre>oc delete limitrange --all -n devsecops</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the 'Ploigos Software Factory Operator'</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the OCP Web Console, navigate to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Operators &#8594; OperatorHub</strong></p>
+</li>
+<li>
+<p>Search for "Ploigos Software Factory Operator"</p>
+</li>
+<li>
+<p>Select Operator and click <strong>Install</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deploy_the_ploigos_platform_and_pipeline"><a class="anchor" href="#_deploy_the_ploigos_platform_and_pipeline"></a><a class="link" href="#_deploy_the_ploigos_platform_and_pipeline">1.9.3. Deploy the Ploigos Platform and Pipeline</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the OCP WebUI, Select the <strong>devsecops</strong> namespace</p>
+</li>
+<li>
+<p>Deploy the Ploigos Platform</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <strong>Installed Operators &#8594; Ploigos Software Factory</strong></p>
+</li>
+<li>
+<p>Inside the software factory operator screen, click <strong>[+ TSSCPlatform]</strong></p>
+</li>
+<li>
+<p>Wait for the deployment to finish</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the <em>tssc-operator-controller-manager</em> pod and watch the logs for the "PLAY RECAP " line</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Deploy the Ploigos Pipeline</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <strong>Installed Operators &#8594; Ploigos Software Factory</strong></p>
+</li>
+<li>
+<p>Inside the software factory operator screen, click <strong>[+ TSSCPipeline]</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Access the deployed Jenkins pod to watch progress</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <strong>Routes &#8594; Jenkins</strong> and click the Jenkins Route</p>
+</li>
+<li>
+<p>Login to Jenkins with Openshift Credentials</p>
+</li>
+<li>
+<p>Navigate to <strong>platform &#8594; reference-quarkus-mvn_jekins_workflow-standard &#8594; main</strong></p>
+</li>
+<li>
+<p>Click "Open Blue Ocean" (Vertical menu on left side)</p>
+</li>
+<li>
+<p>Watch the pipeline progress and wait for 100%</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_add_ssh_key_to_gitea"><a class="anchor" href="#_add_ssh_key_to_gitea"></a><a class="link" href="#_add_ssh_key_to_gitea">1.9.4. Add SSH Key to Gitea</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Obtain the Gitea credentials</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>devsecops</strong> namespace, navigate to <strong>Secrets</strong></p>
+</li>
+<li>
+<p>From the secret <strong>tssc-service-account</strong>, copy the username and password</p>
+</li>
+<li>
+<p>Navigate to <strong>Routes</strong> and open the Gitea route</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Login to Gitea with the tssc-service-account username/password</p>
+</li>
+<li>
+<p>Add SSH Key to account in Gitea</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the Profile Icon (top left corner)</p>
+</li>
+<li>
+<p>Select Settings</p>
+</li>
+<li>
+<p>Select 'Add Key'</p>
+</li>
+<li>
+<p>Enter a public key</p>
+</li>
+<li>
+<p>Click 'Add Key'</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_setup_the_development_environment_with_reference_application"><a class="anchor" href="#_setup_the_development_environment_with_reference_application"></a><a class="link" href="#_setup_the_development_environment_with_reference_application">1.9.5. Setup the Development Environment with reference application</a></h4>
+<div class="paragraph">
+<p>The following directions are designed to setup a development environment for Ploigos. By creating forks of the official repositories, a developer can customize the workflow as needed.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fork required Ploigos repositories</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a fork of: <a href="https://github.com/ploigos/ploigos-step-runner" class="bare">https://github.com/ploigos/ploigos-step-runner</a></p>
+</li>
+<li>
+<p>Create a fork of: <a href="https://github.com/ploigos/ploigos-jenkins-library" class="bare">https://github.com/ploigos/ploigos-jenkins-library</a></p>
+</li>
+<li>
+<p>Clone repositories above to local machine</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Configure the Jenkinsfile to point to the <strong>ploigos-step-runner</strong> fork</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In Gitea, navigate to the quarkus reference application Jenkinsfile <code>cicd/Jenkinsfile</code></p>
+</li>
+<li>
+<p>Add the following to the end of the Jenkinsfile:</p>
+<div class="literalblock">
+<div class="content">
+<pre>stepRunnerUpdateLibrary: true,
+stepRunnerLibSourceUrl: "git+​ https://github.com/[your-step-runner-fork]@[the-branch-to-use​ ]"</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Replace [your-step-runner-fork] with your fork URL</p>
+</li>
+<li>
+<p>Replace [the-branch-to-use] with target branch</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Commit Changes</p>
+</li>
+<li>
+<p>Initiate Pull Request</p>
+</li>
+<li>
+<p>Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Configure the Jenkinsfile to point to the <strong>ploigos-jenkins-library</strong> fork</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In Gitea, navigate to the quarkus reference application Jenkinsfile <code>cicd/Jenkinsfile</code></p>
+</li>
+<li>
+<p>Replace the <strong>remote:</strong> line of the Jenkinsfile with the forked jenkins library URL</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Load the TSSC Jenkins Library
+library identifier: 'ploigos-jenkins-library@main',
+retriever: modernSCM([
+  $class: 'GitSCMSource',
+  remote: 'https://github.com/&lt;username&gt;/ploigos-jenkins-library.git'
+])</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NOTE: also update the <strong>library identifier:</strong> line with the branch name if it differs from <code>main</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Commit Changes</p>
+</li>
+<li>
+<p>Initiate Pull Request</p>
+</li>
+<li>
+<p>Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"><a class="anchor" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"></a><a class="link" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.9.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In Gitea, navigate to the quarkus reference application Jenkinsfile <code>cicd/Jenkinsfile</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Load the Ploigos Jenkins Library
+library identifier: 'ploigos-jenkins-library@v0.17.0',
+retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/ploigos/ploigos-jenkins-library.git'
+])</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// run the pipeline
+ploigosWorkflowStandard(
+    stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/',
+    pgpKeysSecretName: 'pgp-keys-ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>workflowServiceAccountName: 'ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    workflowWorkerImageDefault: 'ploigos/ploigos-ci-agent-jenkins:v0.16.0',
+    workflowWorkerImageUnitTest: 'ploigos/ploigos-tool-maven:v0.16.0',
+    workflowWorkerImagePackage: 'ploigos/ploigos-tool-maven:v0.16.0',
+    workflowWorkerImageStaticCodeAnalysis: 'ploigos/ploigos-tool-sonar:v0.16.0',
+    workflowWorkerImagePushArtifacts: 'ploigos/ploigos-tool-maven:v0.16.0',
+    workflowWorkerImageContainerOperations: 'ploigos/ploigos-tool-containers:v0.16.0',
+    workflowWorkerImageContainerImageStaticComplianceScan: 'ploigos/ploigos-tool-openscap:v0.16.0',
+    workflowWorkerImageContainerImageStaticVulnerabilityScan: 'ploigos/ploigos-tool-openscap:v0.16.0',
+    workflowWorkerImageDeploy: 'ploigos/ploigos-tool-argocd:v0.16.0',
+    workflowWorkerImageValidateEnvironmentConfiguration: 'ploigos/ploigos-tool-config-lint:v0.16.0',
+    workflowWorkerImageUAT: 'ploigos/ploigos-tool-maven:v0.16.0'
+)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Rename the function <code>ploigosWorkflowStandard</code> to <code>ploigosWorkflowMinimal</code> and Remove <strong>workflowWorker</strong> Lines to conform to the Ploigos Minimal Workflow:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Load the Ploigos Jenkins Library
+library identifier: 'ploigos-jenkins-library@v0.17.0',
+retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/ploigos/ploigos-jenkins-library.git'
+])</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// run the pipeline
+ploigosWorkflowMinimal(
+    stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/',
+    pgpKeysSecretName: 'pgp-keys-ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    workflowServiceAccountName: 'ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',
+    workflowWorkerImageDefault: 'ploigos/ploigos-ci-agent-jenkins:v0.16.0',
+    workflowWorkerImagePackage: 'ploigos/ploigos-tool-maven:v0.16.0',
+    workflowWorkerImagePushArtifacts: 'ploigos/ploigos-tool-maven:v0.16.0',
+    workflowWorkerImageContainerOperations: 'ploigos/ploigos-tool-containers:v0.16.0',
+    workflowWorkerImageDeploy: 'ploigos/ploigos-tool-argocd:v0.16.0',
+)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Commit Changes</p>
+</li>
+<li>
+<p>Initiate Pull Request</p>
+</li>
+<li>
+<p>Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ploigos-workflow-reference-ops"><a class="anchor" href="#ploigos-workflow-reference-ops"></a><a class="link" href="#ploigos-workflow-reference-ops">1.10. Operating the Reference Implementation</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-reference-ops"><a class="anchor" href="#ploigos-workflow-reference-ops"></a><a class="link" href="#ploigos-workflow-reference-ops">1.9. Operating the Reference Implementation</a></h3>
-<div class="paragraph">
-<p>TODO</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="ploigos-workflow-terms"><a class="anchor" href="#ploigos-workflow-terms"></a><a class="link" href="#ploigos-workflow-terms">1.10. Terms and Definitions</a></h3>
+<h3 id="ploigos-workflow-terms"><a class="anchor" href="#ploigos-workflow-terms"></a><a class="link" href="#ploigos-workflow-terms">1.11. Terms and Definitions</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -2252,7 +2325,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="ploigos"><a class="anchor" href="#ploigos"></a><a class="link" href="#ploigos">2. Deploy using existing infrastructure</a></h2>
+<h2 id="ploigos-deploy"><a class="anchor" href="#ploigos-deploy"></a><a class="link" href="#ploigos-deploy">2. Deploy using existing infrastructure</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="ploigos-deploy-changes"><a class="anchor" href="#ploigos-deploy-changes"></a><a class="link" href="#ploigos-deploy-changes">2.1. Changing the default workflow</a></h3>
@@ -2287,7 +2360,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="ploigos"><a class="anchor" href="#ploigos"></a><a class="link" href="#ploigos">3. Customize Workflow</a></h2>
+<h2 id="ploigos-customize"><a class="anchor" href="#ploigos-customize"></a><a class="link" href="#ploigos-customize">3. Customize Workflow</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="ploigos-opinions-establish"><a class="anchor" href="#ploigos-opinions-establish"></a><a class="link" href="#ploigos-opinions-establish">3.1. Opinions</a></h3>
@@ -2387,7 +2460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="ploigos"><a class="anchor" href="#ploigos"></a><a class="link" href="#ploigos">4. Contributing</a></h2>
+<h2 id="ploigos-contribute"><a class="anchor" href="#ploigos-contribute"></a><a class="link" href="#ploigos-contribute">4. Contributing</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="ploigos-contribute-guide"><a class="anchor" href="#ploigos-contribute-guide"></a><a class="link" href="#ploigos-contribute-guide">4.1. Contribution Guide</a></h3>
@@ -2512,21 +2585,17 @@ Library for Jenkins that defines domain specific language for the implementation
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1">{ProjectShortName}</dt>
-<dd>
-<p>Ploigos</p>
-</dd>
 <dt class="hdlist1">Workflow</dt>
 <dd>
-<p>A {ProjectShortName} procedure as represented by a drawing.</p>
+<p>A Ploigos procedure as represented by a drawing.</p>
 </dd>
 <dt class="hdlist1">Workflow Abstraction</dt>
 <dd>
-<p>A {ProjectShortName} Workflow as represented by a drawing with no specified tooling to implement that steps of the workflow.</p>
+<p>A Ploigos Workflow as represented by a drawing with no specified tooling to implement that steps of the workflow.</p>
 </dd>
-<dt class="hdlist1">Workflow Implimentaiton</dt>
+<dt class="hdlist1">Workflow Implementation</dt>
 <dd>
-<p>An implimentation of a {ProjectShortName} Workflow Abstraction with specific tooling.</p>
+<p>An implementation of a Ploigos Workflow Abstraction with specific tooling.</p>
 </dd>
 </dl>
 </div>
@@ -2535,7 +2604,7 @@ Library for Jenkins that defines domain specific language for the implementation
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-01 17:05:48 UTC
+Last updated 2021-03-17 14:04:01 UTC
 </div>
 </div>
 </body>
