@@ -1,14 +1,13 @@
 @startuml
 
 title Ploigos - Step Runner Sequence - Attestation Step Implementer
-caption Describes how the three main component operate to execute a Ploigos Step Runner (PSR) command with automated governance.
+caption Describes how the attestion step accomplishses its work 
 
 control "step_runner.py" as stepRunner
 control "autogov_implementer.py" as stepImpl
 control "governace_serializer.py" as govSerial
 
 control "Evidence Store" as evidenceStore
-control "Policy Store" as policyStore
 control "Signature Store" as sigstore
 
 stepRunner -> stepImpl : sub_step._run_step()
