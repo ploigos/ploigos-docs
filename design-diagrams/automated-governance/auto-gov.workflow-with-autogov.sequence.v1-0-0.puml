@@ -1,0 +1,42 @@
+@startuml
+
+title Modern Governance - Automated Attestation - Reference Architecture
+caption Ploigos sequience diagarm for implemeting automated generation, collection, and attestation of a software delivery workflow.
+
+actor "Authorized Person" as person
+boundary "Workflow" as workflow
+control "Workflow Step Runner" as step
+control "Evidence Store" as evidenceStore
+control "Policy Store" as policyStore
+control "Signature Store" as sigstore
+control "Work" as sigstore
+
+person -> workflow : Initiate single workflow run
+workflow -> step : Initiate single workflow run
+
+group Initialize Workflow Run
+step -> step : Generate metadata for workflow run
+step -> sigstore: Generate single-use key pair
+step <- sigstore: Return public key
+end
+
+group For Each Workflow Step
+step -> step : Execute workflow step logic
+step -> step : Collected evidence of workflow step outcomes
+step -> policyStore : Retreive policy for step
+step -> step: Generate attestation from policy & evidence
+step -> step: Sign Attestion w/ single-use public key
+step -> evidenceStore : Persist attestation
+end
+
+group Generate Workflow Report
+step -> step : Aggreagate attestations
+step -> step : Generate workflow run report
+step -> evidenceStore : Publish workflow run report
+end
+
+workflow <- step : Workflow Complete
+person <- workflow : Workflow Complete
+
+
+@enduml
