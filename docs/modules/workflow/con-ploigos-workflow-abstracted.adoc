@@ -3,7 +3,7 @@
 
 _What is Ploigos?_
 
-Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow. 
+Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow.
 
 The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. A workflow first approach identifies the organizational behaviors and expected outcomes to define what quality is.  The workflow codifies and enforces these to ensure all aspects of security, compliance, trust, and privacy are addressed.
 
@@ -17,13 +17,16 @@ Ploigos defines a reference high level workflow that covers the process of takin
 
 [id="{ProjectNameID}-workflow-abstracted-high-level-image", reftext="{ProjectName} Abstracted Workflow - High Level Image"]
 
-image::ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png[alt="({ProjectName}) Workflow - High Level",title="({ProjectName}) - High Level",caption="Workflow Image: ",link=images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png]
+image::ploigos/Ideation_Delivery_Workflow-vertical.png[alt="({ProjectName}) Workflow - High Level",title="{ProjectName} - High Level",caption="Workflow Image: ",link=images/ploigos/Ideation_Delivery_Workflow-vertical.png]
+
+* link:images/ploigos/Ideation_Delivery_Workflow-vertical.png[Vertical Rendering]
+* link:images/ploigos/Ideation_Delivery_Workflow-horizontal.png[Horizontal Rendering]
 
 
 [id="{ProjectNameID}-workflow-idea-steps-{context}"]
 == Idea Delivery Workflow Steps
 
-Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline  
+Each predefined process represents an encapsulation of steps that are typically necessary in a complete end-to-end pipeline
 
 
 Prioritize Ideas::
@@ -40,7 +43,7 @@ The procedure for detecting change in the source code repository, and using that
 
 
 CI/CD::
-Build artifacts are created and tested automatically on a continual basis. This provides developers with the ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.   
+Build artifacts are created and tested automatically on a continual basis. This provides developers with the ability to make code changes with instant (realtime) deployment of those changes into live development runtime environment. An ability to bypass pipeline to reduce friction during development on feature branches.
 The detailed CI/CD Process Workflow section provides more details on this predefined process.
 
 Retrospective::
@@ -62,7 +65,10 @@ Predefined process for how software is released.
 = CI/CD Process Workflow
 
 [id="{ProjectNameID}-workflow-process-image", reftext="{ProjectName} Abstracted Workflow - Process Image"]
-image::ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png[alt="({ProjectName}) Workflow - Processes",title="({ProjectName}) - Processes",caption="Workflow Image:",link=images/ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png]
+image::ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png[alt="({ProjectName}) Workflow - Processes",title="{ProjectName} - Processes",caption="Workflow Image: ",link=images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png]
+
+* link:images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png[Vertical Rendering]
+* link:images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-horizontal.png[Horizontal Rendering]
 
 [id="{ProjectNameID}-workflow-components-processes-level-{context}"]
 
@@ -89,7 +95,10 @@ Deployment of the application into the production environment.
 = Minimum Workflow
 
 [id="{ProjectNameID}-workflow-minimum-image", reftext="{ProjectName} Abstracted Workflow - Minimum Image"]
-image::ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png[alt="({ProjectName}) Workflow - Minimum",title="({ProjectName}) - Minimum",caption="Workflow Image:",link=images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png]
+image::ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png[alt="({ProjectName}) Workflow - Minimum",title="{ProjectName} - Minimum",caption="Workflow Image: ",link=images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png]
+
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png$$[Vertical Rendering]
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-horizontal.png$$[Horizontal Rendering]
 
 == Minimum Workflow Steps
 
@@ -97,12 +106,12 @@ Detect Change::
  - Detect new/changed/merged branches
 
  To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.
- 
- 
+
+
  - Start CI/CD workflow for changed branch
 
  The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.
- 
+
 Setup::
  - Setup workflow step runner
  - Setup PGP keys
@@ -114,7 +123,7 @@ Continuous Integration::
 
  - Tag Source Code
 
-  This step will take the version created in the "generate metadata" step to tag the source in source control. 
+  This step will take the version created in the "generate metadata" step to tag the source in source control.
 
  - Package Application Artifact
 
@@ -122,16 +131,16 @@ Continuous Integration::
 
  - Push Application Artifact to repository
 
-  Transfer runtime artifacts into a centralized artifact repository for distribution. 
+  Transfer runtime artifacts into a centralized artifact repository for distribution.
 
  - Create Container Image
  - Push container image to registry
- 
+
 Continuous Deployment - DEV (Feature Branch)::
  - Deploy or Update to dev environment
 
  Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.
- 
+
 Continuous Deployment - TEST (Release Branch)::
  - Deploy or Update to test environment
 
@@ -139,7 +148,7 @@ Continuous Deployment - TEST (Release Branch)::
 
 Continuous Deployment - PROD (Release Branch)::
  - Deploy or Update to production environment
- 
+
  Deploy tested code to shared prod environment with latest feature available to end users
 
 Report::
@@ -147,19 +156,21 @@ Report::
 
  Provide central dashboard with published test results as an indicator of overall health of system
 
-= Standard Workflow
+= Typical Workflow
 
-[id="{ProjectNameID}-workflow-standard-image", reftext="{ProjectName} Abstracted Workflow - Standard Image"]
-image::ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png[alt="({ProjectName}) Workflow - Standard",title="({ProjectName}) - Standard",caption="Workflow Image:",link=images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png]
+[id="{ProjectNameID}-workflow-typical-image", reftext="{ProjectName} Abstracted Workflow - Typical Image"]
+image::ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png[alt="({ProjectName}) Workflow - Typical",title="{ProjectName} - Typical",caption="Workflow Image: ",link=images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png]
 
-== Standard Workflow Steps
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png$$[Vertical Rendering]
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-horizontal.png$$[Horizontal Rendering]
+
+== Typical Workflow Steps
 
 Detect Change::
  - Detect new/changed/merged branches
 
  To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.
- 
- 
+
  - Start CI/CD workflow for changed branch
 
  The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.
@@ -175,11 +186,11 @@ Continuous Integration::
 
  - Tag Source Code
 
- This step will take the version created in the "generate metadata" step to tag the source in source control. 
+ This step will take the version created in the "generate metadata" step to tag the source in source control.
 
  - Run Unit Tests
 
- Validate that each unit of the software performs as designed.  
+ Validate that each unit of the software performs as designed.
 
  - Package Application Artifact
 
@@ -190,16 +201,12 @@ Continuous Integration::
  The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.
 
  - Push Application Artifact to repository
- 
- Transfer runtime artifacts into a centralized artifact repository for distribution. 
+
+ Transfer runtime artifacts into a centralized artifact repository for distribution.
 
  - Create Container Image
 
- Assemble the minimal container image that the application will need to run, including the packaged application artifacts. Test container images, verify functionality, and validate the structure and content of the container themselves. 
-
- - Run Static Image Scan: Compliance
-
- Ensure adherence to an organization's security compliance policy by your container image.
+ Assemble the minimal container image that the application will need to run, including the packaged application artifacts. Test container images, verify functionality, and validate the structure and content of the container themselves.
 
  - Run Static Image Scan: Vulnerability
 
@@ -207,26 +214,26 @@ Continuous Integration::
 
  - Push container image to registry
 
- Transfer the verified image to centralized repository with metadata applied as labels to the image.  
+ Transfer the verified image to centralized repository with metadata applied as labels to the image.
 
  - Sign Container Image
 
  Sign the container image to allow validating image source and ensure image has not been tampered with.
- 
+
 Continuous Deployment - DEV (Feature Branch)::
  - Deploy or Update to dev environment
- 
+
  Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.
 
  - Validate environment configuration
 
- To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team. 
+ To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.
 
  - Run user acceptance tests
 
- Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage. 
- 
- - Run performance tests (limited)
+ Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.
+
+ - Run performance test
 
  Run limited performance tests to ensure basic performance requirements are met
 
@@ -259,7 +266,156 @@ Continuous Deployment - PROD (Release Branch)::
  - Run Canary Testing
 
  Allows you to roll out new code/features to a subset of end-users as an initial test.
-  
+
+Report::
+ - Generate and publish workflow report
+
+ Provide central dashboard with published test results as an indicator of overall health of system
+
+= Everything Workflow
+
+[id="{ProjectNameID}-workflow-everything-image", reftext="{ProjectName} Abstracted Workflow - Everything Image"]
+image::ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png[alt="({ProjectName}) Workflow - Everything",title="{ProjectName} - Everything",caption="Workflow Image: ",link=images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png]
+
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png$$[Vertical Rendering]
+* link:$$images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-horizontal.png$$[Horizontal Rendering]
+
+== Everything Workflow Steps
+
+Detect Change::
+ - Detect new/changed/merged branches
+
+ To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.
+
+
+ - Start CI/CD workflow for changed branch
+
+ The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.
+
+Setup::
+ - Setup workflow step runner
+ - Setup PGP keys
+
+Continuous Integration::
+ - Generate metadata
+
+ The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.
+
+ - Tag Source Code
+
+ This step will take the version created in the "generate metadata" step to tag the source in source control.
+
+ - Run Unit Tests
+
+ Validate that each unit of the software performs as designed.
+
+ - Package Application Artifact
+
+ Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.
+
+ - Run Static Code Analysis
+
+ The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.
+
+ - Push Application Artifact to repository
+
+ Transfer runtime artifacts into a centralized artifact repository for distribution.
+
+ - Create Container Image
+
+ Assemble the minimal container image that the application will need to run, including the packaged application artifacts. Test container images, verify functionality, and validate the structure and content of the container themselves.
+
+ - Run Static Image Scan: Compliance
+
+ Ensure adherence to an organization's security compliance policy by your container image.
+
+ - Run Static Image Scan: Vulnerability
+
+ Identify software vulnerabilities in your container image.
+
+ - Push container image to registry
+
+ Transfer the verified image to centralized repository with metadata applied as labels to the image.
+
+ - Sign Container Image
+
+ Sign the container image to allow validating image source and ensure image has not been tampered with.
+
+ - Generate, Publish, and Sign Evidence
+
+ Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.
+
+Continuous Deployment - DEV (Feature Branch)::
+ - Audit Attestation
+
+ Evaluates the evidence generated up to this point against a given set of attestations.
+
+ - Deploy or Update to dev environment
+
+ Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.
+
+ - Validate environment configuration
+
+ To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.
+
+ - Run user acceptance tests
+
+ Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.
+
+ - Run performance test
+
+ Run limited performance tests to ensure basic performance requirements are met
+
+ - Generate, Publish, and Sign Evidence
+
+ Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.
+
+Continuous Deployment - TEST (Release Branch)::
+ - Audit Attestation
+
+ Evaluates the evidence generated up to this point against a given set of attestations.
+
+ - Deploy or Update to test environment
+
+ Deploy image built from the latest release branch to the test environment.
+
+ - Validate environment configuration
+
+ Using predefined rules, validate the configuration files used to deploy the test environment
+
+ - Run user acceptance tests
+
+ Run automated user accepting tests
+
+ - Run performance tests (full)
+
+ To identify and eliminate the performance bottlenecks in the application.
+
+ - Generate, Publish, and Sign Evidence
+
+ Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.
+
+Continuous Deployment - PROD (Release Branch)::
+ - Audit Attestation
+
+ Evaluates the evidence generated up to this point against a given set of attestations.
+
+ - Deploy or Update to production environment
+
+ Deploy tested code to shared prod environment with latest feature available to end users
+
+ - Validate environment configuration
+
+ Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules
+
+ - Run Canary Testing
+
+ Allows you to roll out new code/features to a subset of end-users as an initial test.
+
+- Generate, Publish, and Sign Evidence
+
+ Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.
+
 Report::
  - Generate and publish workflow report
 
@@ -273,6 +429,4 @@ While the rendered PNGs here are useful for starting the conversation and statin
 To facilitate ease of adoption, consistency, re-use, and contribution back to the community, the workflows are all drawn in the https://jgraph.github.io/mxgraph/[MXGraph] format using https://draw.io/[Draw.io] and provided here for consumption, modification, and re-use.
 
 * Ploigos Workflows
-** link:images/ploigos_workflows.drawio[Draw.io - Compressed XML]
-
-
+** link:images/ploigos/ploigos_workflows.drawio[Draw.io - Compressed XML]
