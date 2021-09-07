@@ -456,35 +456,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_minimum_workflow_steps">1.4.1. Minimum Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#_standard_workflow">1.5. Standard Workflow</a>
+<li><a href="#_typical_workflow">1.5. Typical Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#_standard_workflow_steps">1.5.1. Standard Workflow Steps</a></li>
+<li><a href="#_typical_workflow_steps">1.5.1. Typical Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#_workflow_source_files">1.6. Workflow Source Files</a></li>
-<li><a href="#ploigos-workflow-tools">1.7. Ploigos Workflow Tools</a>
+<li><a href="#_everything_workflow">1.6. Everything Workflow</a>
 <ul class="sectlevel3">
-<li><a href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.7.1. Tool Categories and Purposes</a></li>
-<li><a href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.7.2. Component Implementers</a></li>
+<li><a href="#_everything_workflow_steps">1.6.1. Everything Workflow Steps</a></li>
 </ul>
 </li>
-<li><a href="#ploigos-workflow-infrastructure">1.8. Infrastructure Requirements</a>
+<li><a href="#_workflow_source_files">1.7. Workflow Source Files</a></li>
+<li><a href="#ploigos-workflow-tools">1.8. Ploigos Workflow Tools</a>
 <ul class="sectlevel3">
-<li><a href="#_suggested_sizing">1.8.1. Suggested Sizing</a></li>
+<li><a href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.8.1. Tool Categories and Purposes</a></li>
+<li><a href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.8.2. Component Implementers</a></li>
 </ul>
 </li>
-<li><a href="#ploigos-reference-impl">1.9. Reference Implementation</a>
+<li><a href="#ploigos-workflow-infrastructure">1.9. Infrastructure Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_prerequisites">1.9.1. Prerequisites</a></li>
-<li><a href="#_installing_the_ploigos_software_factory_operator">1.9.2. Installing the Ploigos Software Factory Operator</a></li>
-<li><a href="#_deploy_the_ploigos_platform_and_pipeline">1.9.3. Deploy the Ploigos Platform and Pipeline</a></li>
-<li><a href="#_add_ssh_key_to_gitea">1.9.4. Add SSH Key to Gitea</a></li>
-<li><a href="#_setup_the_development_environment_with_reference_application">1.9.5. Setup the Development Environment with reference application</a></li>
-<li><a href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.9.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></li>
+<li><a href="#_suggested_sizing">1.9.1. Suggested Sizing</a></li>
 </ul>
 </li>
-<li><a href="#ploigos-workflow-reference-ops">1.10. Operating the Reference Implementation</a></li>
-<li><a href="#ploigos-workflow-terms">1.11. Terms and Definitions</a></li>
+<li><a href="#ploigos-reference-impl">1.10. Reference Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisites">1.10.1. Prerequisites</a></li>
+<li><a href="#_installing_the_ploigos_software_factory_operator">1.10.2. Installing the Ploigos Software Factory Operator</a></li>
+<li><a href="#_deploy_the_ploigos_platform_and_pipeline">1.10.3. Deploy the Ploigos Platform and Pipeline</a></li>
+<li><a href="#_add_ssh_key_to_gitea">1.10.4. Add SSH Key to Gitea</a></li>
+<li><a href="#_setup_the_development_environment_with_reference_application">1.10.5. Setup the Development Environment with reference application</a></li>
+<li><a href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.10.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></li>
+</ul>
+</li>
+<li><a href="#ploigos-workflow-reference-ops">1.11. Operating the Reference Implementation</a></li>
+<li><a href="#ploigos-workflow-terms">1.12. Terms and Definitions</a></li>
 </ul>
 </li>
 <li><a href="#ploigos-deploy">2. Deploy using existing infrastructure</a>
@@ -547,9 +552,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="ploigos-workflow-abstracted-high-level-image" class="imageblock">
 <div class="content">
-<a class="image" href="images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png"><img src="images/ploigos_workflows-Ploigos_Idea_Delivery_Workflow-vertical.png" alt="(Ploigos) Workflow - High Level"></a>
+<a class="image" href="images/ploigos/Ideation_Delivery_Workflow-vertical.png"><img src="images/ploigos/Ideation_Delivery_Workflow-vertical.png" alt="(Ploigos) Workflow - High Level"></a>
 </div>
-<div class="title">Workflow Image: (Ploigos) - High Level</div>
+<div class="title">Workflow Image: Ploigos - High Level</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/ploigos/Ideation_Delivery_Workflow-vertical.png">Vertical Rendering</a></p>
+</li>
+<li>
+<p><a href="images/ploigos/Ideation_Delivery_Workflow-horizontal.png">Horizontal Rendering</a></p>
+</li>
+</ul>
 </div>
 <div class="sect3">
 <h4 id="ploigos-workflow-idea-steps-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-idea-steps-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-idea-steps-assembly-ploigos">1.2.1. Idea Delivery Workflow Steps</a></h4>
@@ -615,9 +630,19 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <h3 id="_cicd_process_workflow"><a class="anchor" href="#_cicd_process_workflow"></a><a class="link" href="#_cicd_process_workflow">1.3. CI/CD Process Workflow</a></h3>
 <div id="ploigos-workflow-process-image" class="imageblock">
 <div class="content">
-<a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Processes_-_v1_0_0-vertical.png" alt="(Ploigos) Workflow - Processes"></a>
+<a class="image" href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png"><img src="images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png" alt="(Ploigos) Workflow - Processes"></a>
 </div>
-<div class="title">Workflow Image:(Ploigos) - Processes</div>
+<div class="title">Workflow Image: Ploigos - Processes</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-vertical.png">Vertical Rendering</a></p>
+</li>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Processes-horizontal.png">Horizontal Rendering</a></p>
+</li>
+</ul>
 </div>
 <div id="ploigos-workflow-components-processes-level-assembly-ploigos" class="dlist">
 <dl>
@@ -648,9 +673,19 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <h3 id="_minimum_workflow"><a class="anchor" href="#_minimum_workflow"></a><a class="link" href="#_minimum_workflow">1.4. Minimum Workflow</a></h3>
 <div id="ploigos-workflow-minimum-image" class="imageblock">
 <div class="content">
-<a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Minimum_-_v1_0_0.png" alt="(Ploigos) Workflow - Minimum"></a>
+<a class="image" href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png"><img src="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png" alt="(Ploigos) Workflow - Minimum"></a>
 </div>
-<div class="title">Workflow Image:(Ploigos) - Minimum</div>
+<div class="title">Workflow Image: Ploigos - Minimum</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-vertical.png">Vertical Rendering</a></p>
+</li>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Minimum-horizontal.png">Horizontal Rendering</a></p>
+</li>
+</ul>
 </div>
 <div class="sect3">
 <h4 id="_minimum_workflow_steps"><a class="anchor" href="#_minimum_workflow_steps"></a><a class="link" href="#_minimum_workflow_steps">1.4.1. Minimum Workflow Steps</a></h4>
@@ -802,15 +837,298 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect2">
-<h3 id="_standard_workflow"><a class="anchor" href="#_standard_workflow"></a><a class="link" href="#_standard_workflow">1.5. Standard Workflow</a></h3>
-<div id="ploigos-workflow-standard-image" class="imageblock">
+<h3 id="_typical_workflow"><a class="anchor" href="#_typical_workflow"></a><a class="link" href="#_typical_workflow">1.5. Typical Workflow</a></h3>
+<div id="ploigos-workflow-typical-image" class="imageblock">
 <div class="content">
-<a class="image" href="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png"><img src="images/ploigos_workflows-Ploigos_CI_CD_Workflow_Steps_-_Standard_-_v1_0_0.png" alt="(Ploigos) Workflow - Standard"></a>
+<a class="image" href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png"><img src="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png" alt="(Ploigos) Workflow - Typical"></a>
 </div>
-<div class="title">Workflow Image:(Ploigos) - Standard</div>
+<div class="title">Workflow Image: Ploigos - Typical</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-vertical.png">Vertical Rendering</a></p>
+</li>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Typical-horizontal.png">Horizontal Rendering</a></p>
+</li>
+</ul>
 </div>
 <div class="sect3">
-<h4 id="_standard_workflow_steps"><a class="anchor" href="#_standard_workflow_steps"></a><a class="link" href="#_standard_workflow_steps">1.5.1. Standard Workflow Steps</a></h4>
+<h4 id="_typical_workflow_steps"><a class="anchor" href="#_typical_workflow_steps"></a><a class="link" href="#_typical_workflow_steps">1.5.1. Typical Workflow Steps</a></h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Detect Change</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Detect new/changed/merged branches</p>
+<div class="literalblock">
+<div class="content">
+<pre>To bring an idea from development into a release (and ultimately production) a developer will create a merge request from feature branch to the primary release branch. The merge request should initially be created as WIP, which indicates this is a "Work in progress" and not yet ready to be merged. The act of creating the merge request from a feature branch to the release branch should trigger the pipeline to be run on the new feature branch.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start CI/CD workflow for changed branch</p>
+<div class="literalblock">
+<div class="content">
+<pre>The capability of the CI tool to detect actions at the source control tool. For actions "new merge request" or "changed merge request", the pipeline will run and the subject will be feature branch being merged. For "merge of feature branch to release branch" the pipeline will run and the subject will be the primary release branch.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Setup</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup workflow step runner</p>
+</li>
+<li>
+<p>Setup PGP keys</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Integration</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate metadata</p>
+<div class="literalblock">
+<div class="content">
+<pre>The pipeline will generate a semantic version based on other metadata, to produce version and image tag to uniquely identify artifacts associated with the pipeline run. This information gets applied to runtime artifacts and container image as labels.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Tag Source Code</p>
+<div class="literalblock">
+<div class="content">
+<pre>This step will take the version created in the "generate metadata" step to tag the source in source control.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run Unit Tests</p>
+<div class="literalblock">
+<div class="content">
+<pre>Validate that each unit of the software performs as designed.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Package Application Artifact</p>
+<div class="literalblock">
+<div class="content">
+<pre>Build runtime artifacts, distribution archives, and other necessary artifacts required to run application.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run Static Code Analysis</p>
+<div class="literalblock">
+<div class="content">
+<pre>The pipeline will perform static analysis on source code to identify defects, vulnerabilities, programmatic and stylistic problems as early in the development life cycle as possible. For example, static analysis is completed prior to building, scanning and deploying the image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push Application Artifact to repository</p>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer runtime artifacts into a centralized artifact repository for distribution.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create Container Image</p>
+<div class="literalblock">
+<div class="content">
+<pre>Assemble the minimal container image that the application will need to run, including the packaged application artifacts. Test container images, verify functionality, and validate the structure and content of the container themselves.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run Static Image Scan: Vulnerability</p>
+<div class="literalblock">
+<div class="content">
+<pre>Identify software vulnerabilities in your container image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push container image to registry</p>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer the verified image to centralized repository with metadata applied as labels to the image.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Sign Container Image</p>
+<div class="literalblock">
+<div class="content">
+<pre>Sign the container image to allow validating image source and ensure image has not been tampered with.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - DEV (Feature Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to dev environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide a temporary environment for deployment of code changes associated with a feature. If the environment does not already exist, the environment will be created.  The lifetime of the environment is limited to the time it takes to implement the feature and merge the changes into the release branch of the primary code repo. At which point the development environment will be deleted.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>To validate the development test environment matches a given baseline of required objects, and configuration of those objects are correct. Requirements for this step can often come from an enterprise security and compliance team.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run user acceptance tests</p>
+<div class="literalblock">
+<div class="content">
+<pre>Assess if the system can support day-to-day business and user scenarios and ensure the system is sufficient and correct for business usage.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run performance test</p>
+<div class="literalblock">
+<div class="content">
+<pre>Run limited performance tests to ensure basic performance requirements are met</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - TEST (Release Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to test environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy image built from the latest release branch to the test environment.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>Using predefined rules, validate the configuration files used to deploy the test environment</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run user acceptance tests</p>
+<div class="literalblock">
+<div class="content">
+<pre>Run automated user accepting tests</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run performance tests (full)</p>
+<div class="literalblock">
+<div class="content">
+<pre>To identify and eliminate the performance bottlenecks in the application.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Continuous Deployment - PROD (Release Branch)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy or Update to production environment</p>
+<div class="literalblock">
+<div class="content">
+<pre>Deploy tested code to shared prod environment with latest feature available to end users</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Validate environment configuration</p>
+<div class="literalblock">
+<div class="content">
+<pre>Verify that the deployment environment has been built successfully and configured according to predefined specifications and rules</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run Canary Testing</p>
+<div class="literalblock">
+<div class="content">
+<pre>Allows you to roll out new code/features to a subset of end-users as an initial test.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Report</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate and publish workflow report</p>
+<div class="literalblock">
+<div class="content">
+<pre>Provide central dashboard with published test results as an indicator of overall health of system</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_everything_workflow"><a class="anchor" href="#_everything_workflow"></a><a class="link" href="#_everything_workflow">1.6. Everything Workflow</a></h3>
+<div id="ploigos-workflow-everything-image" class="imageblock">
+<div class="content">
+<a class="image" href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png"><img src="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png" alt="(Ploigos) Workflow - Everything"></a>
+</div>
+<div class="title">Workflow Image: Ploigos - Everything</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-vertical.png">Vertical Rendering</a></p>
+</li>
+<li>
+<p><a href="images/ploigos/Deployable_Unit_CI_CD_Workflow_Steps_-_Container_-_Everything-horizontal.png">Horizontal Rendering</a></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_everything_workflow_steps"><a class="anchor" href="#_everything_workflow_steps"></a><a class="link" href="#_everything_workflow_steps">1.6.1. Everything Workflow Steps</a></h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Detect Change</dt>
@@ -941,6 +1259,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 </li>
+<li>
+<p>Generate, Publish, and Sign Evidence</p>
+<div class="literalblock">
+<div class="content">
+<pre>Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.</pre>
+</div>
+</div>
+</li>
 </ul>
 </div>
 </dd>
@@ -948,6 +1274,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <dd>
 <div class="ulist">
 <ul>
+<li>
+<p>Audit Attestation</p>
+<div class="literalblock">
+<div class="content">
+<pre>Evaluates the evidence generated up to this point against a given set of attestations.</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Deploy or Update to dev environment</p>
 <div class="literalblock">
@@ -973,10 +1307,18 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </li>
 <li>
-<p>Run performance tests (limited)</p>
+<p>Run performance test</p>
 <div class="literalblock">
 <div class="content">
 <pre>Run limited performance tests to ensure basic performance requirements are met</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate, Publish, and Sign Evidence</p>
+<div class="literalblock">
+<div class="content">
+<pre>Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.</pre>
 </div>
 </div>
 </li>
@@ -987,6 +1329,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <dd>
 <div class="ulist">
 <ul>
+<li>
+<p>Audit Attestation</p>
+<div class="literalblock">
+<div class="content">
+<pre>Evaluates the evidence generated up to this point against a given set of attestations.</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Deploy or Update to test environment</p>
 <div class="literalblock">
@@ -1019,6 +1369,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 </li>
+<li>
+<p>Generate, Publish, and Sign Evidence</p>
+<div class="literalblock">
+<div class="content">
+<pre>Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.</pre>
+</div>
+</div>
+</li>
 </ul>
 </div>
 </dd>
@@ -1026,6 +1384,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <dd>
 <div class="ulist">
 <ul>
+<li>
+<p>Audit Attestation</p>
+<div class="literalblock">
+<div class="content">
+<pre>Evaluates the evidence generated up to this point against a given set of attestations.</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Deploy or Update to production environment</p>
 <div class="literalblock">
@@ -1047,6 +1413,14 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <div class="literalblock">
 <div class="content">
 <pre>Allows you to roll out new code/features to a subset of end-users as an initial test.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate, Publish, and Sign Evidence</p>
+<div class="literalblock">
+<div class="content">
+<pre>Generates, publishes, and signs evidence output by all previous steps up to this point. Used later for attestation gates.</pre>
 </div>
 </div>
 </li>
@@ -1073,7 +1447,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow_source_files"><a class="anchor" href="#_workflow_source_files"></a><a class="link" href="#_workflow_source_files">1.6. Workflow Source Files</a></h3>
+<h3 id="_workflow_source_files"><a class="anchor" href="#_workflow_source_files"></a><a class="link" href="#_workflow_source_files">1.7. Workflow Source Files</a></h3>
 <div class="paragraph">
 <p>While the rendered PNGs here are useful for starting the conversation and stating clearly the opinionated Ploigos workflow, it is recognized that every implementation of the Ploigos will be different. This includes the tool abstracted workflow, as well as the specific tools used to implement it.</p>
 </div>
@@ -1087,7 +1461,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 <div class="ulist">
 <ul>
 <li>
-<p><a href="images/ploigos_workflows.drawio">Draw.io - Compressed XML</a></p>
+<p><a href="images/ploigos/ploigos_workflows.drawio">Draw.io - Compressed XML</a></p>
 </li>
 </ul>
 </div>
@@ -1096,12 +1470,12 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-tools"><a class="anchor" href="#ploigos-workflow-tools"></a><a class="link" href="#ploigos-workflow-tools">1.7. Ploigos Workflow Tools</a></h3>
+<h3 id="ploigos-workflow-tools"><a class="anchor" href="#ploigos-workflow-tools"></a><a class="link" href="#ploigos-workflow-tools">1.8. Ploigos Workflow Tools</a></h3>
 <div class="paragraph">
 <p>Once a <a href="#ploigos-workflow-assembly-ploigos">[ploigos-workflow-assembly-ploigos]</a> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fulfill the required components needs.</p>
 </div>
 <div class="sect3">
-<h4 id="ploigos-workflow-tool-purposes-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-purposes-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.7.1. Tool Categories and Purposes</a></h4>
+<h4 id="ploigos-workflow-tool-purposes-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-purposes-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-purposes-assembly-ploigos">1.8.1. Tool Categories and Purposes</a></h4>
 <div class="paragraph">
 <p>This section describes the components needed to implement the steps of the Ploigos and their purpose in doing so.</p>
 </div>
@@ -1322,7 +1696,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </table>
 </div>
 <div class="sect3">
-<h4 id="ploigos-workflow-tool-implementers-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-implementers-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.7.2. Component Implementers</a></h4>
+<h4 id="ploigos-workflow-tool-implementers-assembly-ploigos"><a class="anchor" href="#ploigos-workflow-tool-implementers-assembly-ploigos"></a><a class="link" href="#ploigos-workflow-tool-implementers-assembly-ploigos">1.8.2. Component Implementers</a></h4>
 <div class="paragraph">
 <p><mark>TODO</mark></p>
 </div>
@@ -1569,7 +1943,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-infrastructure"><a class="anchor" href="#ploigos-workflow-infrastructure"></a><a class="link" href="#ploigos-workflow-infrastructure">1.8. Infrastructure Requirements</a></h3>
+<h3 id="ploigos-workflow-infrastructure"><a class="anchor" href="#ploigos-workflow-infrastructure"></a><a class="link" href="#ploigos-workflow-infrastructure">1.9. Infrastructure Requirements</a></h3>
 <div class="paragraph">
 <p>Below is the infrastructure used to develop and test the Minimum Viable Product(MVP) of the Ploigos CI/CD Workflow Reference Implementation. The most basic requirement for the deployment of the Ploigos CI/CD Workflow is an operational OCP 4.x cluster.</p>
 </div>
@@ -1717,7 +2091,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_suggested_sizing"><a class="anchor" href="#_suggested_sizing"></a><a class="link" href="#_suggested_sizing">1.8.1. Suggested Sizing</a></h4>
+<h4 id="_suggested_sizing"><a class="anchor" href="#_suggested_sizing"></a><a class="link" href="#_suggested_sizing">1.9.1. Suggested Sizing</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. Containerized Tool Sizing</caption>
 <colgroup>
@@ -1915,12 +2289,12 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-reference-impl"><a class="anchor" href="#ploigos-reference-impl"></a><a class="link" href="#ploigos-reference-impl">1.9. Reference Implementation</a></h3>
+<h3 id="ploigos-reference-impl"><a class="anchor" href="#ploigos-reference-impl"></a><a class="link" href="#ploigos-reference-impl">1.10. Reference Implementation</a></h3>
 <div class="paragraph">
 <p>The following guide shows how to deploy the reference implementation of the Ploigos Standard Workflow into an OCP 4.x cluster with a simple quarkus application as a demo.</p>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><a class="link" href="#_prerequisites">1.9.1. Prerequisites</a></h4>
+<h4 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><a class="link" href="#_prerequisites">1.10.1. Prerequisites</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1930,7 +2304,7 @@ The detailed CI/CD Process Workflow section provides more details on this predef
 </div>
 </div>
 <div class="sect3">
-<h4 id="_installing_the_ploigos_software_factory_operator"><a class="anchor" href="#_installing_the_ploigos_software_factory_operator"></a><a class="link" href="#_installing_the_ploigos_software_factory_operator">1.9.2. Installing the Ploigos Software Factory Operator</a></h4>
+<h4 id="_installing_the_ploigos_software_factory_operator"><a class="anchor" href="#_installing_the_ploigos_software_factory_operator"></a><a class="link" href="#_installing_the_ploigos_software_factory_operator">1.10.2. Installing the Ploigos Software Factory Operator</a></h4>
 <div class="paragraph">
 <p>See <a href="https://github.com/ploigos/ploigos-software-factory-operator">ploigos-software-factory-operator</a> for latest information.</p>
 </div>
@@ -2001,7 +2375,7 @@ EOF</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_deploy_the_ploigos_platform_and_pipeline"><a class="anchor" href="#_deploy_the_ploigos_platform_and_pipeline"></a><a class="link" href="#_deploy_the_ploigos_platform_and_pipeline">1.9.3. Deploy the Ploigos Platform and Pipeline</a></h4>
+<h4 id="_deploy_the_ploigos_platform_and_pipeline"><a class="anchor" href="#_deploy_the_ploigos_platform_and_pipeline"></a><a class="link" href="#_deploy_the_ploigos_platform_and_pipeline">1.10.3. Deploy the Ploigos Platform and Pipeline</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2069,7 +2443,7 @@ EOF</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_add_ssh_key_to_gitea"><a class="anchor" href="#_add_ssh_key_to_gitea"></a><a class="link" href="#_add_ssh_key_to_gitea">1.9.4. Add SSH Key to Gitea</a></h4>
+<h4 id="_add_ssh_key_to_gitea"><a class="anchor" href="#_add_ssh_key_to_gitea"></a><a class="link" href="#_add_ssh_key_to_gitea">1.10.4. Add SSH Key to Gitea</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2117,7 +2491,7 @@ EOF</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_setup_the_development_environment_with_reference_application"><a class="anchor" href="#_setup_the_development_environment_with_reference_application"></a><a class="link" href="#_setup_the_development_environment_with_reference_application">1.9.5. Setup the Development Environment with reference application</a></h4>
+<h4 id="_setup_the_development_environment_with_reference_application"><a class="anchor" href="#_setup_the_development_environment_with_reference_application"></a><a class="link" href="#_setup_the_development_environment_with_reference_application">1.10.5. Setup the Development Environment with reference application</a></h4>
 <div class="paragraph">
 <p>The following directions are designed to setup a development environment for Ploigos. By creating forks of the official repositories, a developer can customize the workflow as needed.</p>
 </div>
@@ -2220,7 +2594,7 @@ retriever: modernSCM([
 </div>
 </div>
 <div class="sect3">
-<h4 id="_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"><a class="anchor" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"></a><a class="link" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.9.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></h4>
+<h4 id="_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"><a class="anchor" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow"></a><a class="link" href="#_changing_from_the_ploigos_cicd_standard_workflow_to_the_ploigos_cicd_minimum_workflow">1.10.6. Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2311,13 +2685,13 @@ ploigosWorkflowMinimal(
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-reference-ops"><a class="anchor" href="#ploigos-workflow-reference-ops"></a><a class="link" href="#ploigos-workflow-reference-ops">1.10. Operating the Reference Implementation</a></h3>
+<h3 id="ploigos-workflow-reference-ops"><a class="anchor" href="#ploigos-workflow-reference-ops"></a><a class="link" href="#ploigos-workflow-reference-ops">1.11. Operating the Reference Implementation</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ploigos-workflow-terms"><a class="anchor" href="#ploigos-workflow-terms"></a><a class="link" href="#ploigos-workflow-terms">1.11. Terms and Definitions</a></h3>
+<h3 id="ploigos-workflow-terms"><a class="anchor" href="#ploigos-workflow-terms"></a><a class="link" href="#ploigos-workflow-terms">1.12. Terms and Definitions</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -2604,7 +2978,7 @@ Library for Jenkins that defines domain specific language for the implementation
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-17 14:04:01 UTC
+Last updated 2021-09-07 15:50:25 UTC
 </div>
 </div>
 </body>
