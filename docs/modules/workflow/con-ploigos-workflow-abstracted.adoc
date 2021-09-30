@@ -3,11 +3,11 @@
 
 _What is Ploigos?_
 
-Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment. Ploigos can be divided into two major components: the Idea Delivery Workflow and the CI/CD Workflow.
+Ploigos is an opinionated workflow used to transform ideas into delivered software in a production environment.
 
 The Idea Delivery Workflow is an abstract process workflow that defines a high level view of how an organization can best take ideas that solve business problems and implement the solution in a well defined procedure. This process focuses on the specific actions that need to take place without identifying specific tools for each step. Ploigos provides a general use Idea Delivery Workflow that can be further customized to fit specific projects as needed. A workflow first approach identifies the organizational behaviors and expected outcomes to define what quality is.  The workflow codifies and enforces these to ensure all aspects of security, compliance, trust, and privacy are addressed.
 
-The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more '*Steps*' in the CD/CD workflow, and automating the *Step* by creating a *StepImplementer*. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.
+//The CI/CD Workflow is the implementation of the software development portion of the Idea Delivery Workflow. Ploigos creates a framework for a modular, extensible, and opinionated CD/CD pipeline. Modularity and extensibility are accomplished by defining one or more '*Steps*' in the CD/CD workflow, and automating the *Step* by creating a *StepImplementer*. As part of fulfilling the opinionated aspect, Ploigos provides a number of pre-defined Steps, StepImplementers, and several CI/CD Workflows.
 
 
 [id="{ProjectNameID}-workflow-idea-delivery-high-level", reftext="{ProjectName} Idea Delivery Workflow - High Level"]
