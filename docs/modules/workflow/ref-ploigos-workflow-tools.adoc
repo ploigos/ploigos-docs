@@ -1,191 +1,245 @@
 [id="{ProjectNameID}-workflow-tools", reftext="{ProjectName} Tools"]
-= {ProjectName} Workflow Tools
+= Ploigos Workflow Tools
 
-Once a <<{ProjectNameID}-workflow-{context}>> is decided upon, then the next task is to determine all of the types of components needed to implement the workflow, and then finally, the actual component implementers (aka, specific technology implementations and tools). This section contains both the component types and their purposes as well as opinions on which actual component implementations to use to fulfill the required components needs.
+Once a Idea Delivery Workflow and CI/CD Process Workflow is established,
+then the next task is to determine all of the types of components needed to 
+implement the workflow. This is done by ensuring each of the required
+tool categories in the table below are being tracked as an item that is either
+deployed or provided by a 3rd party.
 
-[id="{ProjectNameID}-workflow-tool-purposes-{context}"]
-== Tool Categories and Purposes
+Finally, choosing the actual component implementers (meaning the specific 
+software tools or products) can be performed. This section has components that
+are dictated by the established Idea Delivery Workflow, CI/CD Process Workflow,
+and the tool categories. Some of the categories below may be optional depending
+on the workflow.
 
-This section describes the components needed to implement the steps of the {ProjectName} and their purpose in doing so.
-
-.Required Components Overview
-[cols="a,a",options="header"]
-|===
-| Component
-| Purpose
-
-| Container Platform
-| Serves as runtime infrastructure for containers
-
-| Identity Management
-| Allows organization to manage identity and access of users and groups to enterprise resources to keep systems and data secure  
-
-| Authentication
-| To verify the identity of a user or process
-
-| Authorization
-| The use of access control rules to decide whether access requests from (authenticated) consumers shall be approved or disapproved.
-
-| Artifact Repository
-| Supports pushing, pulling and storing of software artifacts/packages and accompanying meta data 
-
-| Image Registry
-| Supports pushing, pulling and storing of OCI compliant images and accompanying meta data  
-
-| Source Control Tool
-| Responsible for managing changes to source code 
-
-| Continuous Integration (CI) Tool
-| Automated tasks that verify new code’s correctness before integration
-
-| Static Code Analysis Tool
-| The analysis of software to catch defects, bugs, or security issues before actually executing the programs
-
-| Application Language Packaging Tool
-| Performs the process of binding relevant files and components together to create a consistent, standardized deliverable for a software application. 
-
-| Application Language Unit Test Tool
-| Tools to support testing the smallest part or individual unit to determine if the component is fit for use. 
-
-| Binary Artifact Upload Tool
-| Pushes binary artifacts and accompanying metadata via network into a storage repository
-
-| Container Image Build Tool
-| Packages application into a binary OCI compliant image suitable to run inside any OCI compliant container platform
-
-| Container Image Upload Tool
-| Pushes container image and accompanying metadata via network into a storage repository
-
-| Container Image Unit Test Tool
-| Runs automated unit tests either as part of the image build process, or against the built images
-
-| Container Image Scanning Tool
-| Analysis on a container image's packages and other dependencies to determine if there are any known vulnerabilities in those packages or dependencies
-
-| Kubernetes Resources Creation Tool
-| Creates the necessary Kubernetes resources needed to deploy and run an application inside a container platform 
-
-| Continuous Deployment Tool
-| Detects code changes and based on those changes, will automatically run pipeline to deploy code to chosen deployment environments
-
-| User Acceptance Testing (UAT) Tool
-| Tests to verify user-facing functionality and that the software meets real-world requirements
-
-| Runtime Vulnerability Scanning Tool
-| Identifies vulnerabilities and scan your containers for malware at runtime (dynamic) as opposed to static analysis.
-
-| Performance Testing Tool
-| Tests software for performance issues 
-
-| Integrated Development Environment (IDE)
-| Provides a comprehensive suite of commonly used development functionality into a single application to assist developer's efficiency and productivity  
-
-| Peer Review Tool
-| Facilitates and assists developers with management of the peer code review process. 
-
-| Canary Testing Tool
-| Allows slow roll-out of new code to a small subset of users to reduce the risk of introducing a new software version in production 
-
-| Discussion
-| A forum for debate and discussion to keep developers informed and aware of what is happening.
-
-|===
-
-[id="{ProjectNameID}-workflow-tool-implementers-{context}"]
-== Component Implementers
-
-#TODO#
-
-.{ProjectName} Component Implementers
+.Component Implementers Overview
 [cols="a,a,a",options="header"]
 |===
-| Component
-2+| Component Implementers by Application Technology Stack
-
-|
-h| Maven Packaged App
-h| NPM Packaged App
+| Tool Category
+| Purpose
+| Component Implementers
 
 | Container Platform
-2+| Red Hat OpenShift Container Platform (OCP)
+| Serves as runtime infrastructure for containers.
+| Red Hat OpenShift Container Platform (OCP)
 
 | Identity Management
-2+| Red Hat Identity Manager (IdM)
+| Allows organization to manage identity and access of users and groups to 
+  enterprise resources to keep systems and data secure.
+| Red Hat Identity Manager (IdM)
 
 | Authentication
-2+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
+| To verify the identity of a user or process.
+| Red Hat Single Sign-On (RH SSO) (KeyCloak)
 
 | Authorization
-2+| Red Hat OpenShift Container Platform (OCP) with LDAP Group Sync from Red Hat Identity Manager (IdM)
+| The use of access control rules to decide whether access requests from 
+  (authenticated) consumers shall be approved or disapproved.
+| Red Hat OpenShift Container Platform (OCP) with LDAP Group Sync from Red Hat Identity Manager (IdM)
 
 | Artifact Repository
-2+| https://www.sonatype.com/nexus/repository-oss-download[Sonatype Nexus OSS]
+| Supports pushing, pulling and storing of software artifacts/packages and
+  accompanying meta data.
+| 
+* https://www.sonatype.com/nexus/repository-oss-download[Sonatype Nexus OSS] +
+* https://jfrog.com/artifactory/[Artifactory]
 
-| Image Registry
-2+| Red Hat Quay (+ Clair)
+| Container Image Registry
+| Supports pushing, pulling and storing of OCI compliant images and 
+  accompanying meta data.
+| 
+* https://www.sonatype.com/nexus/repository-oss-download[Sonatype Nexus OSS] +
+* https://jfrog.com/artifactory/[Artifactory] +
+* Red Hat Quay (+ Clair)
 
-| Source Control Tool
-2+| https://github.com/go-gitea/gitea[Gitea]
+| Source Control
+| Responsible for managing changes to source code.
+| 
+* https://github.com/go-gitea/gitea[Gitea] +
+* https://gitlab.com[GitLab]
 
-| Continuous Integration (CI) Tool
-2+|
-* Jenkins (https://github.com/ploigos/ploigos-jenkins-library[pipelines])
+| Workflow Runner (Continuous Integration (CI))
+| Automated tasks that verify new code’s correctness before integration.
+|
+* https://github.com/ploigos/ploigos-jenkins-library[Jenkins] +
+* https://tekton.dev[tekton]
 
-| Static Code Analysis Tool
-2+| https://www.sonarqube.org/[SonarQube]
+| Static Code Analysis
+| The analysis of software to catch defects, bugs, or security issues before 
+  actually executing the programs.
+| 
+* https://www.sonarqube.org/[SonarQube]
 
-| Application Language Packaging Tool
-| maven
-| npm
+| Application Language Packager
+| Performs the process of binding relevant files and components together to 
+  create a consistent, standardized deliverable for a software application. 
+| 
+* maven +
+* npm
 
-| Application Language Unit Test Tool
-| maven generating JUnit Report
-| NPM generating JUnit Report
+| Application Language Unit Tester
+| Tools to support testing the smallest part or individual unit to determine 
+  if the component is fit for use. 
+| 
+* maven generating JUnit Report +
+* npm generating JUnit Report
 
-| Binary Artifact Upload Tool
-| maven
-| npm
+| Binary Artifact Uploader
+| Pushes binary artifacts and accompanying metadata via network into a 
+  storage repository.
+|
+* maven +
+* npm
 
-| Container Image Build Tool
-2+| https://buildah.io/[buildah]
+| Container Image Builder
+| Packages application into a binary OCI compliant image suitable to run 
+  inside any OCI compliant container platform.
+| 
+* https://buildah.io/[buildah]
 
-| Container Image Upload Tool
-2+| https://github.com/containers/skopeo[skopeo]
+| Container Image Uploader
+| Pushes container image and accompanying metadata via network into a storage
+  repository.
+| 
+* https://github.com/containers/skopeo[skopeo]
 
-| Container Image Unit Test Tool
-2+| #TODO - tbd#
+| Container Image Build Vulnerability Scanner
+| Analysis on a container image's packages and other dependencies to 
+  determine if there are any known vulnerabilities in those packages or 
+  dependencies.
+| 
+* OpenSCAP
 
-| Container Image Scanning Tool
-2+| OpenSCAP
+| Container Image Build Compliance Scanner
+| Analysis on a container image's packages and other dependencies to 
+  determine if there are any known compliance violations in those packages 
+  or dependencies.
+| 
+* OpenSCAP
+
+| Container Image Signer
+| Cryptographically sign the container image for systems that require
+  a verified signature on container images for deployment.
+|
+* podman
 
 | Kubernetes Resources Creation Tool
-2+| https://helm.sh[helm]
+| Creates the necessary Kubernetes resources needed to deploy and run an 
+  application inside a container platform.
+| 
+* https://helm.sh[helm]
 
-| Continuous Deployment (CD) Tool
-2+| https://argoproj.github.io/argo-cd/[ArgoCD]
+| Continuous Deployer
+| Detects code changes and based on those changes, will automatically run 
+  pipeline to deploy code to chosen deployment environments.
+| 
+* https://argoproj.github.io/argo-cd/[ArgoCD]
 
-| Validate Environment Configuration Tool
-2+| https://stelligent.github.io/config-lint/#/[config-lint]
+| Environment Configuration Validator
+| Tool that validates the environment matches a given baseline of required 
+  objects, and configuration of those objects are correct. 
+| 
+* https://stelligent.github.io/config-lint/#/[config-lint]
 
-| User Acceptance Testing (UAT) Tool
-2+| Cucumber driving Selenium
+| User Acceptance Tester (UAT)
+| Tests to verify user-facing functionality and that the software meets 
+  real-world requirements.
+| 
+* Cucumber driving Selenium
 
-| Runtime Vulnerability Scanning Tool
-2+|
-* TBD
-** OWASP compliant (might be within CI tool)
+| Performance Tester
+| Tests software for performance issues.
+|
+
+| Runtime Application Vulnerability Scanner
+| Identifies vulnerabilities and scan your containers for malware at runtime
+  (dynamic) as opposed to static analysis.
+|
+* https://www.zaproxy.org/[OWASP ZAP]
+
+| Canary Tester
+| Allows slow roll-out of new code to a small subset of users to reduce the 
+  risk of introducing a new software version in production.
+| 
+* Cucumber driving Selenium
+
+| Container Image Registry Vulnerability Scanner
+| Scans container images in a registry for known vulnerabilities.
+| 
+* Claire
+
+| Container Image Registry Compliance Scanner
+| Scans container images in a registry for violations of 
+  organizational policy.
+|
+
+| Container Platform Vulernability Scanner
+| Scans the container platform hosts and platform for vulnerabilities.
+| 
+* Red Hat Advanced Cluster Security (RHACS)
+
+| Container Image Runtime Vulnerability Scanner
+| Scans running container for known vulnerabilities.
+|
+
+| Container Image Runtime Compliance Scanner
+| Scans running container images for violations of 
+  organizational policy.
+|
+
+| Container Platform Vulnerability Enforcer
+| Enforces polcies related to vulernabilities on the
+  container platform
+|
+* Red Hat Advanced Cluster Security (RHACS)
+
+| Container Platform Compliance Scanner
+| Scans the container platform and hosts for violations of 
+  organizational policy.
+|
+* Red Hat Advanced Cluster Security (RHACS)
+
+| Container Platform Compliance Enforcer
+| Enforces polcies related to compliance of organizational policy
+  on the container platform
+|
+* Red Hat Advanced Cluster Security (RHACS)
+
+| Compliance and Validation Input Files Repository
+| Repository that creates a central repoistory of compliance and validation
+  configurations
+|
+* https://github.com/go-gitea/gitea[Gitea]
+
+| Workflow Results Presentation
+| Repository or GUI where results of the workflow
+|
+* https://www.sonatype.com/nexus/repository-oss-download[Sonatype Nexus OSS] +
+* https://jfrog.com/artifactory/[Artifactory] +
+
+| Signed Container Enforcement
+|
+|
+* podman
 
 | Integrated Development Environment (IDE)
-| #TODO - tbd#
-| #TODO - tbd#
+| Provides a comprehensive suite of commonly used development functionality
+  into a single application to assist developer's efficiency and productivity.
+|
+* https://www.eclipse.org/che/[che]
 
-| Peer Review Tool
-2+| https://github.com/go-gitea/gitea[Gitea]
-
-| Canary Testing Tool
-2+| Cucumber driving Selenium
+| Peer Review Tracker
+| Facilitates and assists developers with management of the peer code review
+  process. 
+| 
+* https://github.com/go-gitea/gitea[Gitea]
 
 | Discussion
-| #TODO - purpose#
+| A forum for debate and discussion to keep developers informed and aware of 
+  what is happening.
+|
+* Mattermost
+* Confluence
 
 |===

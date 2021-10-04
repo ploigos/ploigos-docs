@@ -5,7 +5,7 @@ include::docs/vars/ploigos.adoc[]
 :context: {ProjectNameID}
 
 include::docs/assembly-ploigos-workflow.adoc[leveloffset=+1]
-include::docs/assembly-ploigos-deploy.adoc[leveloffset=+1]
+//include::docs/assembly-ploigos-deploy.adoc[leveloffset=+1]
 include::docs/assembly-ploigos-customize.adoc[leveloffset=+1]
 include::docs/assembly-ploigos-contribute.adoc[leveloffset=+1]
 

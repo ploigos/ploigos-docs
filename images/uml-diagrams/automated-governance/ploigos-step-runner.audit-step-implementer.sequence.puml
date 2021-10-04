@@ -1,0 +1,34 @@
+@startuml
+
+title Ploigos - Step Runner Sequence - Attestation Step Implementer
+caption Describes how the attestion step accomplishses its work 
+
+control "step_runner.py" as stepRunner
+control "autogov_implementer.py" as stepImpl
+control "governace_serializer.py" as govSerial
+
+control "Evidence Store" as evidenceStore
+control "Signature Store" as sigstore
+
+stepRunner -> stepImpl : sub_step._run_step()
+
+activate stepImpl
+
+    stepImpl -> stepImpl : Retreive workflow results
+    stepImpl -> govSerial : Send workflow results
+
+    activate govSerial
+        govSerial -> govSerial:  Serialize workflow result into standard governance api
+        stepImpl <- govSerial : Return serialized results
+    deactivate govSerial
+
+    stepImpl -> sigstore : Retrieve private key
+    stepImpl -> stepImpl : Create attestation - sign serailzied results with key
+    stepImpl -> evidenceStore : Persist attestation
+
+    stepImpl -> stepImpl : create step_results
+    stepRunner <- stepImpl : return step_results
+
+deactivate stepImpl
+
+@enduml

@@ -1,6 +1,318 @@
 [id="{ProjectNameID}-customize-steprunner", reftext="{ProjectName} Process for adding or changing a steprunner"]
 
 
-= Process for adding or changing a steprunner
+= Process for Adding/Changing a StepRunner
 
-TODO
+Replacing an existing step (e.g., changing the *package* step to use npm) vs. 
+adding a new step (e.g., an organization specific compliance scan) are almost 
+identical, the only difference being how the process is started:
+
+To replace the step implementer for an existing step in the process, first 
+locate that step's configuration in the configuration files (config.yml and 
+config-secrets.yml by default). 
+
+Be sure to use *sops* to edit the secrets file; do not attempt to modify the
+file directly.
+
+Locate the existing configuration; in the example of changing the package 
+step from Maven to NPM:
+
+
+*Step Implementer - Before*
+  
+  ...     
+  package:
+  - implementer: MavenPackage
+
+
+Replace the implementer with the new one:
+
+*Step Implementer - After*
+
+  ...
+  package:
+  - implementer: NpmPackage
+
+If adding a new step implementer, simply add the step name and implementer into
+the file. While it does not matter which order the stage is added, convention 
+is to add this configuration where it would belong in the actual pipeline 
+(e.g., deploy can be defined before build, but this severely reduces 
+readability of the file).
+
+*Step Implementer - New*
+
+  ...
+  package:
+  - implementer: MitgComplianceCheck
+  
+The implementer will automatically be picked up since the *NpmPackage* class
+is defined under the package folder in the Ploigos Step Runner module. If the
+implementation lives under a folder that does not match the step name, it can
+be referenced using the fully qualified class name (e.g., 
+*ploigos_step_runner.step_implementers.shared.NpmGeneric*). Once the desired
+step implementer is defined, review that implement documentation to 
+determine the possible configuration options. Review the various "Configuration
+Key" options:
+
+* *Required, no default value*: This value must be set under the step 
+implementer config, otherwise the step will fail when the pipeline is run.
+
+* *Required, with default value*: If the default value is not 
+acceptable/correct, the value must be overridden in the step implementer 
+config.
+
+* *Not required*: These values are not required for every workflow, and can 
+therefore be left blank – but review each one to determine if it is required
+for your particular workflow.
+
+If the default values are acceptable, and no additional configuration is 
+required, there should be no config section for the implementer. Do not put
+sensitive information in config.yaml; this information should be encrypted 
+using SOPS as part of config-secrets.yaml
+
+= Creating the Cloud Resources[[customize-cloudresources]]
+
+Currently, Ploigos utilizes a helm chart to set up the Kubernetes resources 
+required to run a pipeline, such as a ServiceAccount, with associated 
+RoleBinding and ClusterRole. As before with the Jenkins Library, this step will
+involve copying from an existing template. In the case of the cloud resources,
+however, an entirely new repository is required. The repository to copy from 
+is: https://github.com/ploigos/ploigos-charts[ploigos-charts]
+
+The simplest way to create a new repository for these cloud resources is:
+
+. Create a new repository in GitHub, naming it appropriately based on the 
+workflow (e.g., cloud-resources_jenkins_workflow_custom).
+. Create a new folder locally whose name matches that of the newly-created 
+  repository.
+. Go into this folder on the command line and initialize the repository locally
+  using git init.
+. Create the initial branch (main): 
+  
+  git checkout -b main
+
+. Copy all files and folders except for the .git folder from the reference 
+  cloud resources project (linked above).
+. Create a remote linking this local repository to the remote repository
+  
+  git remote add origin https://<git_url>/<org_name>/cloud-resources_jenkins_workflow_custom.git
+
+. Push the changes to the remote
+
+  git push -u origin/main
+
+With this repository created and the root commit pushed, create a branch for 
+defining the workflow – while not required, strongly consider using the 
+pattern feature/<name> for the branch name. On this branch, make the following 
+changes:
+
+*[.underline]#Common Changes#*
+
+* Determine if this workflow has any deployment steps. If not, delete the 
+  folder `reference-quarkus-mvn-deploy`.
+* Rename the `reference-quarkus-mvn-workflow` folder to represent the new 
+  workflow created above (e.g., build-only-workflow). Do the same for the 
+  deploy folder, if it still exists.
+* Update the README to reflect the following:
+** Update the first two lines to reflect the purpose of these cloud resources
+** Replace all instances of `charts/reference-quarkus-mvn-workflow` with `charts/<new-workflow-folder>`
+** Add any other notes that may be specific to these cloud resources, if any
+
+*[.underline]#Workflow Resources Changes#*
+
+Perform the following changes under the `charts/<workflow-folder>` directory:
+
+* Update the *applicationName* and *serviceName* values in values.yaml – these
+  values will determine the names of various Kubernetes resources that are 
+  created, so be cognizant of Kubernetes' 63 character limit for various 
+  resource names, and try to keep the combined length of these two strings to
+  under 32 characters.
+* Create a PGP private key for the pipeline and replace the contents of the 
+  *jenkins.key* value in *secrets.yaml*
+* Update *Chart.yaml* to update the version of 
+  `ploigos-workflow-jenkins-resources`, if needed
+
+*[.underline]#Deployment Resources Changes#*
+
+If this workflow contains deployment steps, perform the following changes under
+the `charts/<deploy-folder>` directory:
+
+* Update the description in *Chart.yaml* to reflect the intent of these 
+  resources / its supporting workflow library
+* Update *values.yaml* with any values shared between all environments.
+* Delete the `values-*.yaml` files that are not a deployment target, if any.
+
+If there is only one target deployment environment, all of the values _could_ 
+be put in a single values file, but this is not recommended. Instead, separate
+values into whether or not they would be common or environment specific if 
+there was a second environment; this makes it easier to grow the workflow 
+later, and use it as a reference for other workflows. Once all of these changes
+are made: add and commit the changes, push them up to the repository, and open 
+a merge request.
+
+All of these changes could have been done as part of the initial root commit,
+but this information was omitted in order to simplify the written instructions.
+It is up to the implementer to determine if this should be one or two commits.
+
+= Encrypting Secrets
+
+Sensitive information, such as passwords and private encryption keys, should 
+always be encrypted at rest. This creates a challenge for automation 
+processes, since the tools involved require a secure means to access required
+authentication credentials without user intervention.
+
+The Ploigos workflow solves this problem using https://github.com/mozilla/sops[Mozilla SOPS], 
+a powerful tool with a wide array of functionality for protecting secrets at 
+rest. A full explanation of its inner workings and functionality can be 
+reviewed in their documentation; this section aims to provide a high-level 
+overview of only the SOPS functionality that Ploigos takes advantage of for 
+encrypting sensitive information required for an automated pipeline run.
+
+//
+
+Ploigos SOPS Functionality::
+A SOPS-encrypted file takes the form of a key/value(s) pair file 
+(e.g., JSON, INI); at the time of writing, Ploigos uses YAML for storing 
+configuration of reference applications, but there is no reason that JSON could
+not be used instead.
+
+The encrypted file is then stored in version control. The reference 
+architecture for the Ploigos ecosystem expects this file to reside in the 
+folder `cicd/ploigos-step-runner-config` (relative to the repository root 
+folder), though this can be modified by overriding the value for 
+*stepRunnerConfigDir*. The CI/CD workflow tool decrypts the values in this file
+in order to gain access to authentication secrets (e.g., tokens, passwords, 
+keys) for various tools used across the pipeline. This removes the need for 
+user input and only authorized users are able to modify this file.
+
+The keys from the configuration key/value pairs are unencrypted, which carries
+two benefits. First, anyone with access to the file can see what values are 
+stored in the file, without gaining access to the values themselves. Also, it
+is possible to use version control tooling (e.g., `git diff`) to individually
+identify which values have been changed at any point in time.
+
+[NOTE]
+The file will have multiple PGP keys associated: one for each dev trusted to 
+decrypt/modify values, plus one for each tool that needs to decrypt that secret
+(e.g., the CI/CD workflow tool).
+
+First Encryption::
+
+Before a SOPS-encrypted file can be created, a PGP public/private keypair is 
+required; see the section “Generating PGP Keys” below for how this will work. 
+Once a keypair is available, simply invoke the SOPS tool with the desired 
+filename as the only argument:
+
+  sops --pgp <pgp-fingerprint> my-config-secrets.yaml
+
+[NOTE] 
+PGP fingerprint is explicitly specified to ensure that the correct PGP key is 
+used; if multiple PGP keys exist, SOPS will use the first one it finds.
+
+This will open a text editor with a pre-generated YAML template. Fill in 
+configuration values as required, then save and quit. SOPS will automatically 
+encrypt the document. To see this in action, open the file through a standard 
+text editor (i.e., not through SOPS) and note that the following are true:
+
+* The configuration keys are unencrypted, but the configuration values are 
+encrypted.
+* There is a sops.pgp entry in the file with a fingerprint that matches the 
+fingerprint of the PGP keypair used to generate this file.
+
+//
+
+Rotating Keys::
+
+When a SOPS-encrypted file is first created, only the user whose PGP public key
+was used to encrypt the key (e.g., the user who created the file) can decrypt 
+the file. It will be necessary for multiple people to decrypt this file -- at 
+a minimum, the originator of the file, and the automation tooling.
+
+If values were encrypted with an individual developer’s private key, then only
+that developer would be able to decrypt those values. Instead, a symmetric 
+encryption key is generated for encrypting configuration values, and that key
+is then protected with the user’s PGP public key. This way, the key can be 
+encrypted multiple times using different PGP keys, allowing the owner of those 
+keys to also decrypt the key (and thus the configuration values in turn).
+
+As a prerequisite to adding a public key to a SOPS-encrypted file, the user 
+performing the operation must already have:
+
+. Their own public key added to the file.
+. The public key of the user to be given permission to decrypt the file.
+. The public keys for all users who already have permission to decrypt the file
+  (e.g., whose keys were previously added to the file).
+
+[NOTE]
+The method for sharing public keys is outside the scope of this document.
+
+Once these prerequisites are met, add the new PGP key using its fingerprint:
+
+  sops -r -i --add-pgp <fingerprint> some-secrets-file.yaml
+
+To revoke a user’s permissions, use the same command as above, but replace
+`--add-pgp` with `--rm-pgp`.
+
+//
+
+Decrypting Configuration in the Pipeline::
+
+The larger purpose of this exercise has been to create a configuration file 
+that can be stored in version control and read in by a CI/CD workflow tool. 
+The last piece of this puzzle is setting up the workflow tool to be able to 
+decrypt these values.
+
+[.underline]#Generating the Workflow Runner Key#
+
+TODO: discuss generating public/private keypair for pipeline
+
+[NOTE]
+The public key needs to be distributed the same way that all the other keys 
+are; DO NOT LOSE IT! DELETE PRIVATE KEY FROM LOCAL MACHINE ONCE DONE!!
+
+Just as various users’ keys are added to the SOPS-encrypted configuration to
+be able to decrypt these values, the CI/CD workflow runner tool also requires a
+PGP public/private keypair. A user will need to generate this keypair, but it 
+should only live on their machine temporarily; once this process is complete, 
+the private key must be deleted from the local machine. The public key should 
+be distributed the same way that all the other user’s public keys are.
+
+[.underline]#Adding Key to Helm Chart#
+
+There is a Helm chart that will be run later in this process in order to 
+prepare a pipeline for a specific application; to prepare a Ploigos pipeline;
+see the <<customize-cloudresources, Create the Cloud Resources>> section for 
+additional information.
+
+The private key that was generated for the workflow tool needs to be loaded 
+into a SOPS-encrypted file within this helm chart. The default location for 
+storing the private key is:
+`<cloud-resources>/charts/reference-quarkus-mvn-workflow/secrets.yaml`
+
+This file should be a SOPS-encrypted file (using PGP public keys from all users
+ who should have access to this file) with the following content, placing the 
+PGP private key inline as appropriate:
+
+
+  global:
+    pgpKeys:
+      tekton-tssc-references.key: |
+        -----BEGIN PGP PRIVATE KEY BLOCK-----
+        ...SNIPPED...
+        -----END PGP PRIVATE KEY BLOCK-----
+
+Running this Helm chart requires human intervention, so only users’ PGP keys 
+should be added here. Once the cloud resources Helm chart is run, the output 
+will contain the name of the secret that was created to hold this PGP key 
+(e.g., `PGP Keys Secret: pgp-keys-ploigos-workflow-dms-child-support`).
+
+The value for `pgpKeysSecretName` should be overridden in the Jenkinsfile to
+reference this value. When the pipeline is run, this PGP private key will be 
+injected into the pod and imported, in order to decrypt pipeline configuration 
+values.
+
+Note that this secret is protected so as to only be accessed by a 
+ServiceAccount with specific permissions; the workflow runner pod must be run 
+using the same permissions.
+
+

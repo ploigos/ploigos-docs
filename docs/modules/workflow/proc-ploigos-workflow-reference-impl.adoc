@@ -1,6 +1,6 @@
 [id="{ProjectNameID}-reference-impl", reftext="{ProjectName} Reference Implementation"]
 
-= Reference Implementation
+= Typical Workflow Deployment
 
 The following guide shows how to deploy the reference implementation of the Ploigos Standard Workflow into an OCP 4.x cluster with a simple quarkus application as a demo. 
 
@@ -8,169 +8,312 @@ The following guide shows how to deploy the reference implementation of the Ploi
 == Prerequisites
 
 * Operational OCP 4.x cluster
+** Non-FIPS
+** Access to Red Hat CDN, quay.io, and the OCP Operator Hub
 
 
-== Installing the Ploigos Software Factory Operator
-
-See https://github.com/ploigos/ploigos-software-factory-operator[ploigos-software-factory-operator] for latest information.
+== Planning the Typical Workflow Deployment
 
 
-. Login to an OCP cluster as `cluster-admin`
-. Import the RedHatGov Operator Catalog (Create a custom `CatalogSource`)
-+
-----
-oc apply -f - << EOF
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: redhatgov-operators
-  namespace: openshift-marketplace
-spec:
-  sourceType: grpc
-  image: quay.io/redhatgov/operator-catalog:latest
-  displayName: Red Hat NAPS Community Operators
-  publisher: RedHatGov
-EOF
-----
-+
-. Create a project named *devsecops* for the pipeline tooling+
-+
-----
-oc new-project devsecops
-----
-+
-. Remove restrictive limit ranges *NOTE: Required for RHPDS clusters*
-+
-----
-oc delete limitrange --all -n devsecops
-----
-+
-. Install the 'Ploigos Software Factory Operator'
-* In the OCP Web Console, navigate to:
-** *Operators -> OperatorHub*
-** Search for "Ploigos Software Factory Operator"
-** Select Operator and click *Install*
 
-== Deploy the Ploigos Platform and Pipeline
+== Deploy the Typical Workflow
 
-. In the OCP WebUI, Select the *devsecops* namespace
-. Deploy the Ploigos Platform
-* Navigate to *Installed Operators -> Ploigos Software Factory*
-* Inside the software factory operator screen, click *[+ TSSCPlatform]*
-* Wait for the deployment to finish
-** Navigate to the _tssc-operator-controller-manager_ pod and watch the logs for the "PLAY RECAP " line
-. Deploy the Ploigos Pipeline
-* Navigate to *Installed Operators -> Ploigos Software Factory*
-* Inside the software factory operator screen, click *[+ TSSCPipeline]*
-. Access the deployed Jenkins pod to watch progress
-* Navigate to *Routes -> Jenkins* and click the Jenkins Route
-* Login to Jenkins with Openshift Credentials
-* Navigate to *platform -> reference-quarkus-mvn_jekins_workflow-standard -> main*
-* Click "Open Blue Ocean" (Vertical menu on left side)
-* Watch the pipeline progress and wait for 100%
+=== Deploy a Workflow with the Ploigos Software Factory Operator
 
-== Add SSH Key to Gitea
+Follow https://github.com/ploigos/ploigos-software-factory-operator#quick-start[Ploigos Software Factory Operator - Quick Start] 
+to deploy the latest Software Factory Operator.
 
-. Obtain the Gitea credentials
-* In the *devsecops* namespace, navigate to *Secrets*
-* From the secret *tssc-service-account*, copy the username and password
-* Navigate to *Routes* and open the Gitea route
-. Login to Gitea with the tssc-service-account username/password
-. Add SSH Key to account in Gitea
-* Click the Profile Icon (top left corner)
-* Select Settings
-* Select 'Add Key'
-* Enter a public key
-* Click 'Add Key'
 
-== Setup the Development Environment with reference application
-The following directions are designed to setup a development environment for Ploigos. By creating forks of the official repositories, a developer can customize the workflow as needed.
+=== Deploy a Workflow with existing/manually installed Infrastructure
 
-. Fork required Ploigos repositories
-* Create a fork of: https://github.com/ploigos/ploigos-step-runner
-* Create a fork of: https://github.com/ploigos/ploigos-jenkins-library
-* Clone repositories above to local machine
-. Configure the Jenkinsfile to point to the *ploigos-step-runner* fork
-* In Gitea, navigate to the quarkus reference application Jenkinsfile `cicd/Jenkinsfile`
-* Add the following to the end of the Jenkinsfile:
+The following section describes examples on how to deploy various
+components on OCP.
 
- stepRunnerUpdateLibrary: true,
- stepRunnerLibSourceUrl: "git+​ https://github.com/[your-step-runner-fork]@[the-branch-to-use​ ]"
+Deploy IDM::
 
-** Replace [your-step-runner-fork] with your fork URL
-** Replace [the-branch-to-use] with target branch
-* Commit Changes
-* Initiate Pull Request
-* Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository
-. Configure the Jenkinsfile to point to the *ploigos-jenkins-library* fork
-* In Gitea, navigate to the quarkus reference application Jenkinsfile `cicd/Jenkinsfile`
-* Replace the *remote:* line of the Jenkinsfile with the forked jenkins library URL 
-  
-  // Load the TSSC Jenkins Library
-  library identifier: 'ploigos-jenkins-library@main',
-  retriever: modernSCM([
-    $class: 'GitSCMSource',
-    remote: 'https://github.com/<username>/ploigos-jenkins-library.git'
-  ])
+NOTE: Edit the following values: `Secret.stringData.admin.password`, `Service.spec.clusterIP`, `Route.spec.host`, `Pod.spec.env`
 
-** NOTE: also update the *library identifier:* line with the branch name if it differs from `main`
-* Commit Changes
-* Initiate Pull Request
-* Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository
+. Install containerized IdM
 
-== Changing from the Ploigos CI/CD Standard Workflow to the Ploigos CI/CD Minimum Workflow
+  oc new-project idm
+  oc apply -f - << EOF
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: freeipa-data-pvc
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    storageClassName: gp2
+    resources:
+      requests:
+        storage: 10Gi
+  ---
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: freeipa-server-password
+  stringData:
+    admin.password: Secret123
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: freeipa-server-service
+  spec:
+    selector:
+      app: freeipa-server
+    clusterIP: <idm_service_ip>
+    ports:
+    - name: http
+      port: 80
+      targetPort: 80
+    - name: https
+      port: 443
+      targetPort: 443
+    - name: dns-udp
+      port: 53
+      protocol: UDP
+      targetPort: 53
+    - name: kerberos-tcp
+      port: 88
+      protocol: TCP
+      targetPort: 88
+    - name: kerberos-udp
+      port: 88
+      protocol: UDP
+      targetPort: 88
+    - name: kerberospw-udp
+      port: 464
+      protocol: UDP
+      targetPort: 464
+    - name: kerberospw-tcp
+      port: 464
+      protocol: TCP
+      targetPort: 464
+    - name: ldap-tcp
+      port: 389
+      protocol: TCP
+      targetPort: 389
+    - name: ldaps-tcp
+      port: 636
+      protocol: TCP
+      targetPort: 636
+  ---
+  kind: Route
+  apiVersion: route.openshift.io/v1
+  metadata:
+    name: freeipa
+  spec:
+    host: freeipa-idm.apps.<cluster_domain>
+    to:
+      kind: Service
+      name: freeipa-server-service
+      weight: 100
+    port:
+      targetPort: https
+    tls:
+      termination: passthrough
+    wildcardPolicy: None
+  ---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: freeipa-server
+    labels:
+      app: freeipa-server
+  spec:
+    restartPolicy: OnFailure
+    containers:
+    - name: freeipa-server
+      image:  quay.io/freeipa/freeipa-server:centos-8-stream
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: freeipa-server-data
+        mountPath: /data
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      - containerPort: 443
+        protocol: TCP
+      - containerPort: 53
+        protocol: UDP
+      - containerPort: 88
+        protocol: TCP
+      - containerPort: 88
+        protocol: UDP
+      - containerPort: 464
+        protocol: TCP
+      - containerPort: 464
+        protocol: UDP
+      - containerPort: 389
+        protocol: TCP
+      - containerPort: 636
+        protocol: TCP
+      env:
+      - name: IPA_SERVER_HOSTNAME
+        value: freeipa-idm.apps.<cluster_domain>
+      - name: IPA_SERVER_IP
+        value: <idm_clusterIP>
+      - name: PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: freeipa-server-password
+            key: admin.password
+      - name: IPA_SERVER_INSTALL_OPTS
+        value: "-U -r CLUSTER.LOCAL --setup-dns --no-forwarders --no-ntp"
+      readinessProbe:
+        exec:
+          command: [ "/usr/bin/systemctl", "status", "ipa" ]
+        initialDelaySeconds: 60
+        timeoutSeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 3
+      volumes:
+    - name: freeipa-server-data
+      persistentVolumeClaim:
+        claimName: freeipa-data-pvc
+    - name: cgroups
+      hostPath:
+        path: /sys/fs/cgroup 
+  EOF
 
-. In Gitea, navigate to the quarkus reference application Jenkinsfile `cicd/Jenkinsfile`:
+Deploy Keycloak::
+
+. Install SSO operator to SSO namespace as `keycloak-1`
+. Obtain admin creds from secret `credential-keycloak-1`
+. Setup SSO configuration for OCP
+.. Create new client: Clients -> Create
+
+  ----
+  clientid: openshift
+  client protocol: openid-connect
+  ----
+
+.. Edit client: 
+
+  ----
+  access type: confidential
+  valid redirect URIs: 
+   - https://console-openshift-console.apps.<cluster_domain>/*
+   - https://oauth-openshift.apps.<cluster_domain>/*
+  web origins: 
+   - https://console-openshift-console.apps.<cluster_domain>
+   - https://oauth-openshift.apps.<cluster_domain>
+  ----        
+           
+. Integrate with IDM
+..  Configure -> User Federation -> add provider (ldap)
+
+  ----
+  Vendor: Red Hat Directory Server
+  Connection URL: ldap://<idm_ip>:389
+  Users DN: cn=users,cn=accounts,dc=cluster,dc=local
+  Bind DN: cn=Directory Manager
+  Bind Credential: <bind_secret>
+  ----
     
-  // Load the Ploigos Jenkins Library
-  library identifier: 'ploigos-jenkins-library@v0.17.0',
-  retriever: modernSCM([
-      $class: 'GitSCMSource',
-      remote: 'https://github.com/ploigos/ploigos-jenkins-library.git'
-  ])
+. Setup OCP for SSO configuration
+.. Administration -> Cluster Settings -> Global Configuration -> OAuth  -> Add OpenID Connect
+
+  ----
+  name: sso
+  clientid: openshift
+  client secret: <from SSO>
+  issuer url: https://keycloak-sso.apps.<cluster_domain>/auth/realms/master
+  ----
+
+
+Deploy Jenkins::
+
+. Install Jenkins operator to `jenkins` namespace
+. Create Jenkins instance
+
+
+Deploy Gitea::
+
+. Add HelmChartRepository CR
   
-  // run the pipeline
-  ploigosWorkflowStandard(
-      stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/',
-      pgpKeysSecretName: 'pgp-keys-ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',
+  ----
+  oc apply -f - << EOF
+  apiVersion: helm.openshift.io/v1beta1
+  kind: HelmChartRepository
+  metadata:
+    name: gitea-charts
+  spec:
+   # optional name that might be used by console
+    name: gitea-charts
+    connectionConfig:
+      url: https://dl.gitea.io/charts/
+  EOF
+  ----
 
-      workflowServiceAccountName: 'ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',
+. Switch to 'developer' view, create gitea namespace, install gitea using helm
 
-      workflowWorkerImageDefault: 'ploigos/ploigos-ci-agent-jenkins:v0.16.0',
-      workflowWorkerImageUnitTest: 'ploigos/ploigos-tool-maven:v0.16.0',
-      workflowWorkerImagePackage: 'ploigos/ploigos-tool-maven:v0.16.0',
-      workflowWorkerImageStaticCodeAnalysis: 'ploigos/ploigos-tool-sonar:v0.16.0',
-      workflowWorkerImagePushArtifacts: 'ploigos/ploigos-tool-maven:v0.16.0',
-      workflowWorkerImageContainerOperations: 'ploigos/ploigos-tool-containers:v0.16.0',
-      workflowWorkerImageContainerImageStaticComplianceScan: 'ploigos/ploigos-tool-openscap:v0.16.0',
-      workflowWorkerImageContainerImageStaticVulnerabilityScan: 'ploigos/ploigos-tool-openscap:v0.16.0',
-      workflowWorkerImageDeploy: 'ploigos/ploigos-tool-argocd:v0.16.0',
-      workflowWorkerImageValidateEnvironmentConfiguration: 'ploigos/ploigos-tool-config-lint:v0.16.0',
-      workflowWorkerImageUAT: 'ploigos/ploigos-tool-maven:v0.16.0'
-  )
-
-. Rename the function `ploigosWorkflowStandard` to `ploigosWorkflowMinimal` and Remove *workflowWorker* Lines to conform to the Ploigos Minimal Workflow:
-
-  // Load the Ploigos Jenkins Library
-  library identifier: 'ploigos-jenkins-library@v0.17.0',
-  retriever: modernSCM([
-      $class: 'GitSCMSource',
-      remote: 'https://github.com/ploigos/ploigos-jenkins-library.git'
-  ])
+. Add 'anyuid' scc for Gitea deploy 
   
-  // run the pipeline
-  ploigosWorkflowMinimal(
-      stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/',
-      pgpKeysSecretName: 'pgp-keys-ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',
+  ----
+  oc adm policy add-scc-to-user anyuid -z default -n gitea`
+  ----
 
-      workflowServiceAccountName: 'ploigos-workflow-ref-quarkus-mvn-jenkins-std-fruit',
-      workflowWorkerImageDefault: 'ploigos/ploigos-ci-agent-jenkins:v0.16.0',
-      workflowWorkerImagePackage: 'ploigos/ploigos-tool-maven:v0.16.0',
-      workflowWorkerImagePushArtifacts: 'ploigos/ploigos-tool-maven:v0.16.0',
-      workflowWorkerImageContainerOperations: 'ploigos/ploigos-tool-containers:v0.16.0',
-      workflowWorkerImageDeploy: 'ploigos/ploigos-tool-argocd:v0.16.0',
-  )
+. Create route for gitea http
+. Obtain admin user/pass from: `Workloads-> statefulsets -> gitea -> environments -> init container (configure-gitea)`
+. Connecting Giteao to IdM:
 
-. Commit Changes
-. Initiate Pull Request
-. Upon successful Pull Request build, Merge changes into main branch of the reference-quarkus-mvn-jenkins repository
+  ----
+  #From the Gitea WebUI: Site Administration -> Authentication Sources, add source
+  Auth Type: LDAP(Via BindDN)
+  Auth Name: idm
+  Security protocol: unencrypted
+  Host: <IdM host ip>
+  Port: 389
+  BindDN: cn=Directory Manager
+  Bind Passord: <binddn secret>
+  User Search Base: cn=users,cn=accounts,dc=cluster,dc=local
+  User Filter: (&(objectClass=posixAccount)(uid=%s))
+  Email attribute: mail
+  ----
+
+NOTE: To expose SSH functionality will require external loadbalancer and networking configuration
+that is not available in some sandbox environments (ex: OpenTLC/RHPDS deployments)
+
+
+Deploy Nexus::
+
+. Install Nexus Repository Operator
+. Add 'anyuid' scc for Nexus deploy `oc adm policy add-scc-to-user anyuid -z nxrm-operator-certified -n nexus`
+. Create route to nexus http server
+. Login to nexus (admin/admin123)
+. Follow configuration wizard
+.. Disable anonymous access
+. Add docker repository
+.. Configure docker repository for port 9001 (http)
+. Add OCP service for nexus docker (port 9001)
+. Add OCP route for nexus docker (https/edge -> 9001)
+
+Deploy ArgoCD::
+
+. Install ArgoCD community operator
+. Create an instance of ArgoCD
+. Create route to argocd-server (passthrough)
+. Get admin password from secret (Secrets -> argocd-1-cluster -> admin.password)
+
+Deploy SonarQube::
+
+. Install sonarqube operator (redhatgov)
+. Create a sonarqube instance
+. Login and change password (default: admin/admin)
+
+Deploy ACS(StackRox)::
+
+. Install ACS operator
+. Remove resource limit for stackrox project (if exists)
+. Deploy central
+. Create cluster bundle
+.. Stackrox UI -> `Platform Configuration -> integrations -> cluster init bundle -> New Integration`
+.. Generate and download kubernetes yaml
+.. Apply yaml to cluster
+. Deploy secured cluster
+
+
