@@ -12,10 +12,13 @@ include::vars/ploigos.adoc[]
 
 include::modules/workflow/con-ploigos-workflow-abstracted.adoc[leveloffset=+1]
 include::modules/workflow/ref-ploigos-workflow-tools.adoc[leveloffset=+1]
+
+
+= Deploying Ploigos
 include::modules/workflow/con-ploigos-workflow-infrastructure.adoc[leveloffset=+1]
 include::modules/workflow/proc-ploigos-workflow-reference-impl.adoc[leveloffset=+1]
-include::modules/workflow/proc-ploigos-workflow-reference-ops.adoc[leveloffset=+1]
-include::modules/workflow/ref-ploigos-workflow-terms.adoc[leveloffset=+1]
+//include::modules/workflow/proc-ploigos-workflow-reference-ops.adoc[leveloffset=+1]
+
 
 
 // reload parent variables

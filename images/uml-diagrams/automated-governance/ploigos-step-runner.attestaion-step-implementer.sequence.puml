@@ -1,0 +1,39 @@
+@startuml
+
+title Ploigos - Step Runner Sequence - Audit Step Implementer
+caption Describes how the audit step accomplishses its work 
+
+control "step_runner.py" as stepRunner
+control "autogov_implementer.py" as stepImpl
+control "governace_serializer.py" as govSerial
+
+control "Evidence Store" as evidenceStore
+control "Policy Store" as policyStore
+control "Policy Engine" as ploicyEngine
+control "Signature Store" as sigstore
+
+stepRunner -> stepImpl : sub_step._run_step()
+
+activate stepImpl
+
+    stepImpl -> evidenceStore : Retreive attestation
+    stepImpl -> stepImpl : Validate attestion with public key
+    stepImpl -> policyStore : Request policy
+
+    activate policyStore
+        stepImpl <- policyStore : Return policy
+    deactivate policyStore
+
+    stepImpl -> ploicyEngine : Send attestion & policy for audit
+    activate ploicyEngine
+        ploicyEngine -> ploicyEngine : Excute Audit
+        stepImpl <- ploicyEngine : Return result
+    deactivate ploicyEngine
+
+    stepImpl -> stepImpl : Determine audit success or failure
+    stepImpl -> stepImpl : Serilize step_results from audit results & finding determination
+    stepRunner <- stepImpl : return step_results
+
+deactivate stepImpl
+
+@enduml

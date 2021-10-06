@@ -1,7 +1,13 @@
 [id="{ProjectNameID}-workflow-infrastructure", reftext="{ProjectName} Infrastructure Requirements"]
-= Infrastructure Requirements 
+= Infrastructure Resources 
 
-Below is the infrastructure used to develop and test the Minimum Viable Product(MVP) of the Ploigos CI/CD Workflow Reference Implementation. The most basic requirement for the deployment of the Ploigos CI/CD Workflow is an operational OCP 4.x cluster. 
+The most basic requirement for the deployment of the Ploigos CI/CD Workflow is
+an operational OCP 4.x cluster. 
+
+== OCP Platform Suggested Sizing
+
+Below is the infrastructure used to develop and test the Minimum Viable 
+Product(MVP) of the Ploigos CI/CD Workflow Reference Implementation. 
 
 .Red Hat OpenShift Sizing
 [cols="a,a,a,a,a,a",options="header"]
@@ -57,7 +63,10 @@ Below is the infrastructure used to develop and test the Minimum Viable Product(
 |===
 
 
-== Suggested Sizing
+== Containerized Tool Suggested Sizing
+
+Below is suggested initial sizing for tools commonly deployed with Ploigos
+
 .Containerized Tool Sizing
 [cols="a,a,a,a",options="header"]
 |===
@@ -69,12 +78,12 @@ Below is the infrastructure used to develop and test the Minimum Viable Product(
 | Red Hat SSO
 | 2
 | 2
-| WAG (https://access.redhat.com/solutions/3217681[Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO]
+| WAG (https://access.redhat.com/solutions/3217681[Capacity planning, Sizing guide, Performance Tuning or Benchmarks for RH-SSO])
 
 | Sonatype Nexus Repository Manager 3 OSS
 | 8
 | 16-32+
-| https://help.sonatype.com/repomanager3/installation/system-requirements[Sonatype Nexus Repository Manager 3 OSS - System Requirments]
+| https://help.sonatype.com/repomanager3/installation/system-requirements[Sonatype Nexus Repository Manager 3 OSS - System Requirements]
 
 | JFrog Artifactory OSS - DB (PostgreSQL)
 | 2
@@ -84,8 +93,9 @@ Below is the infrastructure used to develop and test the Minimum Viable Product(
 | Red Hat Quay - Operator Based
 | 2
 | 4
-| https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites],
-https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_on_openshift_with_quay_setup_operator/architecture[Operator and Quay Architecture]
+| 
+* https://access.redhat.com/documentation/en-us/red_hat_quay/3.2/html/deploy_red_hat_quay_-_basic/preparing_for_red_hat_quay_basic#prerequisites[Quay Docs - Preparing for Red Hat Quay Basic - Prerequisites] +
+* https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_on_openshift_with_quay_setup_operator/architecture[Operator and Quay Architecture]
 
 | Red Hat Quay - Operator Based - DB (Crunchy Data PostgreSQL)
 | 2 / Operator Governed
@@ -131,4 +141,5 @@ https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat
 | N/A (embedded in CI container)
 | N/A (embedded in CI container)
 |
+
 |===

@@ -13,18 +13,38 @@ In summary, this modular documentation is based around the concept of dividing d
 
 == Adding to the Documentation
 
+Automatic Asciidoc builds with GitHub Actions::
+
 . Fork the documentation repository
 ** Once the repository is forked, ensure GitHub actions is enabled for the repository to build and publish the documentation.
-
 . Perform edits to the documentation
 ** Follow the guidelines established by the Modular Documentation system
 *** Refine existing user stories - modify existing documentation assemblies
 *** Establish new user stories - add additional assemblies into the documentation
-
 . Review Changes in GitHub Pages
-
 . Submitting a pull request to the repository
 
+Manual/Local Build Process::
+
+Prerequisites:
+
+* Podman installed
+* `quay.io/hdaems/podman-asciidoctor:1.1` image
+
+//
+
+. Check out document repository https://github.com/ploigos/ploigos-docs.git[ploigos-docs]
+. Perform edits
+. Build asciidocs
+
+  #make site directory
+  mkdir site/
+  #copy images into site/
+  cp -R images site/
+  #run sciidoctor container
+  podman run --user=<userid> --rm -v <docs_repo>:/documents:Z podman-asciidoctor asciidoctor -D site -o index.html master.adoc
+
+. Open HTML file site/index.html
 
 == Building the Documentation
 

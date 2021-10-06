@@ -1,0 +1,47 @@
+[id="{ProjectNameID}-opinions-establish", reftext="{ProjectName} Establish Opinions for the workflow"]
+= Developing Opinions
+
+Ploigos is an opinionated software development and deployment workflow. The
+Typical CI/CD workflow, as the provided suggested workflow to implement,
+presents specific technology chosen based on industry popularity, feature
+set, open source involvement, and proficiency by contributing members of 
+Ploigos. These considerations, and many more, may be evaluated by a particular
+organization when deciding on specific component implementer within the
+workflow. 
+
+Some other considerations that guide opinions established in this document are:
+
+* The CI tool should be modular and easily replaceable.
+* https://trunkbaseddevelopment.com/[Trunk Based Development], instead of:
+   -  https://nvie.com/posts/a-successful-git-branching-model/[git-flow]
+   -  https://guides.github.com/introduction/flow/[GitHub Flow]
+* When creating merge requests, create feature branches on forks rather than
+   on the primary repository, to mirror the workflow of large open source
+   projects.
+* The "Release Branch" is the branch that goes into production. 
+   The term "main" will be used to refer to the release branch. The name of 
+   this branch may be different from team to team.  There are many different 
+   naming conventions for a branch that goes to production 
+   (e.g., master, trunk, release) 
+
+* The minimum, and recommended, number of logical environments is
+   - `N` number of development environments, one per active feature branch
+   - Test
+   - Production
+
+* A "StepRunner" is the implementation of all the necessary work associated 
+  with common steps in a CI/CD pipeline. Examples of step runners include: 
+  package, tag source, unit test, etc. The implementation of the StepRunner 
+  is abstracted away from the user, and available as reusable modules via 
+  the ploigos-step-runner library.   
+
+* For UAT test bed infrastructure (i.e., Selenium Grid), such infrastructure, 
+  when possible, should be dynamically created on-demand (by 
+  infrastructure-as-code) using a StepRunner from the ploigos-step-runner 
+  library. There will be cases where UAT infrastructure already exists 
+  in-house. In such cases, the use of preexisting/static infrastructure is 
+  a supported alternative for UAT testing.  For example, if your company 
+  already has an established deployment of Selenium Grid, that instance of 
+  Selenium Grid can be used rather than have the framework dynamically stand 
+  up additional instances.  
+

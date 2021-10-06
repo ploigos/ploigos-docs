@@ -1,6 +1,125 @@
-[id="{ProjectNameID}-customize-workflow", reftext="{ProjectName} Process for changing the workflow"]
+[id="{ProjectNameID}-customize-workflow", reftext="{ProjectName} Changing the Workflow"]
+
+= Changing the Workflow
+
+Forking the StepRunner and Jenkins Library::
+
+In order to customize the CI/CD workflow and how specific steps in that
+workflow are configured, the first step is to clone and modify the source
+code repositories that control the workflow operation. With Ploigos this
+will be the `ploigos-jenkins-library` and `ploigos-step-runner` repositories.
+
+In the following example, it will be demonstrated how to fork the official
+`ploigos-step-runner` and `ploigos-jenkins-library` repositories to the Gitea
+server hosted as part of the CI/CD Workflow, and update the reference
+application to use the forked repositories.
 
 
-= Process for changing the workflow
+. Create the empty/bank repositories in Gitea with the following names:
+  
+  ploigos-step-runner
+  ploigos-jenkins-library
 
-TODO
+. Clone the repositories:
+
+  git clone https://github.com/ploigos/ploigos-step-runner.git
+  git clone https://github.com/ploigos/ploigos-jenkins-library
+
+. Update the cloned repository remote to point to the Gitea server
+  
+  cd ploigos-jenkins-library
+  git remote rename origin github
+  git remote add origin https://<repo_url>/platform/ploigos-jenkins-library.git
+  git push -u origin main
+  git push --tags
+
+  cd ploigos-step-runner
+  git remote rename origin github
+  git remote add origin https://<repo_url>/platform/ploigos-step-runner.git
+  git push -u origin main
+  git push --tags
+
+
+. Configure the Jenkinsfile for the reference application 
+  to point to the new internal `ploigos-step-runner` (if using the Software
+  Factory Operator and the `mvn-reference-app` application)
+
+  //cicd/ploigos-software-factory-operator/Jenkinsfile
+  // Load the Ploigos Jenkins Library
+  library identifier: 'ploigos-jenkins-library@v0.21.0',
+  retriever: modernSCM([
+      $class: 'GitSCMSource',
+      remote: 'https://<repo_url>/platform/ploigos-jenkins-library.git'
+  ])
+  // run the pipeline
+  ploigosWorkflowTypical(
+      stepRunnerConfigDir: 'cicd/ploigos-software-factory-operator/ploigos-step-runner-config/',
+      pgpKeysSecretName: 'ploigos-gpg-key',
+      workflowServiceAccountName: 'jenkins',
+      workflowWorkerImageDefault: 'quay.io/ploigos/ploigos-base:v0.21',
+      workflowWorkerImageAgent: 'quay.io/ploigos/ploigos-ci-agent-jenkins:v0.21',
+      workflowWorkerImageUnitTest: 'quay.io/ploigos/ploigos-tool-maven:v0.21',
+      workflowWorkerImagePackage: 'quay.io/ploigos/ploigos-tool-maven:v0.21',
+      workflowWorkerImageStaticCodeAnalysis: 'quay.io/ploigos/ploigos-tool-sonar:v0.21',
+      workflowWorkerImagePushArtifacts: 'quay.io/ploigos/ploigos-tool-maven:v0.21',
+      workflowWorkerImageContainerOperations: 'quay.io/ploigos/ploigos-tool-containers:v0.21',
+      workflowWorkerImageContainerImageStaticVulnerabilityScan: 'quay.io/ploigos/ploigos-tool-openscap:v0.21',
+      workflowWorkerImageDeploy: 'quay.io/ploigos/ploigos-tool-argocd:v0.21',
+      workflowWorkerImageUAT: 'quay.io/ploigos/ploigos-tool-maven:v0.21',
+      separatePlatformConfig: true,
+      //updated section
+      stepRunnerUpdateLibrary: true,
+      stepRunnerLibSourceUrl: "git+​https://<repo_url>/platform/ploigos-step-runner.git@main"
+  ) 
+
+//
+
+Creating or Updating the Workflow::
+
+Changes to the Ploigos CI/CD Workflow start in the `ploigos-jenkins-library` 
+repository. The repository container a *vars/* directory which defines the 3
+common CI/CD workflows:
+
+* *ploigosWorkflowMinimal.groovy* - Minimum Jenkins workflow
+* *ploigosWorkflowTypical.groovy* - Typical Jenkins workflow (Recommended)
+* *ploigosWorkflowEverything.groovy* - Jenkins workflow with all options 
+  enabled
+
+Each groovy file is split into two primary sections: the *WorkflowParams*
+which contains variables for the workflow that can be set in the application
+Jenkinsfile, and the following section which defines the Jenkins *pipeline*
+
+When creating new pipelines, ensure that it contains at least the following stages:
+
+* *SETUP: Workflow Step Runner*: this stage prepares the PGP keys for use 
+across all subsequent steps, and updates the Ploigos Step Runner if needed.
+* *CI: Generate Metadata*: this stage gathers information about the git 
+repository that this workflow is being run against, as well as any metadata 
+that would be relevant for upcoming steps (e.g., information from the POM file
+if this is a Maven build).
+* *CI: Tag Source Code*: this stage tags the current commit and pushes it to 
+the git repo, allowing for traceability between code commits and the CI/CD 
+workflow results.
+* The reporting step (defined under *pipeline.post.always*) should be part of 
+every workflow.
+
+For the new workflow, identify which environments will have deployments
+(DEV/TEST/PROD) and ensure each environment has a *stage('<ENV>')* entry
+defined. Substages under the *stage(Continuous Integration)* definition
+can be customized to match the planned CI/CD Workflow.
+
+Before removing the definition for a stage, take note of all variables that 
+are being used. If these variables are not used anywhere else in the file, the 
+variable declaration at the top of the file should be removed. While all 
+variables should be examined, the following are the main variables to watch 
+out for:
+
+* *WORKFLOW_WORKER_**: these variables are used in the container() declaration.
+Note that if a container is no longer used, its associated entry in 
+*spec.containers* entry can be removed as well.
+* *envName**: if any of the deployment steps are being removed, the associated 
+variable for environment name (e.g., *envNameProd*) can be removed.
+* *releaseGitRefPatterns*: this variable is used in every deployment step; if 
+every deployment step is removed, this variable can be removed as well.
+
+
