@@ -1,0 +1,67 @@
+@startuml
+
+title Ploigos - Step Runner Sequence
+caption Describes how the three main component operate to execute a Ploigos Step Runner (PSR) command
+
+actor "Authorized Person" as person
+control "Workflow Runner" as workflow
+boundary "Ploigos Set Runner CLI" as cli
+control "__main__.py" as main
+control "step_runner.py" as stepRunner
+control "step_implementer.py" as stepImpl
+
+person -> workflow : Invoke workflow
+
+    group For each Workflow Step
+
+    workflow -> cli : Invoke ploigos CLI
+
+    cli -> main: Invoke main
+
+    activate main
+    main -> main : Parse configuration file
+    main -> main : Decrypt encrypted configuration varaibles
+    main -> main : Set any configuration overrides
+    main -> main : Instantiate step from configuration
+
+    main -> stepRunner : step.run_step() - Invoke step 
+    activate stepRunner
+
+    stepRunner -> stepRunner : Instantiate sub steps
+
+    group for each sub step
+        stepRunner -> stepImpl : sub_step._run_step()
+
+        activate stepImpl
+            stepImpl -> stepImpl : Execute step logic
+            stepImpl -> stepImpl : Serialize results into standard data format
+            stepRunner <- stepImpl : Return step_result
+        deactivate stepImpl
+
+        group Procss step result
+            stepRunner -> stepRunner : self.workflow_result.add_step_result(step_result) - Add step results to workflow results
+            stepRunner -> stepRunner : self.workflow_result.write_to_pickle_file(step_result) - Add step results to python pickle file
+            stepRunner -> stepRunner : self.workflow_result.write_restuls_to_yml_file(step_result) - Add step results to the yaml file
+        end
+
+        alt step_result.success
+            main <- stepRunner: return true
+        else 
+            main <- stepRunner: return false
+        end
+
+    end
+
+    deactivate stepRunner
+    
+
+    alt step.run_step() == false
+        workflow <- main: Return system exit 200
+    else step.run_step() throws Exception
+        workflow <- stepRunner: rReturn system exit 300
+    end
+
+    deactivate main
+end
+
+@enduml
